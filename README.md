@@ -10,6 +10,7 @@
     - [Make] (https://dbwebb.se/kurser/mvc-v2/labbmiljo/make2)
     - [Node.js](https://nodejs.org/)
     - [Git](https://dbwebb.se/kurser/mvc-v2/labbmiljo/git)
+    - [Encore](https://github.com/dbwebb-se/mvc/blob/main/example/symfony/README.md)
 
 - Clone repo to local computer
 
@@ -19,6 +20,11 @@ git clone https://github.com/SvanteF/mvc-report
 cd mvc-report
 
 ```
+- Build the assets
+```bash
+npm run build
+```
+
 - Run the application
 
 ```bash

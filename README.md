@@ -7,7 +7,7 @@
 - Install the lab environment
     - [PHP](https://dbwebb.se/kurser/mvc-v2/labbmiljo/php)
     - [Composer](https://dbwebb.se/kurser/mvc-v2/labbmiljo/php-composer)
-    - [Make] (https://dbwebb.se/kurser/mvc-v2/labbmiljo/make2)
+    - [Make](https://dbwebb.se/kurser/mvc-v2/labbmiljo/make2)
     - [Node.js](https://nodejs.org/)
     - [Git](https://dbwebb.se/kurser/mvc-v2/labbmiljo/git)
     - [Encore](https://github.com/dbwebb-se/mvc/blob/main/example/symfony/README.md)

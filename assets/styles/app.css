@@ -83,6 +83,12 @@ header nav ul li a:hover {
   border-radius: 5px;
   padding: 2px;
 }
+.two-columns-report .right p {
+  text-align: left;
+}
+.two-columns-report .right .reply {
+  font-weight: bold;
+}
 
 .lucky {
   background-color: #f7931a;

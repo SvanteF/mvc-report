@@ -6,12 +6,19 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: white;
+  background-color: #fafafa;
+  font-family: "Kanit", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Babas Neue", sans-serif;
 }
 
 header {
   width: 100%;
+  border: 2px solid black;
   border-radius: 5px;
+  background-color: #aaa;
   padding: 20px 0;
 }
 header nav ul {
@@ -60,7 +67,15 @@ header nav ul li a:hover {
   margin-bottom: 20px;
   font-size: 1.2em;
 }
-.two-columns-about .left, .two-columns-about .right {
+.two-columns-about .left {
+  padding: 2px;
+}
+.two-columns-about .left .links {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.two-columns-about .right {
   border: 2px solid black;
   border-radius: 5px;
   padding: 2px;
@@ -98,12 +113,21 @@ header nav ul li a:hover {
   border-radius: 5px;
 }
 
+.api {
+  background-color: #ddd;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 footer {
   width: 100%;
+  border: 2px solid black;
   border-radius: 5px;
   padding: 20px 0;
   margin-top: auto;
-  background-color: lightblue;
+  background-color: #aaa;
 }
 footer .link-course, footer .link-mine {
   font-size: 1.2em;

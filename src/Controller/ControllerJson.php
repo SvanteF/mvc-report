@@ -18,7 +18,7 @@ class ControllerJson
 
         switch($number) {
             case 1:
-                $quote = "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.";
+                $quote = "Two things are infinite: the universe and human stupidity; and I am not sure about the universe.";
                 break;
             case 2:
                 $quote = "Imagination is more important than knowledge.";

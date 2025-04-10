@@ -26,11 +26,14 @@
                     <li><a href="{{ path('report') }}">REPORT</a></li>
                     <li><a href="{{ path('lucky') }}">LUCKY</a></li>
                     <li><a href="{{ path('api') }}">API</a></li>
+                    <li><a href="{{ path('pig_init_get') }}">Pig game</a></li>
+                    <li><a href="{{ path('showSession') }}">Session</a></li>
+                    <li><a href="{{ path('card_start') }}">Card</a></li>
                 </ul>
             </nav>
         </header>
         
-        {% block body %}{% endblock %}
+        <main>{% block body %}{% endblock %}</main>
 
         <footer>
             <a class="link-course" href="https://github.com/dbwebb-se/mvc" target="_blank">

@@ -16,7 +16,7 @@ class ControllerJson
         $date = date('l jS \of F Y h:i:s A');
 
 
-        switch($number) {
+        switch ($number) {
             case 1:
                 $quote = "Two things are infinite: the universe and human stupidity; and I am not sure about the universe.";
                 break;

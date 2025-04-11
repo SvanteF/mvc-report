@@ -38,10 +38,7 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/card", name: "card_start")]
-    public function cardStart(
-        Request $request,
-        SessionInterface $session
-    ): Response
+    public function cardStart(): Response
     {
         return $this->render('card.html.twig');
     }

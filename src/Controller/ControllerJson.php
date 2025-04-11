@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Card\DeckOfCards;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ControllerJson
@@ -38,5 +41,130 @@ class ControllerJson
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
         return $response;
+    }
+
+    #[Route("/api/deck", methods: ["GET"])]
+    public function jsonDeck(): Response
+    {
+        $deck = new DeckOfCards();
+
+        $allCards = $deck->getDeck();
+        $data = [];
+
+        foreach ($allCards as $card) {
+            $data[] = [
+                'value' => $card->getValue(),
+                'color' => $card->getColor(),
+            ];
+        }
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route("/api/deck/shuffle", methods: ["POST"])]
+    public function jsonDeckShuffle(
+        SessionInterface $session
+    ): Response
+    {
+        $deck = new DeckOfCards();
+
+        $shuffledDeck = $deck->shuffleAndGetDeck();
+
+        $session->set("deck_of_cards", $shuffledDeck);
+
+        $data = [];
+
+        foreach ($shuffledDeck as $card) {
+            $data[] = [
+                'value' => $card->getValue(),
+                'color' => $card->getColor(),
+            ];
+        }
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route("/api/deck/draw", methods: ["POST"])]
+    public function jsonDeckDraw(
+        SessionInterface $session
+    ): Response
+    {
+        $deck = $session->get("deck_of_cards");
+
+        $drawRes = $deck->drawCard();
+
+        [$drawCard, $cardsLeft] = $drawRes;
+
+        $session->set("deck_of_cards", $deck);
+
+        $cardsLeft = count ($deck->getDeck());
+
+        $data = [
+            'drawn_card' => [
+                'value' => $drawCard->getValue(),
+                'color' => $drawCard->getColor()
+            ],
+            'cards_left' => $cardsLeft
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route("/api/deck/draw/", methods: ["POST"])]
+    public function jsonDeckDrawMany(
+        Request $request,
+        SessionInterface $session,
+    ): Response
+    {
+        $num = $request->request->get('num');
+
+        if ($num > 52) {
+            throw new \Exception("There are maximum 52 cards");
+        }
+
+        $deck = $session->get("deck_of_cards");
+
+        $cardHand = [];
+
+        for ($i = 1; $i <= $num; $i++) {
+            $drawRes = $deck->drawCard();
+
+            if ($drawRes === null) {
+                break;
+            }
+    
+            [$drawCard, $cardsLeft] = $drawRes;
+        
+            $cardHand[] = [
+                'value' => $drawCard->getValue(),
+                'color' => $drawCard->getColor(),
+            ];        }
+
+        $cardsLeft = count ($deck->getDeck());
+        $session->set("deck_of_cards", $deck);
+
+        $data = [
+            'drawn_cards' => $cardHand, 
+            'cards_left' => $cardsLeft
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+
     }
 }

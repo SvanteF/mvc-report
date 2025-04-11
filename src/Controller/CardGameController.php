@@ -86,6 +86,15 @@ class CardGameController extends AbstractController
     {
         $deck = $session->get("deck_of_cards");
 
+        if ($deck === null) {
+        
+            $this->addFlash(
+                'notice',
+                'Det finns ingen kortlek så vi skapade en'
+            );
+            return $this->redirectToRoute('card_deck');
+        }
+
         $drawRes = $deck->drawCard();
 
         if ($drawRes === null) {
@@ -120,6 +129,15 @@ class CardGameController extends AbstractController
         }
 
         $deck = $session->get("deck_of_cards");
+
+        if ($deck === null) {
+        
+            $this->addFlash(
+                'notice',
+                'Det finns ingen kortlek så vi skapade en'
+            );
+            return $this->redirectToRoute('card_deck');
+        }
 
         $cardHand = [];
         for ($i = 1; $i <= $num; $i++) {

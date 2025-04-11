@@ -13,4 +13,12 @@
 
 {{ include('flash.html.twig') }}
 
+<p>Spelet använder sig av tre klasser. Card, DeckOfCards och DeckWithJokers. 
+    DeckOfCards är en komposition som innehåller Card-objekt. 
+    DeckWithJokers ärver från DeckOfCards.
+</p>
+
+<img src="{{ asset('img/uml.png') }}" alt="">
+
+
 {% endblock %}

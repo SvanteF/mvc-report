@@ -68,8 +68,7 @@ class ControllerJson
     #[Route("/api/deck/shuffle", methods: ["POST"])]
     public function jsonDeckShuffle(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = new DeckOfCards();
 
         $shuffledDeck = $deck->shuffleAndGetDeck();
@@ -95,8 +94,7 @@ class ControllerJson
     #[Route("/api/deck/draw", methods: ["POST"])]
     public function jsonDeckDraw(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get("deck_of_cards");
 
         $drawRes = $deck->drawCard();
@@ -105,7 +103,7 @@ class ControllerJson
 
         $session->set("deck_of_cards", $deck);
 
-        $cardsLeft = count ($deck->getDeck());
+        $cardsLeft = count($deck->getDeck());
 
         $data = [
             'drawn_card' => [
@@ -126,8 +124,7 @@ class ControllerJson
     public function jsonDeckDrawMany(
         Request $request,
         SessionInterface $session,
-    ): Response
-    {
+    ): Response {
         $num = $request->request->get('num');
 
         if ($num > 52) {
@@ -144,19 +141,20 @@ class ControllerJson
             if ($drawRes === null) {
                 break;
             }
-    
+
             [$drawCard, $cardsLeft] = $drawRes;
-        
+
             $cardHand[] = [
                 'value' => $drawCard->getValue(),
                 'color' => $drawCard->getColor(),
-            ];        }
+            ];
+        }
 
-        $cardsLeft = count ($deck->getDeck());
+        $cardsLeft = count($deck->getDeck());
         $session->set("deck_of_cards", $deck);
 
         $data = [
-            'drawn_cards' => $cardHand, 
+            'drawn_cards' => $cardHand,
             'cards_left' => $cardsLeft
         ];
 

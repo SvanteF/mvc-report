@@ -4,5 +4,4 @@ namespace App\Card;
 
 class CardHand
 {
-    
 }

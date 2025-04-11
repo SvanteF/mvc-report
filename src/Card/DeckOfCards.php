@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Card;
 
 class DeckOfCards
@@ -20,7 +21,7 @@ class DeckOfCards
     public function shuffleAndGetDeck(): array
     {
         shuffle($this->deck);
-        
+
         return $this->deck;
     }
 
@@ -35,7 +36,7 @@ class DeckOfCards
         $card = $this->deck[$randomPos];
 
         unset($this->deck[$randomPos]);
-        $this->deck = array_values($this->deck);        
+        $this->deck = array_values($this->deck);
 
         return [$card, count($this->deck)];
     }

@@ -46,8 +46,7 @@ class CardGameController extends AbstractController
     #[Route("/card/deck", name: "card_deck")]
     public function cardDeck(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = new DeckOfCards();
 
         $session->set("deck_of_cards", $deck);
@@ -62,8 +61,7 @@ class CardGameController extends AbstractController
     #[Route("/card/deck/shuffle", name: "shuffle_deck")]
     public function shuffleDeck(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         //$deck = new DeckOfCards();
         $deck = $session->get("deck_of_cards");
 
@@ -75,16 +73,15 @@ class CardGameController extends AbstractController
             'shuffleCards' => $deck->getDeck()
         ]);
     }
-    
+
     #[Route("/card/deck/draw", name: "draw_from_deck")]
     public function drawFromDeck(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get("deck_of_cards");
 
         if ($deck === null) {
-        
+
             $this->addFlash(
                 'notice',
                 'Det finns ingen kortlek så vi skapade en'
@@ -100,14 +97,14 @@ class CardGameController extends AbstractController
                 'Leken är tom'
             );
 
-            return $this->redirectToRoute('card_start'); 
+            return $this->redirectToRoute('card_start');
         }
 
         [$drawCard, $cardsLeft] = $drawRes;
 
         $session->set("deck_of_cards", $deck);
 
-        $cardsLeft = count ($deck->getDeck());
+        $cardsLeft = count($deck->getDeck());
 
         return $this->render('draw.html.twig', [
             'drawCard' => $drawCard,
@@ -119,8 +116,7 @@ class CardGameController extends AbstractController
     public function drawManyFromDeckGet(
         SessionInterface $session,
         int $num
-    ): Response    
-    {
+    ): Response {
         if ($num > 52) {
             throw new \Exception("There are maximum 52 cards");
         }
@@ -128,7 +124,7 @@ class CardGameController extends AbstractController
         $deck = $session->get("deck_of_cards");
 
         if ($deck === null) {
-        
+
             $this->addFlash(
                 'notice',
                 'Det finns ingen kortlek så vi skapade en'
@@ -145,16 +141,16 @@ class CardGameController extends AbstractController
                     'warning',
                     'Leken är tom'
                 );
-    
-                return $this->redirectToRoute('card_start'); 
+
+                return $this->redirectToRoute('card_start');
             }
-    
+
             [$drawCard, $cardsLeft] = $drawRes;
-        
+
             $cardHand[] = $drawCard;
         }
 
-        $cardsLeft = count ($deck->getDeck());
+        $cardsLeft = count($deck->getDeck());
         $session->set("deck_of_cards", $deck);
 
 
@@ -169,8 +165,7 @@ class CardGameController extends AbstractController
     public function drawManyFromDeckPost(
         Request $request,
         SessionInterface $session
-    ): Response    
-    {
+    ): Response {
         $num = $request->request->get('num');
 
         if ($num > 52) {
@@ -188,16 +183,16 @@ class CardGameController extends AbstractController
                     'warning',
                     'Leken är tom'
                 );
-    
-                return $this->redirectToRoute('card_start'); 
+
+                return $this->redirectToRoute('card_start');
             }
-    
+
             [$drawCard, $cardsLeft] = $drawRes;
-        
+
             $cardHand[] = $drawCard;
         }
 
-        $cardsLeft = count ($deck->getDeck());
+        $cardsLeft = count($deck->getDeck());
         $session->set("deck_of_cards", $deck);
 
 
@@ -211,8 +206,7 @@ class CardGameController extends AbstractController
     #[Route("/card/deck/jokers", name: "deck_with_jokers")]
     public function deckWithJokers(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deckWithJokers = new DeckWithJokers();
 
         $session->set("deck_of_cards_with_jokers", $deckWithJokers);

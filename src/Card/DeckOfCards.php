@@ -1,11 +1,9 @@
 <?php
 namespace App\Card;
 
-use App\Dice\Dice;
-
 class DeckOfCards
 {
-    private $deck = [];
+    protected $deck = [];
 
     public function __construct()
     {
@@ -22,8 +20,24 @@ class DeckOfCards
     public function shuffleAndGetDeck(): array
     {
         shuffle($this->deck);
-
+        
         return $this->deck;
+    }
+
+    public function drawCard(): ?array
+    {
+        if (count($this->deck) === 0) {
+            return null;
+        }
+
+
+        $randomPos = array_rand($this->deck);
+        $card = $this->deck[$randomPos];
+
+        unset($this->deck[$randomPos]);
+        $this->deck = array_values($this->deck);        
+
+        return [$card, count($this->deck)];
     }
 
     public function getDeck(): array

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Card\DeckOfCards;
+use App\Card\Player;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -164,5 +165,62 @@ class ControllerJson
         );
         return $response;
 
+    }
+
+    #[Route("/api/deck/deal/", methods: ["POST"])]
+    public function jsonDeal(
+        Request $request,
+        SessionInterface $session
+    ): Response {
+        $numPlayers = $request->request->get('numPlayers');
+        $numCards = $request->request->get('numCards');
+
+
+        if ($numCards > 52) {
+            throw new \Exception("There are maximum 52 cards");
+        }
+
+        $deck = $session->get("deck_of_cards");
+
+        $players = [];
+        for ($j = 1; $j <= $numPlayers; $j++) {
+            $playerName = 'Spelare ' . $j;
+            $player = new Player($playerName);
+
+            for ($i = 1; $i <= $numCards; $i++) {
+                $drawRes = $deck->drawCard();
+
+                [$drawCard, $cardsLeft] = $drawRes;
+
+                $player->giveCard($drawCard);
+
+            }
+            $cards = [];
+            foreach ($player->getCardHand() as $card) {
+                $cards[] = [
+                    'value' => $card->getValue(),
+                    'color' => $card->getColor()
+                ];
+            }
+
+            $players[] = [
+                'name' => $player->getName(),
+                'cards' => $cards
+            ];
+        }
+
+        $cardsLeft = count($deck->getDeck());
+        $session->set("deck_of_cards", $deck);
+
+        $data = [
+            'players' => $players,
+            'cards_left' => $cardsLeft
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
     }
 }

@@ -45,6 +45,17 @@
         </form> 
         <p>..........................................................................</p>
 
+        <p>
+            Delar ut ett antal :cards från kortleken till ett antal :players och visar upp de korten som respektive spelare har fått. 
+            Antalet kort som är kvar i kortleken visas. Kortleken sparas i sessionen.
+        </p>
+        <form action="api/deck/deal/" method="POST">
+            <input type="number" id="numPlayers" name="numPlayers" value="1" min="1" max="52" />Antal spelare 
+            <input type="number" id="numCards" name="numCards" value="1" min="1" max="52" />Antal kort per spelare
+            <button type="submit">POST api/deck/draw/:players/:cards</button>
+        </form> 
+        <p>..........................................................................</p>
+
     </section>
     
 

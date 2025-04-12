@@ -5,6 +5,7 @@ namespace App\Controller;
 //use App\Card\Card;
 use App\Card\DeckOfCards;
 use App\Card\DeckWithJokers;
+use App\Card\Player;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -216,6 +217,125 @@ class CardGameController extends AbstractController
 
         return $this->render('deck_with_jokers.html.twig', [
             'allCards' => $allCards,
+        ]);
+    }
+
+    #[Route("/card/deck/deal/{numPlayers<\d+>}/{numCards<\d+>}", name: "deal_get", methods: ["GET"])]
+    public function dealGet(
+        SessionInterface $session,
+        int $numPlayers,
+        int $numCards
+    ): Response {
+        if ($numCards > 52) {
+            throw new \Exception("There are maximum 52 cards");
+        }
+
+        $deck = $session->get("deck_of_cards");
+
+        if ($deck === null) {
+
+            $this->addFlash(
+                'notice',
+                'Det finns ingen kortlek så vi skapade en'
+            );
+            return $this->redirectToRoute('card_deck');
+        }
+
+        $players = [];
+        for ($j = 1; $j <= $numPlayers; $j++) {
+            $playerName = 'Spelare ' . $j;
+            $player = new Player($playerName);
+
+            for ($i = 1; $i <= $numCards; $i++) {
+                $drawRes = $deck->drawCard();
+
+                if ($drawRes === null) {
+                    $this->addFlash(
+                        'warning',
+                        'Leken är tom'
+                    );
+
+                    return $this->redirectToRoute('card_start');
+                }
+
+                [$drawCard, $cardsLeft] = $drawRes;
+
+                $player->giveCard($drawCard);
+
+            }
+            $players[] = $player;
+        }
+
+
+        $cardsLeft = count($deck->getDeck());
+        $session->set("deck_of_cards", $deck);
+
+
+        return $this->render('deal.html.twig', [
+            'players' => $players,
+            'cardsLeft' => $cardsLeft,
+            'numCards' => $numCards,
+            'numPlayers' => $numPlayers,
+        ]);
+    }
+
+    #[Route("/card/deck/deal/", name: "deal_post", methods: ["POST"])]
+    public function dealPost(
+        Request $request,
+        SessionInterface $session
+    ): Response {
+        $numPlayers = $request->request->get('numPlayers');
+        $numCards = $request->request->get('numCards');
+
+
+        if ($numCards > 52) {
+            throw new \Exception("There are maximum 52 cards");
+        }
+
+        $deck = $session->get("deck_of_cards");
+
+        if ($deck === null) {
+
+            $this->addFlash(
+                'notice',
+                'Det finns ingen kortlek så vi skapade en'
+            );
+            return $this->redirectToRoute('card_deck');
+        }
+
+        $players = [];
+        for ($j = 1; $j <= $numPlayers; $j++) {
+            $playerName = 'Spelare ' . $j;
+            $player = new Player($playerName);
+
+            for ($i = 1; $i <= $numCards; $i++) {
+                $drawRes = $deck->drawCard();
+
+                if ($drawRes === null) {
+                    $this->addFlash(
+                        'warning',
+                        'Leken är tom'
+                    );
+
+                    return $this->redirectToRoute('card_start');
+                }
+
+                [$drawCard, $cardsLeft] = $drawRes;
+
+                $player->giveCard($drawCard);
+
+            }
+            $players[] = $player;
+        }
+
+        $cardsLeft = count($deck->getDeck());
+        $session->set("deck_of_cards", $deck);
+
+        return $this->render('deal.html.twig', [
+            'players' => $players,
+            'cardsLeft' => $cardsLeft,
+            'numCards' => $numCards,
+            'numPlayers' => $numPlayers,
         ]);
     }
 }

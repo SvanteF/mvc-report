@@ -10,6 +10,9 @@
 <p><a href="{{ path('shuffle_deck') }}">Blanda kortleken</a></p>
 <p><a href="{{ path('draw_from_deck') }}">Dra ett kort från leken</a></p>
 <p><a href="{{ path('draw_many_from_deck_get', {'num': 0}) }}">Dra ett eller flera kort från leken</a></p>
+<p><a href="{{ path('deal_get', {'numPlayers': 0, 'numCards': 0}) }}">Dela ut kort till spelare</a></p>
+
+
 
 {{ include('flash.html.twig') }}
 

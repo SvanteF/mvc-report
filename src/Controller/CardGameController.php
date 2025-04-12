@@ -62,8 +62,7 @@ class CardGameController extends AbstractController
     public function shuffleDeck(
         SessionInterface $session
     ): Response {
-        //$deck = new DeckOfCards();
-        $deck = $session->get("deck_of_cards");
+        $deck = new DeckOfCards();
 
         $deck->shuffleAndGetDeck();
 

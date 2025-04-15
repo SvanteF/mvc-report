@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Report{% endblock %}
+
+{% block body %}
+    <h1>MVC</h1>
+
+    <section class="two-columns-report">
+        <aside class="left">
+            <h2>Dokumention</h2>
+            <p>
+                <a href="#flowchart">Flödesschema</a>
+            </p>
+            <p>
+                <a href="#...">...</a>
+            </p>
+            <p>
+                <a href="#...">...</a>
+            </p>
+        </aside>
+        <article class="right">
+            <h2 id="flowchart">Flödesschema</h2>
+            <div>
+                <img src="{{ asset('img/flowchart_21.png') }}" alt="">
+            </div>
+        </article>
+    </section>
+    
+
+{% endblock %}

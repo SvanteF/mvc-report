@@ -36,3 +36,9 @@ yarn-error.log
 /tools/**/composer.lock
 .php-cs-fixer.cache
 ###>
+
+###>
+/pig/
+/symfony/
+/tools/
+###<

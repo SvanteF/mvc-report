@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use App\Card\DeckOfCards;
 use App\Card\Player;
+
+use Exception;
+
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -129,7 +132,7 @@ class ControllerJson
         $num = $request->request->get('num');
 
         if ($num > 52) {
-            throw new \Exception("There are maximum 52 cards");
+            throw new Exception("There are maximum 52 cards");
         }
 
         $deck = $session->get("deck_of_cards");
@@ -177,7 +180,7 @@ class ControllerJson
 
 
         if ($numCards > 52) {
-            throw new \Exception("There are maximum 52 cards");
+            throw new Exception("There are maximum 52 cards");
         }
 
         $deck = $session->get("deck_of_cards");
@@ -227,10 +230,10 @@ class ControllerJson
     #[Route("/api/game", methods: ["GET"])]
     public function jsonScore(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game21 = $session->get('game21');
-      
+        
+        $data = [];
         $data[] = [
             'playerPoints' => $game21->getPlayerGamePoints(),
             'bankPoints' => $game21->getBankGamePoints(),

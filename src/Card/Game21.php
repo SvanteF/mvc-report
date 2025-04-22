@@ -27,13 +27,24 @@ class Game21
     public function getNewCard($who): void
     {
         $card = $this->deck->drawCard();
-        if ($who === 'player') {
+        /*if ($who === 'player') {
             $this->drawCards[] = $card[0];
         } else {
             $this->bankCards[] = $card[0];
+        }*/
+
+        //Change du to lint complain
+        switch ($who) {
+            case 'player':
+                $this->drawCards[] = $card[0];
+                break;
+            case 'bank':
+                $this->bankCards[] = $card[0];
+                break;
         }
+
         $this->getPoints($card[0], $who);
-        
+
     }
 
     public function getPlayersCardsAsString(): array
@@ -64,19 +75,37 @@ class Game21
             '♚' => 13
         ];
 
-        if ($who === 'player') {
+        /*if ($who === 'player') {
             if ($cardValue === 'A') {
-                $this->playerGamePoints += ($this->playerGamePoints + 14 <= 21 ) ? 14 : 1;
+                $this->playerGamePoints += ($this->playerGamePoints + 14 <= 21) ? 14 : 1;
             } else {
                 $this->playerGamePoints += $pointsTable[$cardValue];
             }
         } else {
             if ($cardValue === 'A') {
-                $this->bankGamePoints += ($this->bankGamePoints + 14 <= 21 ) ? 14 : 1;
+                $this->bankGamePoints += ($this->bankGamePoints + 14 <= 21) ? 14 : 1;
             } else {
                 $this->bankGamePoints += $pointsTable[$cardValue];
             }
+        }*/
+
+        //Changed since lint complains about else.
+        if ($who === 'player') {
+            if ($cardValue === 'A') {
+                $this->playerGamePoints += ($this->playerGamePoints + 14 <= 21) ? 14 : 1;
+                return;
+            }
+            $this->playerGamePoints += $pointsTable[$cardValue];
+            return;
         }
+        if ($who === 'bank') {
+            if ($cardValue === 'A') {
+                $this->bankGamePoints += ($this->bankGamePoints + 14 <= 21) ? 14 : 1;
+                return;
+            }
+        }
+        $this->bankGamePoints += $pointsTable[$cardValue];
+        return;
     }
 
     public function getPlayerGamePoints(): int

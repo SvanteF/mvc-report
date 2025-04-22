@@ -223,4 +223,23 @@ class ControllerJson
         );
         return $response;
     }
+
+    #[Route("/api/game", methods: ["GET"])]
+    public function jsonScore(
+        SessionInterface $session
+    ): Response
+    {
+        $game21 = $session->get('game21');
+      
+        $data[] = [
+            'playerPoints' => $game21->getPlayerGamePoints(),
+            'bankPoints' => $game21->getBankGamePoints(),
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
 }

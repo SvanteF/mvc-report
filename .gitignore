@@ -42,3 +42,5 @@ yarn-error.log
 /symfony/
 /tools/
 ###<
+node_modules_/
+node_modules/

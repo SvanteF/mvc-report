@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   min-height: 100vh;
   max-width: 1200px;
@@ -122,30 +121,10 @@ header nav ul li a:hover {
   border-radius: 5px;
 }
 
-.pig {
-  border-bottom: 4px double green;
-}
-
-.flash-notice {
-  padding: 0.5em;
-  color: #004085;
-  background-color: #cce5ff;
-  border-color: #b8daff;
-}
-
-.flash-notice:before {
-  content: "ⓘ";
-}
-
-.flash-warning {
-  padding: 0.5em;
-  color: #856404;
-  background-color: #fff3cd;
-  border-color: #ffeeba;
-}
-
-.flash-warning:before {
-  content: "⚠";
+.code {
+  display: block;
+  width: 100%;
+  text-align: left;
 }
 
 footer {

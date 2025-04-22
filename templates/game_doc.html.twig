@@ -3,7 +3,7 @@
 {% block title %}Report{% endblock %}
 
 {% block body %}
-    <h1>MVC</h1>
+    <h1>21</h1>
 
     <section class="two-columns-report">
         <aside class="left">
@@ -12,17 +12,82 @@
                 <a href="#flowchart">Flödesschema</a>
             </p>
             <p>
-                <a href="#...">...</a>
+                <a href="#pseudokod">Pseudokod</a>
             </p>
             <p>
-                <a href="#...">...</a>
+                <a href="#klasser">Klasser</a>
+            </p>
+            <p>
+                <a href="#uml">UML klassdiagram</a>
             </p>
         </aside>
         <article class="right">
             <h2 id="flowchart">Flödesschema</h2>
-            <div>
-                <img src="{{ asset('img/flowchart_21.png') }}" alt="">
+            <img src="{{ asset('img/flowchart_21.png') }}" alt="">
+            <h2 id="pseudokod">Pseudokod</h2>
+            <div class="code">
+            <pre><code>
+                BEGIN
+                    SET bank's bet to 100
+
+                    OBTAIN first card for player
+                    READ player's bet
+                    OBTAIN second card for player
+
+                    IF sum_player = 21 THEN
+                        Player wins hand
+                        RETURN
+                    ENDIF
+
+                    IF sum_player > 21 THEN
+                        Player loses hand
+                        RETURN
+                    ENDIF
+
+                    WHILE player is not satisfied
+
+                        OBTAIN new card for player
+                        IF sum_player = 21 THEN
+                            Player wins hand
+                            RETURN
+                        ELSE IF sum_player > 21 THEN
+                            Player loses hand
+                            RETURN
+                        ENDIF
+                    ENDWHILE
+
+                    WHILE sum_bank < 17
+
+                        OBTAIN new card for bank
+
+                    ENDWHILE
+
+                    IF sum_bank > 21
+                        Player wins hand
+                        RETURN
+                    ELSE IF sum_bank >= sum_player (sum_bank is strictly not required since sum_player cannot be > 21)
+                        Player loses hand
+                        RETURN
+                    ELSE
+                        Player wins hand
+                        RETURN
+                    ENDIF
+                END
+            </code></pre>
             </div>
+            <h2 id="klasser">Klasser</h2>
+            <p>De tre första klasserna Card, DeckOfCards och Player kan återanvändas från kmom02</p>
+            <p>Card: Har properties color och value för att representera kort. </p>
+            <p>DeckOfCards: En komposition som innehåller ett eller flera Card-objekt</p>
+            <p>Player: Har ett namn och en korthand</p>
+            <p>
+                Game21: En ny klass som tillhandahåller logiken för spelet för att hålla
+                implementationen av Controllern smal.
+            </p>
+
+            <h2 id="uml">UML klassdiagram</h2>
+            <p>infoga UML här...</p>
+
         </article>
     </section>
     

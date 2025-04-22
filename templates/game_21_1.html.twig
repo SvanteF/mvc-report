@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title %}21{% endblock %}
+
+{% block body %}
+<h1>21</h1>
+
+<h3>Välkommen!</h3>
+
+<form action="{{ path('game_21_1_post') }}" method="post">
+    <button type="submit">Dra ditt första kort</button>
+</form>
+
+{#
+<p>Ditt första kort: {{ card }}</p>
+
+<form action="{{ path('game_21_post') }}" method="post">
+    <label for="num">Hur mycket vill du satsa?:</label>
+    <input type="number" id="playerBet" name="playerBet" value="1" min="1" max="100" />
+    <button type="submit">Dra ditt andra kort</button>
+</form>
+#}
+
+{% endblock %}

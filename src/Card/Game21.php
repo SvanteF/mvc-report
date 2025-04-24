@@ -130,10 +130,25 @@ class Game21
             return true;
         }
 
-        if ($this->playerGamePoints > 21 || 
-            ($this->bankGamePoints >= $this->playerGamePoints && $this->bankGamePoints >= 17))
-        {
+        if ($this->playerGamePoints > 21) {
             $this->winner = 'bank';
+            $this->betting->clearBet($this->winner, $session);
+            return true;
+        }
+
+        if ($this->bankGamePoints >= 17) {
+            if ($this->bankGamePoints >= $this->playerGamePoints) {
+                $this->winner = 'bank';
+                $this->betting->clearBet($this->winner, $session);
+                return true;
+            }
+            if ($this->bankGamePoints < $this->playerGamePoints) {
+                $this->winner = 'player';
+                $this->betting->clearBet($this->winner, $session);
+                return true;
+            }
+
+            $this->winner = 'draw';
             $this->betting->clearBet($this->winner, $session);
             return true;
         }

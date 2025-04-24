@@ -5,6 +5,14 @@
 {% block body %}
 <h1>21</h1>
 
+<p>Bankens saldo: {{ bankFunds }}</p>
+<p>Spelarens saldo: {{ playerFunds }}</p>
+<p>
+    {% if bet > 0 %}
+        Du har bettat {{bet}}
+    {% endif %}
+</p>
+
 <h2>
     {% for card in playersCards %}
         {{ card }}

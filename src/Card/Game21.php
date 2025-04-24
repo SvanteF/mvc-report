@@ -6,6 +6,8 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class Game21
 {
+    private $betting;
+    private $winner;
     private $deck;
     private $drawCards = [];
     private $bankCards = [];
@@ -13,8 +15,9 @@ class Game21
     private $bankGamePoints = 0;
 
 
-    public function __construct()
+    public function __construct(Betting $betting)
     {
+        $this->betting = $betting;
         $this->deck = new DeckOfCards();
         $this->deck->shuffleAndGetDeck();
     }
@@ -118,9 +121,24 @@ class Game21
         return $this->bankGamePoints;
     }
 
-    public function gameOver(): bool
+    public function gameOver($session): bool
     {
-        return ($this->playerGamePoints >= 21 || $this->bankGamePoints >= 17);
+        if ($this->playerGamePoints === 21 || $this->bankGamePoints > 21)
+        {
+            $this->winner = 'player';
+            $this->betting->clearBet($this->winner, $session);
+            return true;
+        }
+
+        if ($this->playerGamePoints > 21 || 
+            ($this->bankGamePoints >= $this->playerGamePoints && $this->bankGamePoints >= 17))
+        {
+            $this->winner = 'bank';
+            $this->betting->clearBet($this->winner, $session);
+            return true;
+        }
+
+        return false;
     }
 
     public function getBanksCardsAsString(): array
@@ -130,5 +148,10 @@ class Game21
             $result[] = $card->getAsString();
         }
         return $result;
+    }
+
+    public function getWinner(): string
+    {
+        return $this->winner;
     }
 }

@@ -5,37 +5,33 @@
 {% block body %}
 <h1>21</h1>
 
-{% if playerPoints == 21 %}
+{% if winner == 'player' %}
     <h2>DU VANN</h2>
-    <h3>
-        Grattis, du fick {{playerPoints}} poäng!
-    </h3>
-{% elseif playerPoints > 21 %}
-    <h2>GAME OVER</h2>
-    <h3>
-        Du förlorade ({{playerPoints}} poäng = du är tjock)
-    </h3>
-{% elseif bankPoints > 21 %}
-    <h2>DU VANN</h2>
-    <h3>
-        Banken fick {{bankPoints}} poäng och blev tjock
-    </h3>
-{% elseif (bankPoints >= playerPoints and bankPoints <= 21) %}
-    <h2>GAME OVER</h2>
-    <h3>
-        Du fick {{playerPoints}} poäng. Banken fick {{bankPoints}} poäng. Du förlorade!
-    </h3>
-{% elseif playerPoints > bankPoints %}
-    <h2>DU VANN</h2>
-    <h3>
-        Du fick {{playerPoints}} poäng. Banken fick {{bankPoints}} poäng
-    </h3>
+    {#<h3>
+        Grattis, du fick {{ playerPoints }} poäng! (Banken fick {{ bankPoints }} poäng)
+    </h3>#}
+{% elseif winner == 'bank' %}
+    <h2>DU FÖRLORADE</h2>
+    {#<h3>
+        Du förlorade. Banken fick {{ bankPoints }} poäng och du {{ playerPoints }} poäng
+    </h3>#}
 {% endif %}
 
+<h3>Spelarens kort</h3>
+<p>
+    {% for card in playersCards %}
+        {{ card }}
+    {% endfor %}
+</p>
 
-{#
-<p>Du har bettat: {{ playerBet }}</p>
-#}
+<h3>Bankens kort</h3>
+<p>
+    {% for card in banksCards %}
+        {{ card }}
+    {% endfor %}
+</p>
+
+
 
 
 <form action="{{ path('game_21_2_get') }}" method="get">

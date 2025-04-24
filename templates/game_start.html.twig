@@ -5,31 +5,19 @@
 {% block body %}
 <h1>21</h1>
 
-<!--<p><a href="{{ path('card_deck') }}">Skapa och visa kortlek</a></p>
-<p><a href="{{ path('deck_with_jokers') }}">Skapa och visa kortlek med jokrar</a></p>
-<p><a href="{{ path('shuffle_deck') }}">Blanda kortleken</a></p>
-<p><a href="{{ path('draw_from_deck') }}">Dra ett kort från leken</a></p>
-<p><a href="{{ path('draw_many_from_deck_get', {'num': 0}) }}">Dra ett eller flera kort från leken</a></p>
-<p><a href="{{ path('deal_get', {'numPlayers': 0, 'numCards': 0}) }}">Dela ut kort till spelare</a></p>
-
-
 
 {{ include('flash.html.twig') }}
-
-<p>Spelet använder sig av fyra klasser. Card, DeckOfCards, DeckWithJokers och Player. 
-    DeckOfCards är en komposition som innehåller Card-objekt. 
-    DeckWithJokers ärver från DeckOfCards.
-</p>
-
-<img src="{{ asset('img/uml.png') }}" alt="">-->
-
 
 <section class="two-columns-about">
     <aside class="left">
         <div class="links">
-            <form action="{{ path('game_21_1_get') }}" method="get">
+            <a href="{{ path('game_21_1_get') }}">
+                <button>Starta spelet</button>
+            </a>
+
+            {#<form action="{{ path('game_21_1_get') }}" method="get">
                 <button type="submit">Starta spelet</button>
-            </form>
+            </form>#}
 
             <p><a href="{{ path('game_doc') }}">Dokumention</a></p>
 

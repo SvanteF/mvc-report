@@ -5,7 +5,16 @@
 {% block body %}
 <h1>21</h1>
 
-{#<p>Ditt första kort: {{ card }}</p>#}
+<p>Bankens saldo: {{ bankFunds }}</p>
+<p>Spelarens saldo: {{ playerFunds }}</p>
+<p>
+    {% if bet > 0 %}
+        Du har bettat {{bet}}
+    {% endif %}
+    {% if bet == 0 %}
+    {{betText}}
+    {% endif %}
+</p>
 
 <h2>
     {% for card in playersCards %}
@@ -34,6 +43,10 @@
 </form>#}
 
 <form action="{{ path('game_21_2_post') }}" method="post">
+    {% if bet == 0 %}
+    <label for="num">Hur mycket vill du satsa?:</label>
+    <input type="number" id="playersBet" name="playersBet" value="1" min="1" max="100" />
+    {% endif %}
     <button type="submit">Dra nästa kort</button>
 </form>
 

@@ -7,7 +7,9 @@ namespace App\Controller;
 //use App\Card\DeckWithJokers;
 //use App\Card\Player;
 
+use App\Card\Betting;
 use App\Card\Game21;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,58 +31,103 @@ class TwentyOneGameController extends AbstractController
     }
 
     #[Route("/game/21/1", name: "game_21_1_get", methods: ["GET"])]
-    public function game211Get(): Response {
+    public function game211Get(
+        SessionInterface $session
+    ): Response {
+        $betting = new Betting();
 
-        return $this->render('game_21_1.html.twig');
+        $betting->saveToSession($session);
+
+        return $this->render('game_21_1.html.twig', [
+            'playerFunds' => $betting->getPlayerFunds(),
+            'bankFunds' => $betting->getBankFunds(),
+        ]);
     }
 
-    #[Route("/game/21/1", name: "game_21_1_post", methods: ["POST"])]
-    public function game211Post(): Response {
+    /*#[Route("/game/21/1", name: "game_21_1_post", methods: ["POST"])]
+    public function game211Post(
+        SessionInterface $session
+    ): Response {
 
         return $this->redirectToRoute('game_21_2_get');
-    }
+    }*/
 
     #[Route("/game/21/2", name: "game_21_2_get", methods: ["GET"])]
     public function game212Get(
         SessionInterface $session
     ): Response {
 
-        $game21 = new Game21();
-        $game21->getNewCard('player');
+        $betting = $session->get('betting');
 
+        $game21 = new Game21($betting);
+        $game21->getNewCard('player');
         $game21->saveToSession($session);
 
         return $this->render('game_21_2.html.twig', [
             'playersCards' => $game21->getPlayersCardsAsString(),
             'playerPoints' => $game21->getPlayerGamePoints(),
+            'bet' => $betting->getBet(),
+            'playerFunds' => $betting->getPlayerFunds(),
+            'bankFunds' => $betting->getBankFunds(),
+            'betText' => 'Inget bet lagt än',
         ]);
     }
 
     #[Route("/game/21/2", name: "game_21_2_post", methods: ["POST"])]
     public function game212Post(
+        Request $request,
         SessionInterface $session
     ): Response {
-        // $playerBet = $request->request->get('playerBet');
-
-        // $session->set('playerBet', $playerBet);
-
         $game21 = $session->get('game21');
 
+        $betting = $session->get('betting');
+
+        if($betting->getBet() == 0) {
+            $bet = $request->request->get('playersBet');
+            if ($bet > $betting->getPlayerFunds() || $bet > $betting->getBankFunds()) {
+                $bet = 0;
+
+                return $this->render('game_21_2.html.twig', [
+                    'playersCards' => $game21->getPlayersCardsAsString(),
+                    'playerPoints' => $game21->getPlayerGamePoints(),
+                    //'bet' => $betting->getBet(),
+                    'bet' => $bet,
+                    'bankFunds' => $betting->getBankFunds(),
+                    'playerFunds' => $betting->getPlayerFunds(),
+                    'betText' => 'Bet är för högt, det måste vara max saldot för bank eller player',
+                    ]);
+            }
+
+            $betting->makeBet($bet);
+        }
+
         $game21->getNewCard('player');
-
         $game21->saveToSession($session);
+        
+        $betting->saveToSession($session);
 
-        $gameOver = $game21->gameOver();
-
-        if ($gameOver) {
+        if ($game21->gameOver($session)) {
+            if ($betting->getBankFunds() === 0 || $betting->getPlayerFunds() === 0)
+            {
+                return $this->render('game_over_betting.html.twig', [
+                    'winner' => $game21->getWinner(),
+                ]);
+            }
             return $this->render('game_over.html.twig', [
                 'playerPoints' => $game21->getPlayerGamePoints(),
+                'playersCards' => $game21->getPlayersCardsAsString(),
+                'bankPoints' => $game21->getBankGamePoints(),
+                'banksCards' => $game21->getBanksCardsAsString(),
+                'winner' => $game21->getWinner(),
             ]);
         }
 
         return $this->render('game_21_2.html.twig', [
          'playersCards' => $game21->getPlayersCardsAsString(),
          'playerPoints' => $game21->getPlayerGamePoints(),
+         'bet' => $betting->getBet(),
+         'bankFunds' => $betting->getBankFunds(),
+         'playerFunds' => $betting->getPlayerFunds(),
          ]);
     }
 
@@ -88,9 +135,7 @@ class TwentyOneGameController extends AbstractController
     public function game213Post(
         SessionInterface $session
     ): Response {
-        // $playerBet = $request->request->get('playerBet');
-
-        // $session->set('playerBet', $playerBet);
+        $betting = $session->get('betting');
 
         $game21 = $session->get('game21');
 
@@ -98,12 +143,19 @@ class TwentyOneGameController extends AbstractController
 
         $game21->saveToSession($session);
 
-        $gameOver = $game21->gameOver();
-
-        if ($gameOver) {
+        if ($game21->gameOver($session)) {
+            if ($betting->getBankFunds() === 0 || $betting->getPlayerFunds() === 0)
+            {
+                return $this->render('game_over_betting.html.twig', [
+                    'winner' => $game21->getWinner(),
+                ]);
+            }
             return $this->render('game_over.html.twig', [
                 'playerPoints' => $game21->getPlayerGamePoints(),
+                'playersCards' => $game21->getPlayersCardsAsString(),
                 'bankPoints' => $game21->getBankGamePoints(),
+                'banksCards' => $game21->getBanksCardsAsString(),
+                'winner' => $game21->getWinner(),
             ]);
         }
 
@@ -112,6 +164,9 @@ class TwentyOneGameController extends AbstractController
          'playerPoints' => $game21->getPlayerGamePoints(),
          'banksCards' => $game21->getBanksCardsAsString(),
          'bankPoints' => $game21->getBankGamePoints(),
+         'bankFunds' => $betting->getBankFunds(),
+         'playerFunds' => $betting->getPlayerFunds(),
+         'bet' => $betting->getBet(),
          ]);
     }
 }

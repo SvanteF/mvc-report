@@ -9,7 +9,6 @@ namespace App\Controller;
 
 use App\Card\Betting;
 use App\Card\Game21;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -82,7 +81,7 @@ class TwentyOneGameController extends AbstractController
 
         $betting = $session->get('betting');
 
-        if($betting->getBet() == 0) {
+        if ($betting->getBet() == 0) {
             $bet = $request->request->get('playersBet');
             if ($bet > $betting->getPlayerFunds() || $bet > $betting->getBankFunds()) {
                 $bet = 0;
@@ -103,12 +102,11 @@ class TwentyOneGameController extends AbstractController
 
         $game21->getNewCard('player');
         $game21->saveToSession($session);
-        
+
         $betting->saveToSession($session);
 
         if ($game21->gameOver($session)) {
-            if ($betting->getBankFunds() === 0 || $betting->getPlayerFunds() === 0)
-            {
+            if ($betting->getBankFunds() === 0 || $betting->getPlayerFunds() === 0) {
                 return $this->render('game_over_betting.html.twig', [
                     'winner' => $game21->getWinner(),
                 ]);
@@ -144,8 +142,7 @@ class TwentyOneGameController extends AbstractController
         $game21->saveToSession($session);
 
         if ($game21->gameOver($session)) {
-            if ($betting->getBankFunds() === 0 || $betting->getPlayerFunds() === 0)
-            {
+            if ($betting->getBankFunds() === 0 || $betting->getPlayerFunds() === 0) {
                 return $this->render('game_over_betting.html.twig', [
                     'winner' => $game21->getWinner(),
                 ]);

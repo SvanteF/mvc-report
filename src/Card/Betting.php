@@ -9,7 +9,7 @@ class Betting
     private $playerFunds;
     private $bankFunds;
     private $bet;
-    
+
 
     public function __construct()
     {
@@ -23,12 +23,12 @@ class Betting
         $session->set('betting', $this);
     }
 
-    public function makeBet($playersBet):void
+    public function makeBet($playersBet): void
     {
         $this->bet = $playersBet;
     }
 
-    public function clearBet($winner, $session):void
+    public function clearBet($winner, $session): void
     {
         if ($winner === 'player') {
             $this->bankFunds -= $this->bet;

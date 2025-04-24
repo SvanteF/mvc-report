@@ -123,8 +123,7 @@ class Game21
 
     public function gameOver($session): bool
     {
-        if ($this->playerGamePoints === 21 || $this->bankGamePoints > 21)
-        {
+        if ($this->playerGamePoints === 21 || $this->bankGamePoints > 21) {
             $this->winner = 'player';
             $this->betting->clearBet($this->winner, $session);
             return true;

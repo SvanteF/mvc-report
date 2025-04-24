@@ -4,9 +4,7 @@ namespace App\Controller;
 
 use App\Card\DeckOfCards;
 use App\Card\Player;
-
 use Exception;
-
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -232,7 +230,7 @@ class ControllerJson
         SessionInterface $session
     ): Response {
         $game21 = $session->get('game21');
-        
+
         $data = [];
         $data[] = [
             'playerPoints' => $game21->getPlayerGamePoints(),

@@ -5,9 +5,7 @@ namespace App\Controller;
 use App\Dice\Dice;
 use App\Dice\DiceHand;
 use App\Dice\DiceGraphic;
-
 use Exception;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;

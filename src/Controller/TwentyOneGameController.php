@@ -8,6 +8,7 @@ namespace App\Controller;
 //use App\Card\Player;
 
 use App\Card\Betting;
+use App\Card\DeckOfCards;
 use App\Card\Game21;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,6 +34,9 @@ class TwentyOneGameController extends AbstractController
     public function game211Get(
         SessionInterface $session
     ): Response {
+        $deck = new DeckOfCards();
+        $session->set('deck', $deck);
+
         $betting = new Betting();
 
         $betting->saveToSession($session);
@@ -43,24 +47,29 @@ class TwentyOneGameController extends AbstractController
         ]);
     }
 
-    /*#[Route("/game/21/1", name: "game_21_1_post", methods: ["POST"])]
-    public function game211Post(
-        SessionInterface $session
-    ): Response {
-
-        return $this->redirectToRoute('game_21_2_get');
-    }*/
-
     #[Route("/game/21/2", name: "game_21_2_get", methods: ["GET"])]
     public function game212Get(
+        Request $request,
         SessionInterface $session
     ): Response {
+
+        //Save the player's choice of mode
+        //$session->set('gameMode', $request->query->get('gameMode'));
+        $gameMode = $request->query->get('gameMode') ?? $session->get('gameMode');
+        $session->set('gameMode', $gameMode);
 
         $betting = $session->get('betting');
 
-        $game21 = new Game21($betting);
+        //Added for smart game (no shuffle when deck exists)
+        $deck = $session->get('deck') ?? null;
+
+        $game21 = new Game21($betting, $deck);
+
         $game21->getNewCard('player');
+
         $game21->saveToSession($session);
+        //Added for smart game
+        $session->set('deck', $game21->getDeck());
 
         return $this->render('game_21_2.html.twig', [
             'playersCards' => $game21->getPlayersCardsAsString(),
@@ -69,6 +78,7 @@ class TwentyOneGameController extends AbstractController
             'playerFunds' => $betting->getPlayerFunds(),
             'bankFunds' => $betting->getBankFunds(),
             'betText' => 'Inget bet lagt än',
+            'probability' => $game21->getFatProbability(),
         ]);
     }
 
@@ -101,11 +111,12 @@ class TwentyOneGameController extends AbstractController
         }
 
         $game21->getNewCard('player');
+
         $game21->saveToSession($session);
 
         $betting->saveToSession($session);
 
-        if ($game21->gameOver($session)) {
+        if ($game21->gameOver($session, 'player')) {
             if ($betting->getBankFunds() === 0 || $betting->getPlayerFunds() === 0) {
                 return $this->render('game_over_betting.html.twig', [
                     'winner' => $game21->getWinner(),
@@ -126,6 +137,7 @@ class TwentyOneGameController extends AbstractController
          'bet' => $betting->getBet(),
          'bankFunds' => $betting->getBankFunds(),
          'playerFunds' => $betting->getPlayerFunds(),
+         'probability' => $game21->getFatProbability(),
          ]);
     }
 
@@ -141,7 +153,7 @@ class TwentyOneGameController extends AbstractController
 
         $game21->saveToSession($session);
 
-        if ($game21->gameOver($session)) {
+        if ($game21->gameOver($session, 'bank')) {
             if ($betting->getBankFunds() === 0 || $betting->getPlayerFunds() === 0) {
                 return $this->render('game_over_betting.html.twig', [
                     'winner' => $game21->getWinner(),

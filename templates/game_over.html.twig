@@ -7,28 +7,24 @@
 
 {% if winner == 'player' %}
     <h2>DU VANN</h2>
-    {#<h3>
-        Grattis, du fick {{ playerPoints }} poäng! (Banken fick {{ bankPoints }} poäng)
-    </h3>#}
 {% elseif winner == 'bank' %}
     <h2>DU FÖRLORADE</h2>
-    {#<h3>
-        Du förlorade. Banken fick {{ bankPoints }} poäng och du {{ playerPoints }} poäng
-    </h3>#}
 {% endif %}
 
-<h3>Dina kort</h3>
+<h3>Ditt resultat</h3>
 <p>
     {% for card in playersCards %}
         {{ card }}
     {% endfor %}
+    = {{playerPoints}} poäng
 </p>
 
-<h3>Bankens kort</h3>
+<h3>Bankens resultat</h3>
 <p>
     {% for card in banksCards %}
         {{ card }}
     {% endfor %}
+    = {{bankPoints}} poäng
 </p>
 
 

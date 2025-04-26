@@ -58,7 +58,7 @@ class DeckOfCards
     }
 
     /**
-    * @return array<string, int>
+    * @return array<int|string,int>
     */
     public function getNumberOfCards(): array
     {

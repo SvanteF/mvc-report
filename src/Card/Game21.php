@@ -21,7 +21,7 @@ class Game21
         $this->deck = $deck ?? (new DeckOfCards());
         if ($deck === null) {
             $this->deck->shuffleAndGetDeck();
-        }   
+        }
     }
 
     public function saveToSession(SessionInterface $session): void
@@ -44,7 +44,7 @@ class Game21
             $this->deck->shuffleAndGetDeck();
             $card = $this->deck->drawCard();
         }
-    
+
         //Change due to lint complain
 
         switch ($who) {
@@ -116,14 +116,8 @@ class Game21
         return $this->bankGamePoints;
     }
 
-    public function gameOver($session, $who): bool
+    private function genericWin($session): bool
     {
-        //Get the game mode(smart or dumb)
-        $gameMode = $session->get('gameMode');
-
-        //var_dump($who);
-        //var_dump($gameMode);
-      
         if ($this->playerGamePoints === 21 || $this->bankGamePoints > 21) {
             $this->winner = 'player';
             $this->betting->clearBet($this->winner, $session);
@@ -135,7 +129,11 @@ class Game21
             $this->betting->clearBet($this->winner, $session);
             return true;
         }
+        return false;
+    }
 
+    private function dumbWin($session, $who, $gameMode): bool
+    {
         if ($gameMode === 'dumb' && $who === 'bank' && $this->bankGamePoints >= 17) {
             if ($this->bankGamePoints >= $this->playerGamePoints) {
                 $this->winner = 'bank';
@@ -152,13 +150,14 @@ class Game21
             $this->betting->clearBet($this->winner, $session);
             return true;
         }
+        
+        return false;
+    }
 
+    private function smartWin($session, $who, $gameMode): bool
+    {
         if ($gameMode === 'smart' && $who === 'bank') {
             $inverseRisk = $this->getFatProbability('bank');
-
-            //var_dump($this->bankGamePoints);
-            //var_dump($this->playerGamePoints);
-            //var_dump($inverseRisk);
 
             if ($this->bankGamePoints >= $this->playerGamePoints) {
                 $this->winner = 'bank';
@@ -171,6 +170,27 @@ class Game21
                 return true;
             }
         }
+        
+        return false;
+    }
+
+    public function gameOver($session, $who): bool
+    {
+        //Get the game mode(smart or dumb)
+        $gameMode = $session->get('gameMode');
+
+        if ($this->genericWin($session)) {
+            return true;
+        }
+
+        if ($this->dumbWin($session, $who, $gameMode)) {
+            return true;
+        }
+
+        if ($this->smartWin($session, $who, $gameMode)) {
+            return true;
+        }
+
         return false;
     }
 
@@ -225,8 +245,9 @@ class Game21
 
         $playersPoints = 0;
         $banksPoints = 0;
+        $okCard = 0;
 
-        if ($who === 'player'){
+        if ($who === 'player') {
             foreach ($this->drawCards as $card) {
                 $value = $card->getValue();
                 $playersPoints += $pointsTable[$value];
@@ -244,7 +265,7 @@ class Game21
 
         $numberOfOkCards = 0;
 
-        foreach ($number as $value=>$countValues) {
+        foreach ($number as $value => $countValues) {
             $cardPoints = $pointsTable[$value];
             if ($cardPoints <= $okCard) {
                 $numberOfOkCards += $countValues;
@@ -255,14 +276,8 @@ class Game21
         if ($cardsLeft === 0) {
             return 0.0;
         }
-        //var_dump($banksPoints);
-        //var_dump($okCard);
-        //var_dump($numberOfOkCards);
-        //var_dump($cardsLeft);
-        //var_dump($number);
-        //var_dump(round($numberOfOkCards / $cardsLeft * 100, 1));
 
         //Return the propability of not getting fat in percent
         return round($numberOfOkCards / $cardsLeft * 100, 1);
-    }  
+    }
 }

@@ -63,7 +63,7 @@ class DeckOfCards
             'A' => 0
         ];
         foreach ($this->deck as $card) {
-            $value = $card->getValue();            
+            $value = $card->getValue();
             $number[$value]++;
         }
         return $number;

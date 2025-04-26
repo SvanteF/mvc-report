@@ -104,6 +104,7 @@ class TwentyOneGameController extends AbstractController
                     'bankFunds' => $betting->getBankFunds(),
                     'playerFunds' => $betting->getPlayerFunds(),
                     'betText' => 'Bet är för högt, det måste vara max saldot för bank eller player',
+                    'probability' => $game21->getFatProbability(),
                     ]);
             }
 
@@ -128,6 +129,7 @@ class TwentyOneGameController extends AbstractController
                 'bankPoints' => $game21->getBankGamePoints(),
                 'banksCards' => $game21->getBanksCardsAsString(),
                 'winner' => $game21->getWinner(),
+                'probability' => $game21->getFatProbability(),
             ]);
         }
 

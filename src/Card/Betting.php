@@ -6,9 +6,9 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class Betting
 {
-    private $playerFunds;
-    private $bankFunds;
-    private $bet;
+    private int $playerFunds;
+    private int $bankFunds;
+    private int $bet;
 
 
     public function __construct()
@@ -23,12 +23,12 @@ class Betting
         $session->set('betting', $this);
     }
 
-    public function makeBet($playersBet): void
+    public function makeBet(int $playersBet): void
     {
         $this->bet = $playersBet;
     }
 
-    public function clearBet($winner, $session): void
+    public function clearBet(string $winner, SessionInterface $session): void
     {
         if ($winner === 'player') {
             $this->bankFunds -= $this->bet;

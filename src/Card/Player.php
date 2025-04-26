@@ -4,8 +4,12 @@ namespace App\Card;
 
 class Player
 {
-    private $name;
-    private $cardHand = [];
+    private string $name;
+
+    /**
+    * @var Card[]
+    */
+    private array $cardHand = [];
 
     public function __construct(string $name)
     {
@@ -22,6 +26,9 @@ class Player
         return $this->name;
     }
 
+    /**
+    * @return Card[]
+    */
     public function getCardHand(): array
     {
         return $this->cardHand;

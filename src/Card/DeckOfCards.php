@@ -4,7 +4,10 @@ namespace App\Card;
 
 class DeckOfCards
 {
-    protected $deck = [];
+    /**
+    * @var Card[] $deck
+    */
+    protected array $deck = [];
 
     public function __construct()
     {
@@ -18,6 +21,9 @@ class DeckOfCards
         }
     }
 
+    /**
+    * @return Card[]
+    */
     public function shuffleAndGetDeck(): array
     {
         shuffle($this->deck);
@@ -25,6 +31,9 @@ class DeckOfCards
         return $this->deck;
     }
 
+    /**
+    * @return array{0: Card, 1: int}|null
+    */
     public function drawCard(): ?array
     {
         if (count($this->deck) === 0) {
@@ -40,11 +49,17 @@ class DeckOfCards
         return [$card, count($this->deck)];
     }
 
+    /**
+    * @return Card[]
+    */
     public function getDeck(): array
     {
         return $this->deck;
     }
 
+    /**
+    * @return array<string, int>
+    */
     public function getNumberOfCards(): array
     {
         $number = [

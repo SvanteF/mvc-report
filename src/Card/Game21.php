@@ -6,13 +6,23 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class Game21
 {
-    private $betting;
-    private $winner;
-    private $deck;
-    private $drawCards = [];
-    private $bankCards = [];
-    private $playerGamePoints = 0;
-    private $bankGamePoints = 0;
+    private Betting $betting;
+    private string $winner;
+    private DeckOfCards $deck;
+
+    /**
+    *@var Card[] 
+    */    
+    private array $drawCards = [];
+
+    /**
+     * 
+    *@var Card[] 
+    */
+    private array $bankCards = [];
+
+    private int $playerGamePoints = 0;
+    private int $bankGamePoints = 0;
 
 
     public function __construct(Betting $betting, ?DeckOfCards $deck)
@@ -29,7 +39,7 @@ class Game21
         $session->set('game21', $this);
     }
 
-    public function getNewCard($who): void
+    public function getNewCard(string $who): void
     {
         $card = $this->deck->drawCard();
         /*if ($who === 'player') {
@@ -60,6 +70,9 @@ class Game21
 
     }
 
+    /**
+    * @return string[]
+    */
     public function getPlayersCardsAsString(): array
     {
         $result = [];
@@ -69,7 +82,7 @@ class Game21
         return $result;
     }
 
-    public function getPoints($card, $who): void
+    public function getPoints(Card $card, string $who): void
     {
         $cardValue = $card->getValue();
 
@@ -116,7 +129,7 @@ class Game21
         return $this->bankGamePoints;
     }
 
-    private function genericWin($session): bool
+    private function genericWin(SessionInterface $session): bool
     {
         if ($this->playerGamePoints === 21 || $this->bankGamePoints > 21) {
             $this->winner = 'player';
@@ -132,7 +145,7 @@ class Game21
         return false;
     }
 
-    private function dumbWin($session, $who, $gameMode): bool
+    private function dumbWin(SessionInterface $session, string $who, string $gameMode): bool
     {
         if ($gameMode === 'dumb' && $who === 'bank' && $this->bankGamePoints >= 17) {
             if ($this->bankGamePoints >= $this->playerGamePoints) {
@@ -154,7 +167,7 @@ class Game21
         return false;
     }
 
-    private function smartWin($session, $who, $gameMode): bool
+    private function smartWin(SessionInterface $session, string $who, string $gameMode): bool
     {
         if ($gameMode === 'smart' && $who === 'bank') {
             $inverseRisk = $this->getFatProbability('bank');
@@ -174,7 +187,7 @@ class Game21
         return false;
     }
 
-    public function gameOver($session, $who): bool
+    public function gameOver(SessionInterface $session, string $who): bool
     {
         //Get the game mode(smart or dumb)
         $gameMode = $session->get('gameMode');
@@ -194,6 +207,9 @@ class Game21
         return false;
     }
 
+    /**
+    * @return string[]
+    */
     public function getBanksCardsAsString(): array
     {
         $result = [];
@@ -215,7 +231,7 @@ class Game21
     }
 
     //Player is deafult
-    public function getFatProbability($who = 'player'): float
+    public function getFatProbability(string $who = 'player'): float
     {
         //Setting A to 1 since we only want to avoid "getting fat"
         $pointsTable = [

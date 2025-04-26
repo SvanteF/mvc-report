@@ -11,13 +11,13 @@ class Game21
     private DeckOfCards $deck;
 
     /**
-    *@var Card[] 
-    */    
+    *@var Card[]
+    */
     private array $drawCards = [];
 
     /**
-     * 
-    *@var Card[] 
+     *
+    *@var Card[]
     */
     private array $bankCards = [];
 
@@ -163,7 +163,7 @@ class Game21
             $this->betting->clearBet($this->winner, $session);
             return true;
         }
-        
+
         return false;
     }
 
@@ -183,7 +183,7 @@ class Game21
                 return true;
             }
         }
-        
+
         return false;
     }
 

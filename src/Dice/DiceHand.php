@@ -6,8 +6,8 @@ use App\Dice\Dice;
 
 class DiceHand
 {
-    /** 
-    * @var Dice[] 
+    /**
+    * @var Dice[]
     */
     private array $hand = [];
 

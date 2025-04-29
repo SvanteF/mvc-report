@@ -12,7 +12,7 @@ class DeckWithJokersTest extends TestCase
     /**
      * Construct object and verify verify that the new deck contains 54 cards.
      */
-    public function testDeckWithJokersCreate()
+    public function testDeckWithJokersCreate(): void
     {
         $deckWithJokers = new DeckWithJokers();
         // Assert the instance of DeckWithJokers

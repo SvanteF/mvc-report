@@ -12,7 +12,7 @@ class BettingTest extends TestCase
     /**
      * ...
      */
-    public function testAPA()
+    public function testAPA(): void
     {
         $betting = new Betting();
     }

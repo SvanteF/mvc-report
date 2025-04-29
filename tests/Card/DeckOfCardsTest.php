@@ -13,7 +13,7 @@ class DeckOfCardsTestTest extends TestCase
      * Construct object and verify that the object is an instance of DeckOfCards. Also verify that
      * the deck consists of instances of Card.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $deck = new DeckOfCards();
         $this->assertInstanceOf("\App\Card\DeckOfCards", $deck);
@@ -27,7 +27,7 @@ class DeckOfCardsTestTest extends TestCase
     /**
      * Construct a DeckOfCards object and verify that it has 52 cards.
      */
-    public function testGetDeck()
+    public function testGetDeck(): void
     {
         $deck = new DeckOfCards();
         $cards = $deck->getDeck();
@@ -40,7 +40,7 @@ class DeckOfCardsTestTest extends TestCase
      * Construct two DeckOfCards object, shuffle them and verify that they have 52 cards each.
      * Check that the shuffle function works.
      */
-    public function testGetShuffledDeck()
+    public function testGetShuffledDeck(): void
     {
         $deck1 = new DeckOfCards();
         $shuffledCards1 = $deck1->shuffleAndGetDeck();
@@ -60,7 +60,7 @@ class DeckOfCardsTestTest extends TestCase
      * Construct object and verify that an instance of Card is returned as well as the number
      * of the cards in the deck decreases by 1.
      */
-    public function testDrawCardReturnsCardAndCountDecrease()
+    public function testDrawCardReturnsCardAndCountDecrease(): void
     {
         $deck = new DeckOfCards();
 
@@ -78,7 +78,7 @@ class DeckOfCardsTestTest extends TestCase
     /**
      * Construct object and verify that null is returned when drawCard() is called on an empty deck.
      */
-    public function testDrawCardEmptyDeck()
+    public function testDrawCardEmptyDeck(): void
     {
         $deck = new DeckOfCards();
 
@@ -95,7 +95,7 @@ class DeckOfCardsTestTest extends TestCase
     /**
      * Construct object and verify that every value has 4 different colors in the deck
      */
-    public function testGetNumberOfCardsNewDeck()
+    public function testGetNumberOfCardsNewDeck(): void
     {
         $deck = new DeckOfCards();
         $number = $deck->getNumberOfCards();

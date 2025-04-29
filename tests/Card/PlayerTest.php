@@ -13,7 +13,7 @@ class PlayerTest extends TestCase
      * Construct object, verify that is an instance of class Player as well as to check that it returns
      * the correct string through getName()
      */
-    public function testPlayerCreateAndGetName()
+    public function testPlayerCreateAndGetName(): void
     {
         $name = 'testName';
         $player = new Player($name);
@@ -27,7 +27,7 @@ class PlayerTest extends TestCase
      * Construct Player object as well as a Card object (required for testing). Verify that
      * the retrieved card is the same as was initially created
      */
-    public function testPlayerGiveCardAndGetHand()
+    public function testPlayerGiveCardAndGetHand(): void
     {
         $name = 'testName';
         $player = new Player($name);

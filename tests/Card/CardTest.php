@@ -12,7 +12,7 @@ class CardTest extends TestCase
     /**
      * Construct object and verify that the object has the expected properties, including both arguments
      */
-    public function testCreateObjectWithArguments()
+    public function testCreateObjectWithArguments(): void
     {
         $value = '2';
         $color = '♥';
@@ -28,7 +28,7 @@ class CardTest extends TestCase
     /**
      * Construct object and verify that getAsString returns a correct result
      */
-    public function testGetAsString()
+    public function testGetAsString(): void
     {
         $value = '2';
         $color = '♥';

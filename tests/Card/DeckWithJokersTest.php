@@ -4,12 +4,10 @@ namespace App\Card;
 
 use PHPUnit\Framework\TestCase;
 
-use function PHPUnit\Framework\assertCount;
-
 /**
  * Test class for class DeckWithJokers
  */
-class DeckWithJokersTest extends TestCase 
+class DeckWithJokersTest extends TestCase
 {
     /**
      * Construct object and verify verify that the new deck contains 54 cards.

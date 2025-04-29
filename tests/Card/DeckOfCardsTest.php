@@ -7,11 +7,10 @@ use PHPUnit\Framework\TestCase;
 /**
  * Test class for class DeckOfCards
  */
-class DeckOfCardsTestTest extends TestCase 
+class DeckOfCardsTestTest extends TestCase
 {
-
     /**
-     * Construct object and verify that the object is an instance of DeckOfCards. Also verify that 
+     * Construct object and verify that the object is an instance of DeckOfCards. Also verify that
      * the deck consists of instances of Card.
      */
     public function testCreateObject()
@@ -34,11 +33,11 @@ class DeckOfCardsTestTest extends TestCase
         $cards = $deck->getDeck();
 
         $this->assertCount(52, $cards);
-       
+
     }
 
     /**
-     * Construct two DeckOfCards object, shuffle them and verify that they have 52 cards each. 
+     * Construct two DeckOfCards object, shuffle them and verify that they have 52 cards each.
      * Check that the shuffle function works.
      */
     public function testGetShuffledDeck()
@@ -64,11 +63,11 @@ class DeckOfCardsTestTest extends TestCase
     public function testDrawCardReturnsCardAndCountDecrease()
     {
         $deck = new DeckOfCards();
-        
+
         $countBefore = count($deck->getDeck());
 
         $res = $deck->drawCard();
-        $card =$res[0];
+        $card = $res[0];
         $this->assertInstanceOf("\App\Card\Card", $card);
 
         $countAfter = $res[1];
@@ -77,14 +76,14 @@ class DeckOfCardsTestTest extends TestCase
     }
 
     /**
-     * Construct object and verify that null is returned when drawCard() is called on an empty deck. 
+     * Construct object and verify that null is returned when drawCard() is called on an empty deck.
      */
     public function testDrawCardEmptyDeck()
     {
         $deck = new DeckOfCards();
 
         // Empty the deck
-        for ($i = 0; $i <52; $i++) {
+        for ($i = 0; $i < 52; $i++) {
             $deck->drawCard();
         }
 

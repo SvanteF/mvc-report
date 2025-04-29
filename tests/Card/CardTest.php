@@ -7,9 +7,8 @@ use PHPUnit\Framework\TestCase;
 /**
  * Test class for class Card
  */
-class CardTest extends TestCase 
+class CardTest extends TestCase
 {
-
     /**
      * Construct object and verify that the object has the expected properties, including both arguments
      */
@@ -41,4 +40,3 @@ class CardTest extends TestCase
         $this->assertEquals($exp, $card->getAsString());
     }
 }
-

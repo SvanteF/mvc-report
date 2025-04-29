@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745939158">
-  <project timestamp="1745939158">
+<coverage generated="1745952459">
+  <project timestamp="1745952459">
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Card/Betting.php">
       <class name="App\Card\Betting" namespace="global">
-        <metrics complexity="8" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="26" coveredelements="0"/>
+        <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="26" coveredelements="26"/>
       </class>
-      <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="16" type="stmt" count="0"/>
-      <line num="17" type="stmt" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <line num="21" type="method" name="saveToSession" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="26" type="method" name="makeBet" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <line num="31" type="method" name="clearBet" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="33" type="stmt" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <line num="35" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
-      <line num="38" type="stmt" count="0"/>
-      <line num="40" type="stmt" count="0"/>
-      <line num="41" type="stmt" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <line num="43" type="stmt" count="0"/>
-      <line num="44" type="stmt" count="0"/>
-      <line num="47" type="method" name="getPlayerFunds" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="49" type="stmt" count="0"/>
-      <line num="52" type="method" name="getBankFunds" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="54" type="stmt" count="0"/>
-      <line num="57" type="method" name="getBet" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="59" type="stmt" count="0"/>
-      <metrics loc="62" ncloc="62" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="26" coveredelements="0"/>
+      <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="16" type="stmt" count="4"/>
+      <line num="17" type="stmt" count="4"/>
+      <line num="18" type="stmt" count="4"/>
+      <line num="21" type="method" name="saveToSession" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="23" type="stmt" count="2"/>
+      <line num="26" type="method" name="makeBet" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="28" type="stmt" count="2"/>
+      <line num="31" type="method" name="clearBet" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="40" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <line num="43" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="1"/>
+      <line num="47" type="method" name="getPlayerFunds" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="49" type="stmt" count="2"/>
+      <line num="52" type="method" name="getBankFunds" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="54" type="stmt" count="2"/>
+      <line num="57" type="method" name="getBet" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="59" type="stmt" count="3"/>
+      <metrics loc="62" ncloc="62" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="26" coveredelements="26"/>
     </file>
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
@@ -874,6 +874,6 @@
       </class>
       <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="16" loc="1679" ncloc="1582" classes="15" methods="85" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="692" coveredstatements="48" elements="777" coveredelements="64"/>
+    <metrics files="16" loc="1679" ncloc="1582" classes="15" methods="85" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="692" coveredstatements="67" elements="777" coveredelements="90"/>
   </project>
 </coverage>

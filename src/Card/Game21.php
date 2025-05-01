@@ -42,12 +42,7 @@ class Game21
     public function getNewCard(string $who): void
     {
         $card = $this->deck->drawCard();
-        /*if ($who === 'player') {
-            $this->drawCards[] = $card[0];
-        } else {
-            $this->bankCards[] = $card[0];
-        }*/
-
+ 
         //Perform when we are out of cards in the deck
         if ($card === null) {
             $this->deck = new DeckOfCards();
@@ -55,7 +50,7 @@ class Game21
             $card = $this->deck->drawCard();
         }
 
-        //Change due to lint complain
+        //Change due to lint complain...
 
         switch ($who) {
             case 'player':
@@ -295,5 +290,25 @@ class Game21
 
         //Return the propability of not getting fat in percent
         return round($numberOfOkCards / $cardsLeft * 100, 1);
+    }
+
+    /**
+     * Required for unit tests: Get player's card as an object
+     *
+     * @return Card[]
+     */
+    public function getDrawCards(): array
+    {
+        return $this->drawCards;
+    }
+
+    /**
+     * Required for unit tests: Get banks's card as an object
+     *
+     * @return Card[]
+     */
+    public function getBankCards(): array
+    {
+        return $this->bankCards;
     }
 }

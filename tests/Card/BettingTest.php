@@ -91,7 +91,7 @@ class BettingTest extends TestCase
         $this->assertSame($bankFundsBefore, $bankFundsAfter + $bet);
         $this->assertSame($playerFundsBefore, $playerFundsAfter - $bet);
 
-        // Check that the value of the bet was resetset to zero
+        // Check that the value of the bet was reset to zero
         $this->assertSame(0, $betting->getBet());
 
         // Test of scenario 2
@@ -110,11 +110,11 @@ class BettingTest extends TestCase
         $bankFundsAfter = $betting->getBankFunds();
         $playerFundsAfter = $betting->getPlayerFunds();
 
-        // Check that player´s funds increased by the value of $bet while the bank's funds decreased as much
+        // Check that player´s funds decreased by the value of $bet while the bank's funds increased as much
         $this->assertSame($bankFundsBefore, $bankFundsAfter - $bet);
         $this->assertSame($playerFundsBefore, $playerFundsAfter + $bet);
 
-        // Check that the value of the bet was resetset to zero
+        // Check that the value of the bet was reset to zero
         $this->assertSame(0, $betting->getBet());
 
     }

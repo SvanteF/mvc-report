@@ -530,7 +530,8 @@ class Game21Test extends TestCase
         $game = new Game21($this->betting, $this->deck);
         $game->getNewCard('player');
         $game->getNewCard('player');
-        $this->assertIsFloat($game->getFatProbability('player'));
+        $this->assertSame(100.0, $game->getFatProbability('player'));
+
     }
 
     /**

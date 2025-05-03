@@ -2,6 +2,9 @@
 
 namespace App\Card;
 
+/**
+ * DeckOfCards is a composition containing one or more Card objects
+ */
 class DeckOfCards
 {
     /**
@@ -9,6 +12,9 @@ class DeckOfCards
     */
     protected array $deck = [];
 
+    /**
+     * Constructor that initilizes the deck with all 52 Card Objects
+     */
     public function __construct()
     {
         $colors = ['♥', '♣', '♦', '♠'];
@@ -22,8 +28,11 @@ class DeckOfCards
     }
 
     /**
-    * @return Card[]
-    */
+     * Shuffle the existing deck and return it as an array of Card objects
+     * 
+     * @return Card[]
+     */
+
     public function shuffleAndGetDeck(): array
     {
         shuffle($this->deck);
@@ -32,8 +41,10 @@ class DeckOfCards
     }
 
     /**
-    * @return array{0: Card, 1: int}|null
-    */
+     * Draw a random card from the deck. If the deck is empty, return null
+     * 
+     * @return array{0: Card, 1: int}|null
+     */
     public function drawCard(): ?array
     {
         if (count($this->deck) === 0) {
@@ -50,16 +61,20 @@ class DeckOfCards
     }
 
     /**
-    * @return Card[]
-    */
+     * Get the deck as an array of Cards
+     * 
+     * @return Card[]
+     */
     public function getDeck(): array
     {
         return $this->deck;
     }
 
     /**
-    * @return array<int|string,int>
-    */
+     * Get the number of remaining cards sorted by value
+     * 
+     * @return array<int|string,int>
+     */
     public function getNumberOfCards(): array
     {
         $number = [

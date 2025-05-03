@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\Card\\Betting",
             "name": "Betting",
-            "summary": "L\u00E4gger\u0020till\u0020lite\u0020text",
+            "summary": "",
             "url": "classes/App-Card-Betting.html"
         },                {
             "fqsen": "\\App\\Card\\Betting\u003A\u003A__construct\u0028\u0029",
@@ -93,32 +93,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards",
             "name": "DeckOfCards",
-            "summary": "",
+            "summary": "DeckOfCards\u0020is\u0020a\u0020composition\u0020containing\u0020one\u0020or\u0020more\u0020Card\u0020objects",
             "url": "classes/App-Card-DeckOfCards.html"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020that\u0020initilizes\u0020the\u0020deck\u0020with\u0020all\u002052\u0020Card\u0020Objects",
             "url": "classes/App-Card-DeckOfCards.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AshuffleAndGetDeck\u0028\u0029",
             "name": "shuffleAndGetDeck",
-            "summary": "",
+            "summary": "Shuffle\u0020the\u0020existing\u0020deck\u0020and\u0020return\u0020it\u0020as\u0020an\u0020array\u0020of\u0020Card\u0020objects",
             "url": "classes/App-Card-DeckOfCards.html#method_shuffleAndGetDeck"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AdrawCard\u0028\u0029",
             "name": "drawCard",
-            "summary": "",
+            "summary": "Draw\u0020a\u0020random\u0020card\u0020from\u0020the\u0020deck.\u0020If\u0020the\u0020deck\u0020is\u0020empty,\u0020return\u0020null",
             "url": "classes/App-Card-DeckOfCards.html#method_drawCard"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AgetDeck\u0028\u0029",
             "name": "getDeck",
-            "summary": "",
+            "summary": "Get\u0020the\u0020deck\u0020as\u0020an\u0020array\u0020of\u0020Cards",
             "url": "classes/App-Card-DeckOfCards.html#method_getDeck"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AgetNumberOfCards\u0028\u0029",
             "name": "getNumberOfCards",
-            "summary": "",
+            "summary": "Get\u0020the\u0020number\u0020of\u0020remaining\u0020cards\u0020sorted\u0020by\u0020value",
             "url": "classes/App-Card-DeckOfCards.html#method_getNumberOfCards"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003A\u0024deck",
@@ -128,12 +128,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\DeckWithJokers",
             "name": "DeckWithJokers",
-            "summary": "",
+            "summary": "DeckOfCards\u0020is\u0020a\u0020composition\u0020containing\u0020one\u0020or\u0020more\u0020Card\u0020objects",
             "url": "classes/App-Card-DeckWithJokers.html"
         },                {
             "fqsen": "\\App\\Card\\DeckWithJokers\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020that\u0020initilizes\u0020the\u0020deck\u0020with\u0020all\u002052\u0020Card\u0020Objects",
             "url": "classes/App-Card-DeckWithJokers.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Game21",
@@ -605,6 +605,216 @@ Search.appendIndex(
             "name": "Kernel",
             "summary": "",
             "url": "classes/App-Kernel.html"
+        },                {
+            "fqsen": "\\App\\Card\\BettingTest",
+            "name": "BettingTest",
+            "summary": "Test\u0020class\u0020for\u0020class\u0020Betting",
+            "url": "classes/App-Card-BettingTest.html"
+        },                {
+            "fqsen": "\\App\\Card\\BettingTest\u003A\u003AtestBettingCreateAndCheckParameters\u0028\u0029",
+            "name": "testBettingCreateAndCheckParameters",
+            "summary": "Construct\u0020a\u0020Betting\u0020object\u0020and\u0020check\u0020that\u0020the\u0020parameters\u0020are\u0020read\u0020correctly.",
+            "url": "classes/App-Card-BettingTest.html#method_testBettingCreateAndCheckParameters"
+        },                {
+            "fqsen": "\\App\\Card\\BettingTest\u003A\u003AtestBettingOKBet\u0028\u0029",
+            "name": "testBettingOKBet",
+            "summary": "Construct\u0020a\u0020Betting\u0020object,\u0020make\u0020a\u0020bet\u0020and\u0020ensure\u0020the\u0020correct\u0020bet\u0020is\u0020fetched\u0020with\u0020getBet\u0028\u0029",
+            "url": "classes/App-Card-BettingTest.html#method_testBettingOKBet"
+        },                {
+            "fqsen": "\\App\\Card\\BettingTest\u003A\u003AtestBettingSaveToSession\u0028\u0029",
+            "name": "testBettingSaveToSession",
+            "summary": "Construct\u0020a\u0020Betting\u0020object\u0020and\u0020check\u0020that\u0020save\u0020to\u0020Session\u0020works\u0020by\u0020comparing\u0020the\u0020initated\nobject\u0020with\u0020the\u0020one\u0020saved\u0020in\u0020the\u0020session",
+            "url": "classes/App-Card-BettingTest.html#method_testBettingSaveToSession"
+        },                {
+            "fqsen": "\\App\\Card\\BettingTest\u003A\u003AtestBettingClearBet\u0028\u0029",
+            "name": "testBettingClearBet",
+            "summary": "Construct\u0020a\u0020Betting\u0020object.",
+            "url": "classes/App-Card-BettingTest.html#method_testBettingClearBet"
+        },                {
+            "fqsen": "\\App\\Card\\CardTest",
+            "name": "CardTest",
+            "summary": "Test\u0020class\u0020for\u0020class\u0020Card",
+            "url": "classes/App-Card-CardTest.html"
+        },                {
+            "fqsen": "\\App\\Card\\CardTest\u003A\u003AtestCreateObjectWithArguments\u0028\u0029",
+            "name": "testCreateObjectWithArguments",
+            "summary": "Construct\u0020object\u0020and\u0020verify\u0020that\u0020the\u0020object\u0020has\u0020the\u0020expected\u0020properties,\u0020including\u0020both\u0020arguments",
+            "url": "classes/App-Card-CardTest.html#method_testCreateObjectWithArguments"
+        },                {
+            "fqsen": "\\App\\Card\\CardTest\u003A\u003AtestGetAsString\u0028\u0029",
+            "name": "testGetAsString",
+            "summary": "Construct\u0020object\u0020and\u0020verify\u0020that\u0020getAsString\u0020returns\u0020a\u0020correct\u0020result",
+            "url": "classes/App-Card-CardTest.html#method_testGetAsString"
+        },                {
+            "fqsen": "\\App\\Card\\DeckOfCardsTestTest",
+            "name": "DeckOfCardsTestTest",
+            "summary": "Test\u0020class\u0020for\u0020class\u0020DeckOfCards",
+            "url": "classes/App-Card-DeckOfCardsTestTest.html"
+        },                {
+            "fqsen": "\\App\\Card\\DeckOfCardsTestTest\u003A\u003AtestCreateObject\u0028\u0029",
+            "name": "testCreateObject",
+            "summary": "Construct\u0020object\u0020and\u0020verify\u0020that\u0020the\u0020object\u0020is\u0020an\u0020instance\u0020of\u0020DeckOfCards.\u0020Also\u0020verify\u0020that\nthe\u0020deck\u0020consists\u0020of\u0020instances\u0020of\u0020Card.",
+            "url": "classes/App-Card-DeckOfCardsTestTest.html#method_testCreateObject"
+        },                {
+            "fqsen": "\\App\\Card\\DeckOfCardsTestTest\u003A\u003AtestGetDeck\u0028\u0029",
+            "name": "testGetDeck",
+            "summary": "Construct\u0020a\u0020DeckOfCards\u0020object\u0020and\u0020verify\u0020that\u0020it\u0020has\u002052\u0020cards.",
+            "url": "classes/App-Card-DeckOfCardsTestTest.html#method_testGetDeck"
+        },                {
+            "fqsen": "\\App\\Card\\DeckOfCardsTestTest\u003A\u003AtestGetShuffledDeck\u0028\u0029",
+            "name": "testGetShuffledDeck",
+            "summary": "Construct\u0020two\u0020DeckOfCards\u0020object,\u0020shuffle\u0020them\u0020and\u0020verify\u0020that\u0020they\u0020have\u002052\u0020cards\u0020each.",
+            "url": "classes/App-Card-DeckOfCardsTestTest.html#method_testGetShuffledDeck"
+        },                {
+            "fqsen": "\\App\\Card\\DeckOfCardsTestTest\u003A\u003AtestDrawCardReturnsCardAndCountDecrease\u0028\u0029",
+            "name": "testDrawCardReturnsCardAndCountDecrease",
+            "summary": "Construct\u0020object\u0020and\u0020verify\u0020that\u0020an\u0020instance\u0020of\u0020Card\u0020is\u0020returned\u0020as\u0020well\u0020as\u0020the\u0020number\nof\u0020the\u0020cards\u0020in\u0020the\u0020deck\u0020decreases\u0020by\u00201.",
+            "url": "classes/App-Card-DeckOfCardsTestTest.html#method_testDrawCardReturnsCardAndCountDecrease"
+        },                {
+            "fqsen": "\\App\\Card\\DeckOfCardsTestTest\u003A\u003AtestDrawCardEmptyDeck\u0028\u0029",
+            "name": "testDrawCardEmptyDeck",
+            "summary": "Construct\u0020object\u0020and\u0020verify\u0020that\u0020null\u0020is\u0020returned\u0020when\u0020drawCard\u0028\u0029\u0020is\u0020called\u0020on\u0020an\u0020empty\u0020deck.",
+            "url": "classes/App-Card-DeckOfCardsTestTest.html#method_testDrawCardEmptyDeck"
+        },                {
+            "fqsen": "\\App\\Card\\DeckOfCardsTestTest\u003A\u003AtestGetNumberOfCardsNewDeck\u0028\u0029",
+            "name": "testGetNumberOfCardsNewDeck",
+            "summary": "Construct\u0020object\u0020and\u0020verify\u0020that\u0020every\u0020value\u0020has\u00204\u0020different\u0020colors\u0020in\u0020the\u0020deck",
+            "url": "classes/App-Card-DeckOfCardsTestTest.html#method_testGetNumberOfCardsNewDeck"
+        },                {
+            "fqsen": "\\App\\Card\\DeckWithJokersTest",
+            "name": "DeckWithJokersTest",
+            "summary": "Test\u0020class\u0020for\u0020class\u0020DeckWithJokers",
+            "url": "classes/App-Card-DeckWithJokersTest.html"
+        },                {
+            "fqsen": "\\App\\Card\\DeckWithJokersTest\u003A\u003AtestDeckWithJokersCreate\u0028\u0029",
+            "name": "testDeckWithJokersCreate",
+            "summary": "Construct\u0020object\u0020and\u0020verify\u0020verify\u0020that\u0020the\u0020new\u0020deck\u0020contains\u002054\u0020cards.",
+            "url": "classes/App-Card-DeckWithJokersTest.html#method_testDeckWithJokersCreate"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test",
+            "name": "Game21Test",
+            "summary": "Test\u0020class\u0020for\u0020class\u0020Game21",
+            "url": "classes/App-Card-Game21Test.html"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AsetUp\u0028\u0029",
+            "name": "setUp",
+            "summary": "Construct\u0020required\u0020objects\u0020to\u0020avoid\u0020replicated\u0020code.",
+            "url": "classes/App-Card-Game21Test.html#method_setUp"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21Construct\u0028\u0029",
+            "name": "testGame21Construct",
+            "summary": "Verify\u0020instance\u0020of\u0020class\u0020Game21",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21Construct"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21SaveToSession\u0028\u0029",
+            "name": "testGame21SaveToSession",
+            "summary": "Verify\u0020that\u0020save\u0020to\u0020Session\u0020works\u0020by\u0020comparing\u0020the\u0020initated\nobject\u0020with\u0020the\u0020one\u0020saved\u0020in\u0020the\u0020session",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21SaveToSession"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GetNewCard\u0028\u0029",
+            "name": "testGame21GetNewCard",
+            "summary": "Verify\u0020that\u0020the\u0020player\u0020and\u0020bank\u0020get\u00201\u0020new\u0020card\u0020with\u0020getNewCard",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21GetNewCard"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GetNewCardWhenDeckIsEmpty\u0028\u0029",
+            "name": "testGame21GetNewCardWhenDeckIsEmpty",
+            "summary": "Verify\u0020that\u0020a\u0020card\u0020is\u0020drawn\u0020even\u0020if\u0020the\u0020deck\u0020is\u0020initially\u0020empty",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21GetNewCardWhenDeckIsEmpty"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GetNewCardAndNowWithAnAce\u0028\u0029",
+            "name": "testGame21GetNewCardAndNowWithAnAce",
+            "summary": "Verify\u0020that\u0020in\u0020case\u0020of\u0020an\u0020Ace,\u0020count\u0020as\u002014\u0020if\u0020possible.",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21GetNewCardAndNowWithAnAce"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21CardsAsArray\u0028\u0029",
+            "name": "testGame21CardsAsArray",
+            "summary": "Verify\u0020that\u0020a\u0020hand\u0020of\u0020cards\u0020\u0028in\u0020this\u0020case\u00203\u0020cards\u0029\u0020is\u0020correctly\u0020fetched\u0020as\u0020an\u0020array\u0020of\u0020strings",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21CardsAsArray"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverGenericWin\u0028\u0029",
+            "name": "testGame21GameOverGenericWin",
+            "summary": "Verify\u0020that\u0020Genereic\u0020win\u0020performs\u0020accodring\u0020to\u0020spec",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverGenericWin"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverDumbWinBankHasHigherPoints\u0028\u0029",
+            "name": "testGame21GameOverDumbWinBankHasHigherPoints",
+            "summary": "Verify\u0020that\u0020Dumb\u0020win\u0020performs\u0020according\u0020to\u0020spec",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverDumbWinBankHasHigherPoints"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverDumbWinPlayerHasHigherPoints\u0028\u0029",
+            "name": "testGame21GameOverDumbWinPlayerHasHigherPoints",
+            "summary": "Verify\u0020that\u0020Dumb\u0020win\u0020performs\u0020according\u0020to\u0020spec",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverDumbWinPlayerHasHigherPoints"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverDumbWinDraw\u0028\u0029",
+            "name": "testGame21GameOverDumbWinDraw",
+            "summary": "Verify\u0020that\u0020Dumb\u0020win\u0020performs\u0020according\u0020to\u0020spec",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverDumbWinDraw"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverDumbWinBankHasHigherPointsOrDraw\u0028\u0029",
+            "name": "testGame21GameOverDumbWinBankHasHigherPointsOrDraw",
+            "summary": "Verify\u0020that\u0020Smart\u0020win\u0020performs\u0020according\u0020to\u0020spec",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverDumbWinBankHasHigherPointsOrDraw"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverSmartWinRiskTooHigh\u0028\u0029",
+            "name": "testGame21GameOverSmartWinRiskTooHigh",
+            "summary": "Verify\u0020that\u0020Dumb\u0020win\u0020performs\u0020according\u0020to\u0020spec",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverSmartWinRiskTooHigh"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverItsNotOver\u0028\u0029",
+            "name": "testGame21GameOverItsNotOver",
+            "summary": "Verify\u0020that\u0020game\u0020continous\u0020when\u0020no\u0020gameOver\u0020conditions\u0020are\u0020met.",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverItsNotOver"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GetFatProbabilityPlayer\u0028\u0029",
+            "name": "testGame21GetFatProbabilityPlayer",
+            "summary": "Verify\u0020that\u0020the\u0020last\u0020conditions\u0020for\u0020getFatProbability\u0020are\u0020met",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21GetFatProbabilityPlayer"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GetDeckOfCards\u0028\u0029",
+            "name": "testGame21GetDeckOfCards",
+            "summary": "Verify\u0020that\u0020a\u0020deck\u0020of\u0020cards\u0020is\u0020fetched",
+            "url": "classes/App-Card-Game21Test.html#method_testGame21GetDeckOfCards"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003A\u0024game21",
+            "name": "game21",
+            "summary": "",
+            "url": "classes/App-Card-Game21Test.html#property_game21"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003A\u0024betting",
+            "name": "betting",
+            "summary": "",
+            "url": "classes/App-Card-Game21Test.html#property_betting"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Test\u003A\u003A\u0024deck",
+            "name": "deck",
+            "summary": "",
+            "url": "classes/App-Card-Game21Test.html#property_deck"
+        },                {
+            "fqsen": "\\App\\Card\\PlayerTest",
+            "name": "PlayerTest",
+            "summary": "Test\u0020class\u0020for\u0020class\u0020Player",
+            "url": "classes/App-Card-PlayerTest.html"
+        },                {
+            "fqsen": "\\App\\Card\\PlayerTest\u003A\u003AtestPlayerCreateAndGetName\u0028\u0029",
+            "name": "testPlayerCreateAndGetName",
+            "summary": "Construct\u0020object,\u0020verify\u0020that\u0020is\u0020an\u0020instance\u0020of\u0020class\u0020Player\u0020as\u0020well\u0020as\u0020to\u0020check\u0020that\u0020it\u0020returns\nthe\u0020correct\u0020string\u0020through\u0020getName\u0028\u0029",
+            "url": "classes/App-Card-PlayerTest.html#method_testPlayerCreateAndGetName"
+        },                {
+            "fqsen": "\\App\\Card\\PlayerTest\u003A\u003AtestPlayerGiveCardAndGetHand\u0028\u0029",
+            "name": "testPlayerGiveCardAndGetHand",
+            "summary": "Construct\u0020Player\u0020object\u0020as\u0020well\u0020as\u0020a\u0020Card\u0020object\u0020\u0028required\u0020for\u0020testing\u0029.\u0020Verify\u0020that\nthe\u0020retrieved\u0020card\u0020is\u0020the\u0020same\u0020as\u0020was\u0020initially\u0020created",
+            "url": "classes/App-Card-PlayerTest.html#method_testPlayerGiveCardAndGetHand"
+        },                {
+            "fqsen": "\\App\\Dice\\DiceTest",
+            "name": "DiceTest",
+            "summary": "Test\u0020cases\u0020for\u0020class\u0020Dice.",
+            "url": "classes/App-Dice-DiceTest.html"
+        },                {
+            "fqsen": "\\App\\Dice\\DiceTest\u003A\u003AtestCreateDice\u0028\u0029",
+            "name": "testCreateDice",
+            "summary": "Construct\u0020object\u0020and\u0020verify\u0020that\u0020the\u0020object\u0020has\u0020the\u0020expected\nproperties,\u0020use\u0020no\u0020arguments.",
+            "url": "classes/App-Dice-DiceTest.html#method_testCreateDice"
         },                {
             "fqsen": "\\",
             "name": "\\",

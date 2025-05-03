@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class Game21
 {
     private Betting $betting;
-    private string $winner;
+    private string $winner = '';
     private DeckOfCards $deck;
 
     /**
@@ -42,15 +42,13 @@ class Game21
     public function getNewCard(string $who): void
     {
         $card = $this->deck->drawCard();
- 
+
         //Perform when we are out of cards in the deck
         if ($card === null) {
             $this->deck = new DeckOfCards();
             $this->deck->shuffleAndGetDeck();
             $card = $this->deck->drawCard();
         }
-
-        //Change due to lint complain...
 
         switch ($who) {
             case 'player':
@@ -62,13 +60,12 @@ class Game21
         }
 
         $this->getPoints($card[0], $who);
-
     }
 
     /**
     * @return string[]
     */
-    public function getPlayersCardsAsString(): array
+    public function getPlayersCardsAsArray(): array
     {
         $result = [];
         foreach ($this->drawCards as $card) {
@@ -154,9 +151,9 @@ class Game21
                 return true;
             }
 
-            $this->winner = 'draw';
+            /*$this->winner = 'draw';
             $this->betting->clearBet($this->winner, $session);
-            return true;
+            return true;*/
         }
 
         return false;
@@ -205,7 +202,7 @@ class Game21
     /**
     * @return string[]
     */
-    public function getBanksCardsAsString(): array
+    public function getBanksCardsAsArray(): array
     {
         $result = [];
         foreach ($this->bankCards as $card) {

@@ -6,7 +6,6 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
 
-
 /**
  * Test class for class Betting
  */
@@ -42,7 +41,7 @@ class BettingTest extends TestCase
     }
 
     /**
-     * Construct a Betting object and check that save to Session works by comparing the initated 
+     * Construct a Betting object and check that save to Session works by comparing the initated
      * object with the one saved in the session
      */
     public function testBettingSaveToSession(): void
@@ -51,25 +50,25 @@ class BettingTest extends TestCase
 
         // Create a new session with Symfony
         $sessionStorage = new MockArraySessionStorage();
-        $session = new Session($sessionStorage); 
+        $session = new Session($sessionStorage);
 
         // Call saveToSession
         $betting->saveToSession($session);
-        
+
         // Check if the session contains the same object a was initiated
-        $this->assertSame($betting, $session->get('betting')); 
+        $this->assertSame($betting, $session->get('betting'));
     }
 
-     /**
-     * Construct a Betting object...
-     */
+    /**
+    * Construct a Betting object...
+    */
     public function testBettingClearBet(): void
     {
         $betting = new Betting();
 
         // Create a new session with Symfony
         $sessionStorage = new MockArraySessionStorage();
-        $session = new Session($sessionStorage); 
+        $session = new Session($sessionStorage);
 
         // Test of scenario 1
         $bet = 99;

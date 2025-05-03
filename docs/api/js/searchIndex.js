@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\Card\\Betting",
             "name": "Betting",
-            "summary": "",
+            "summary": "L\u00E4gger\u0020till\u0020lite\u0020text",
             "url": "classes/App-Card-Betting.html"
         },                {
             "fqsen": "\\App\\Card\\Betting\u003A\u003A__construct\u0028\u0029",
@@ -156,10 +156,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Card-Game21.html#method_getNewCard"
         },                {
-            "fqsen": "\\App\\Card\\Game21\u003A\u003AgetPlayersCardsAsString\u0028\u0029",
-            "name": "getPlayersCardsAsString",
+            "fqsen": "\\App\\Card\\Game21\u003A\u003AgetPlayersCardsAsArray\u0028\u0029",
+            "name": "getPlayersCardsAsArray",
             "summary": "",
-            "url": "classes/App-Card-Game21.html#method_getPlayersCardsAsString"
+            "url": "classes/App-Card-Game21.html#method_getPlayersCardsAsArray"
         },                {
             "fqsen": "\\App\\Card\\Game21\u003A\u003AgetPoints\u0028\u0029",
             "name": "getPoints",
@@ -196,10 +196,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Card-Game21.html#method_gameOver"
         },                {
-            "fqsen": "\\App\\Card\\Game21\u003A\u003AgetBanksCardsAsString\u0028\u0029",
-            "name": "getBanksCardsAsString",
+            "fqsen": "\\App\\Card\\Game21\u003A\u003AgetBanksCardsAsArray\u0028\u0029",
+            "name": "getBanksCardsAsArray",
             "summary": "",
-            "url": "classes/App-Card-Game21.html#method_getBanksCardsAsString"
+            "url": "classes/App-Card-Game21.html#method_getBanksCardsAsArray"
         },                {
             "fqsen": "\\App\\Card\\Game21\u003A\u003AgetWinner\u0028\u0029",
             "name": "getWinner",
@@ -215,6 +215,16 @@ Search.appendIndex(
             "name": "getFatProbability",
             "summary": "",
             "url": "classes/App-Card-Game21.html#method_getFatProbability"
+        },                {
+            "fqsen": "\\App\\Card\\Game21\u003A\u003AgetDrawCards\u0028\u0029",
+            "name": "getDrawCards",
+            "summary": "Required\u0020for\u0020unit\u0020tests\u003A\u0020Get\u0020player\u0027s\u0020card\u0020as\u0020an\u0020object",
+            "url": "classes/App-Card-Game21.html#method_getDrawCards"
+        },                {
+            "fqsen": "\\App\\Card\\Game21\u003A\u003AgetBankCards\u0028\u0029",
+            "name": "getBankCards",
+            "summary": "Required\u0020for\u0020unit\u0020tests\u003A\u0020Get\u0020banks\u0027s\u0020card\u0020as\u0020an\u0020object",
+            "url": "classes/App-Card-Game21.html#method_getBankCards"
         },                {
             "fqsen": "\\App\\Card\\Game21\u003A\u003A\u0024betting",
             "name": "betting",

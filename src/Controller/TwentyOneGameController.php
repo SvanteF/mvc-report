@@ -72,7 +72,7 @@ class TwentyOneGameController extends AbstractController
         $session->set('deck', $game21->getDeck());
 
         return $this->render('game_21_2.html.twig', [
-            'playersCards' => $game21->getPlayersCardsAsString(),
+            'playersCards' => $game21->getPlayersCardsAsArray(),
             'playerPoints' => $game21->getPlayerGamePoints(),
             'bet' => $betting->getBet(),
             'playerFunds' => $betting->getPlayerFunds(),
@@ -97,7 +97,7 @@ class TwentyOneGameController extends AbstractController
                 $bet = 0;
 
                 return $this->render('game_21_2.html.twig', [
-                    'playersCards' => $game21->getPlayersCardsAsString(),
+                    'playersCards' => $game21->getPlayersCardsAsArray(),
                     'playerPoints' => $game21->getPlayerGamePoints(),
                     //'bet' => $betting->getBet(),
                     'bet' => $bet,
@@ -125,16 +125,16 @@ class TwentyOneGameController extends AbstractController
             }
             return $this->render('game_over.html.twig', [
                 'playerPoints' => $game21->getPlayerGamePoints(),
-                'playersCards' => $game21->getPlayersCardsAsString(),
+                'playersCards' => $game21->getPlayersCardsAsArray(),
                 'bankPoints' => $game21->getBankGamePoints(),
-                'banksCards' => $game21->getBanksCardsAsString(),
+                'banksCards' => $game21->getBanksCardsAsArray(),
                 'winner' => $game21->getWinner(),
                 'probability' => $game21->getFatProbability(),
             ]);
         }
 
         return $this->render('game_21_2.html.twig', [
-         'playersCards' => $game21->getPlayersCardsAsString(),
+         'playersCards' => $game21->getPlayersCardsAsArray(),
          'playerPoints' => $game21->getPlayerGamePoints(),
          'bet' => $betting->getBet(),
          'bankFunds' => $betting->getBankFunds(),
@@ -163,17 +163,17 @@ class TwentyOneGameController extends AbstractController
             }
             return $this->render('game_over.html.twig', [
                 'playerPoints' => $game21->getPlayerGamePoints(),
-                'playersCards' => $game21->getPlayersCardsAsString(),
+                'playersCards' => $game21->getPlayersCardsAsArray(),
                 'bankPoints' => $game21->getBankGamePoints(),
-                'banksCards' => $game21->getBanksCardsAsString(),
+                'banksCards' => $game21->getBanksCardsAsArray(),
                 'winner' => $game21->getWinner(),
             ]);
         }
 
         return $this->render('game_21_3.html.twig', [
-         'playersCards' => $game21->getPlayersCardsAsString(),
+         'playersCards' => $game21->getPlayersCardsAsArray(),
          'playerPoints' => $game21->getPlayerGamePoints(),
-         'banksCards' => $game21->getBanksCardsAsString(),
+         'banksCards' => $game21->getBanksCardsAsArray(),
          'bankPoints' => $game21->getBankGamePoints(),
          'bankFunds' => $betting->getBankFunds(),
          'playerFunds' => $betting->getPlayerFunds(),

@@ -223,8 +223,85 @@
                 Jag har lärt mig skriva psuedokod och haft stor nytta av flödesschema vid min implementation.
             </p>
             <h2 id="kmom04">Kmom04</h2>
+            <p class="reply">
+                Samtliga obligatoriska krav är implementerade och det valfria undersökt.
+            </p>
             <p>
-                ...
+                Berätta hur du upplevde att skriva kod som testar annan kod med PHPUnit och hur du 
+                upplever phpunit rent allmänt.
+            </p>
+            <p class="reply">
+                Att skriva enhetstester var förvånansvärt tillfredsställande. Dels gav det mig en möjlighet
+                att reflektera över min egen kod och jag hittade exempelvis kod som aldrig kördes och därmed
+                inte behövdes. Det grafiska gränssnittet i docs/coverage är helt lysande för att identifiera
+                kod som behöver testas och att "jobba sig mot 100%".
+            </p>
+
+            <p class="reply">
+               Det svåraste var att mocka där jag inte tyckte jag hade tillräckligt med kunskaper inledningsvis. 
+               Jag har letat mycket för att hitta hur jag ska utföra tester med mockningar.
+            </p>
+            <p>
+                Hur väl lyckades du med kodtäckningen av din kod, lyckades du nå mer än 90% kodtäckning?
+            </p>
+            <p class="reply">
+                Då jag inte skrivit koden med enhetstester i åtanke trodde jag inte det skulle vara möjligt men 
+                till slut nådde jag 100% kodtäckning. Vad som är mer intressant, insåg jag, är att det inte ger 
+                hela bilden av ens kodkvalitet då det räcker med en enkel assertion. Utmaningen var istället
+                att skriva rätt assertions. Det har jag försökt att göra.
+            </p>
+            <p>
+                Upplever du din egen kod som “testbar kod” eller finns det delar i koden som är mer eller 
+                mindre testbar och finns det saker som kan göras för att förbättra kodens testbarhet?
+            </p>
+            <p class="reply">
+                Detta är något jag klurat en hel del på under kursmomentet. Det första jag tänker är att jag ska 
+                skriva enhetstester löpande under utvecklingen istället för efteråt. Det var ett berg att klättra. 
+                På så sätt tror jag att jag betydligt tidigare reflekterar över kodens testbarhet. Konkret ska 
+                jag sträva mot mindre komplexa klasser, både till rader kod och antal if-satser exempelvis. 
+            </p>
+
+            <p class="reply">
+                Jag har behövt mocka ganska mycket och även om jag förstår att det är praxis tycker jag det är
+                lite otillfredsställande. Mer fristående metoder upplever jag är bättre.
+            </p>
+            <p>
+                Valde du att skriva om delar av din kod för att förbättra den eller göra den mer testbar, 
+                om så berätta lite hur du tänkte.
+            </p>
+            <p class="reply">
+                Det korta svaret är ja. Det något längre svaret är att min ambition
+                i ärlighetens namn var att inte skriva om särskilt mycket för att inte riskera förstöra 
+                kortspelet. Jag la en hel del tid på funktionstest i förra kursmomentet och det är tidskrävande 
+                att göra om det arbetet. Däremot blev jag ändå tvungen att göra vissa ändringar. Jag såg ingen annan 
+                utväg än att lägga till två hjälpmetoder (getDrawCards() och getBankCards()) för att kunna 
+                genomföra enhetstesterna. Det fick i sin tur lint att klaga på för stor komplexitet i klassen Game21
+                och jag blev tvungen att bryta ut viss funktionalitet till en ny klass Game21Win för att lösa 
+                det problemet. Som jag nämnt ovan ska jag för kommande projekt göra mina klasser långt mindre
+                komplexa från början. Åtminstone är det vad jag ska försöka göra genom att tänka på test från början.
+            </p>
+            <p>
+                Fundera över om du anser att testbar kod är något som kan identifiera “snygg och ren kod”.
+            </p>
+            <p class="reply">
+                Det tycker jag verkligen. Särskilt att en metod (eller klass för den delen) ska göra 1 sak. Det 
+                tar jag med mig framöver och det tror jag kommer göra koden betydligt lättare att testa. Dessutom, 
+                att göra koden lätt att testa gör att man kan optimera sin kod från början. Som jag nämnde ovan
+                hittade jag till och med en kodsnutt som aldrig kördes. Mitt spel fungerade ändå men död kod ska
+                vi inte ha.
+            </p>
+            <p>
+                Vilken är din TIL för detta kmom?
+            </p>
+            <p class="reply">
+                Jag har främst lärt mig om enhetstester och hur man kan arbeta med dem. Framöver, när det applicerbart,
+                ska jag skriva enhetstester i samband med övrig kod. På sikt vore det även lärorikt att lära sig mer
+                testdriven utveckling. 
+            </p>
+            <p class="reply">
+                Jag har blivit varm i kläderna med att frekvent pusha uppdateringar i git. Det har räddat mig vid ett 
+                par tillfällen. Även att arbeta med verktygen lint, csfix etc är något som jag kommit igång med väl.
+                Sist men inte minst har jag lärt mig arbeta med phpunit, ett verktyg som jag verkligen uppskattar.
             </p>
             <h2 id="kmom05">Kmom05</h2>
             <p>

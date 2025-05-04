@@ -176,21 +176,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Card-Game21.html#method_getBankGamePoints"
         },                {
-            "fqsen": "\\App\\Card\\Game21\u003A\u003AgenericWin\u0028\u0029",
-            "name": "genericWin",
-            "summary": "",
-            "url": "classes/App-Card-Game21.html#method_genericWin"
-        },                {
-            "fqsen": "\\App\\Card\\Game21\u003A\u003AdumbWin\u0028\u0029",
-            "name": "dumbWin",
-            "summary": "",
-            "url": "classes/App-Card-Game21.html#method_dumbWin"
-        },                {
-            "fqsen": "\\App\\Card\\Game21\u003A\u003AsmartWin\u0028\u0029",
-            "name": "smartWin",
-            "summary": "",
-            "url": "classes/App-Card-Game21.html#method_smartWin"
-        },                {
             "fqsen": "\\App\\Card\\Game21\u003A\u003AgameOver\u0028\u0029",
             "name": "gameOver",
             "summary": "",
@@ -226,6 +211,16 @@ Search.appendIndex(
             "summary": "Required\u0020for\u0020unit\u0020tests\u003A\u0020Get\u0020banks\u0027s\u0020card\u0020as\u0020an\u0020object",
             "url": "classes/App-Card-Game21.html#method_getBankCards"
         },                {
+            "fqsen": "\\App\\Card\\Game21\u003A\u003AsetWinner\u0028\u0029",
+            "name": "setWinner",
+            "summary": "",
+            "url": "classes/App-Card-Game21.html#method_setWinner"
+        },                {
+            "fqsen": "\\App\\Card\\Game21\u003A\u003AgetBetting\u0028\u0029",
+            "name": "getBetting",
+            "summary": "",
+            "url": "classes/App-Card-Game21.html#method_getBetting"
+        },                {
             "fqsen": "\\App\\Card\\Game21\u003A\u003A\u0024betting",
             "name": "betting",
             "summary": "",
@@ -260,6 +255,31 @@ Search.appendIndex(
             "name": "bankGamePoints",
             "summary": "",
             "url": "classes/App-Card-Game21.html#property_bankGamePoints"
+        },                {
+            "fqsen": "\\App\\Card\\Game21\u003A\u003A\u0024winHelp",
+            "name": "winHelp",
+            "summary": "",
+            "url": "classes/App-Card-Game21.html#property_winHelp"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Win",
+            "name": "Game21Win",
+            "summary": "",
+            "url": "classes/App-Card-Game21Win.html"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Win\u003A\u003AgenericWin\u0028\u0029",
+            "name": "genericWin",
+            "summary": "",
+            "url": "classes/App-Card-Game21Win.html#method_genericWin"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Win\u003A\u003AdumbWin\u0028\u0029",
+            "name": "dumbWin",
+            "summary": "",
+            "url": "classes/App-Card-Game21Win.html#method_dumbWin"
+        },                {
+            "fqsen": "\\App\\Card\\Game21Win\u003A\u003AsmartWin\u0028\u0029",
+            "name": "smartWin",
+            "summary": "",
+            "url": "classes/App-Card-Game21Win.html#method_smartWin"
         },                {
             "fqsen": "\\App\\Card\\Player",
             "name": "Player",
@@ -691,6 +711,61 @@ Search.appendIndex(
             "summary": "Construct\u0020object\u0020and\u0020verify\u0020verify\u0020that\u0020the\u0020new\u0020deck\u0020contains\u002054\u0020cards.",
             "url": "classes/App-Card-DeckWithJokersTest.html#method_testDeckWithJokersCreate"
         },                {
+            "fqsen": "\\App\\Card\\Game21GameOverTest",
+            "name": "Game21GameOverTest",
+            "summary": "Test\u0020class\u0020for\u0020class\u0020Game21",
+            "url": "classes/App-Card-Game21GameOverTest.html"
+        },                {
+            "fqsen": "\\App\\Card\\Game21GameOverTest\u003A\u003AsetUp\u0028\u0029",
+            "name": "setUp",
+            "summary": "Construct\u0020required\u0020objects\u0020to\u0020avoid\u0020replicated\u0020code.",
+            "url": "classes/App-Card-Game21GameOverTest.html#method_setUp"
+        },                {
+            "fqsen": "\\App\\Card\\Game21GameOverTest\u003A\u003AtestGame21GameOverGenericWin\u0028\u0029",
+            "name": "testGame21GameOverGenericWin",
+            "summary": "Verify\u0020that\u0020Genereic\u0020win\u0020performs\u0020accodring\u0020to\u0020spec",
+            "url": "classes/App-Card-Game21GameOverTest.html#method_testGame21GameOverGenericWin"
+        },                {
+            "fqsen": "\\App\\Card\\Game21GameOverTest\u003A\u003AtestGame21GameOverDumbWinBankHasHigherPoints\u0028\u0029",
+            "name": "testGame21GameOverDumbWinBankHasHigherPoints",
+            "summary": "Verify\u0020that\u0020Dumb\u0020win\u0020performs\u0020according\u0020to\u0020spec",
+            "url": "classes/App-Card-Game21GameOverTest.html#method_testGame21GameOverDumbWinBankHasHigherPoints"
+        },                {
+            "fqsen": "\\App\\Card\\Game21GameOverTest\u003A\u003AtestGame21GameOverDumbWinPlayerHasHigherPoints\u0028\u0029",
+            "name": "testGame21GameOverDumbWinPlayerHasHigherPoints",
+            "summary": "Verify\u0020that\u0020Dumb\u0020win\u0020performs\u0020according\u0020to\u0020spec",
+            "url": "classes/App-Card-Game21GameOverTest.html#method_testGame21GameOverDumbWinPlayerHasHigherPoints"
+        },                {
+            "fqsen": "\\App\\Card\\Game21GameOverTest\u003A\u003AtestGame21GameOverDumbWinDraw\u0028\u0029",
+            "name": "testGame21GameOverDumbWinDraw",
+            "summary": "Verify\u0020that\u0020Dumb\u0020win\u0020performs\u0020according\u0020to\u0020spec",
+            "url": "classes/App-Card-Game21GameOverTest.html#method_testGame21GameOverDumbWinDraw"
+        },                {
+            "fqsen": "\\App\\Card\\Game21GameOverTest\u003A\u003AtestGame21GameOverDumbWinBankHasHigherPointsOrDraw\u0028\u0029",
+            "name": "testGame21GameOverDumbWinBankHasHigherPointsOrDraw",
+            "summary": "Verify\u0020that\u0020Smart\u0020win\u0020performs\u0020according\u0020to\u0020spec",
+            "url": "classes/App-Card-Game21GameOverTest.html#method_testGame21GameOverDumbWinBankHasHigherPointsOrDraw"
+        },                {
+            "fqsen": "\\App\\Card\\Game21GameOverTest\u003A\u003AtestGame21GameOverSmartWinRiskTooHigh\u0028\u0029",
+            "name": "testGame21GameOverSmartWinRiskTooHigh",
+            "summary": "Verify\u0020that\u0020Dumb\u0020win\u0020performs\u0020according\u0020to\u0020spec",
+            "url": "classes/App-Card-Game21GameOverTest.html#method_testGame21GameOverSmartWinRiskTooHigh"
+        },                {
+            "fqsen": "\\App\\Card\\Game21GameOverTest\u003A\u003AtestGame21GameOverItsNotOver\u0028\u0029",
+            "name": "testGame21GameOverItsNotOver",
+            "summary": "Verify\u0020that\u0020game\u0020continous\u0020when\u0020no\u0020gameOver\u0020conditions\u0020are\u0020met.",
+            "url": "classes/App-Card-Game21GameOverTest.html#method_testGame21GameOverItsNotOver"
+        },                {
+            "fqsen": "\\App\\Card\\Game21GameOverTest\u003A\u003A\u0024betting",
+            "name": "betting",
+            "summary": "",
+            "url": "classes/App-Card-Game21GameOverTest.html#property_betting"
+        },                {
+            "fqsen": "\\App\\Card\\Game21GameOverTest\u003A\u003A\u0024deck",
+            "name": "deck",
+            "summary": "",
+            "url": "classes/App-Card-Game21GameOverTest.html#property_deck"
+        },                {
             "fqsen": "\\App\\Card\\Game21Test",
             "name": "Game21Test",
             "summary": "Test\u0020class\u0020for\u0020class\u0020Game21",
@@ -730,41 +805,6 @@ Search.appendIndex(
             "name": "testGame21CardsAsArray",
             "summary": "Verify\u0020that\u0020a\u0020hand\u0020of\u0020cards\u0020\u0028in\u0020this\u0020case\u00203\u0020cards\u0029\u0020is\u0020correctly\u0020fetched\u0020as\u0020an\u0020array\u0020of\u0020strings",
             "url": "classes/App-Card-Game21Test.html#method_testGame21CardsAsArray"
-        },                {
-            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverGenericWin\u0028\u0029",
-            "name": "testGame21GameOverGenericWin",
-            "summary": "Verify\u0020that\u0020Genereic\u0020win\u0020performs\u0020accodring\u0020to\u0020spec",
-            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverGenericWin"
-        },                {
-            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverDumbWinBankHasHigherPoints\u0028\u0029",
-            "name": "testGame21GameOverDumbWinBankHasHigherPoints",
-            "summary": "Verify\u0020that\u0020Dumb\u0020win\u0020performs\u0020according\u0020to\u0020spec",
-            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverDumbWinBankHasHigherPoints"
-        },                {
-            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverDumbWinPlayerHasHigherPoints\u0028\u0029",
-            "name": "testGame21GameOverDumbWinPlayerHasHigherPoints",
-            "summary": "Verify\u0020that\u0020Dumb\u0020win\u0020performs\u0020according\u0020to\u0020spec",
-            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverDumbWinPlayerHasHigherPoints"
-        },                {
-            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverDumbWinDraw\u0028\u0029",
-            "name": "testGame21GameOverDumbWinDraw",
-            "summary": "Verify\u0020that\u0020Dumb\u0020win\u0020performs\u0020according\u0020to\u0020spec",
-            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverDumbWinDraw"
-        },                {
-            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverDumbWinBankHasHigherPointsOrDraw\u0028\u0029",
-            "name": "testGame21GameOverDumbWinBankHasHigherPointsOrDraw",
-            "summary": "Verify\u0020that\u0020Smart\u0020win\u0020performs\u0020according\u0020to\u0020spec",
-            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverDumbWinBankHasHigherPointsOrDraw"
-        },                {
-            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverSmartWinRiskTooHigh\u0028\u0029",
-            "name": "testGame21GameOverSmartWinRiskTooHigh",
-            "summary": "Verify\u0020that\u0020Dumb\u0020win\u0020performs\u0020according\u0020to\u0020spec",
-            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverSmartWinRiskTooHigh"
-        },                {
-            "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GameOverItsNotOver\u0028\u0029",
-            "name": "testGame21GameOverItsNotOver",
-            "summary": "Verify\u0020that\u0020game\u0020continous\u0020when\u0020no\u0020gameOver\u0020conditions\u0020are\u0020met.",
-            "url": "classes/App-Card-Game21Test.html#method_testGame21GameOverItsNotOver"
         },                {
             "fqsen": "\\App\\Card\\Game21Test\u003A\u003AtestGame21GetFatProbabilityPlayer\u0028\u0029",
             "name": "testGame21GetFatProbabilityPlayer",

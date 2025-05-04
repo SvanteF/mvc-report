@@ -199,13 +199,14 @@ class Game21
         if ($this->winHelp->genericWin($this, $session)) {
             return true;
         }
+
         if ($this->winHelp->dumbWin($this, $session, $who, $gameMode)) {
             return true;
         }
+
         if ($this->winHelp->smartWin($this, $session, $who, $gameMode)) {
             return true;
         }
-
 
         return false;
     }
@@ -317,7 +318,6 @@ class Game21
         return $this->bankCards;
     }
 
-    ///////////////////////////
     public function setWinner(string $winner): void
     {
         $this->winner = $winner;

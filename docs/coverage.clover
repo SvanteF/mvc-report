@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1746333910">
-  <project timestamp="1746333910">
+<coverage generated="1746359531">
+  <project timestamp="1746359531">
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Card/Betting.php">
       <class name="App\Card\Betting" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="26" coveredelements="26"/>
@@ -169,22 +169,21 @@
       <line num="185" type="stmt" count="7"/>
       <line num="199" type="stmt" count="7"/>
       <line num="200" type="stmt" count="1"/>
-      <line num="202" type="stmt" count="6"/>
-      <line num="203" type="stmt" count="3"/>
-      <line num="205" type="stmt" count="3"/>
-      <line num="206" type="stmt" count="2"/>
-      <line num="210" type="stmt" count="1"/>
-      <line num="216" type="method" name="getBanksCardsAsArray" visibility="public" complexity="2" crap="2" count="1"/>
-      <line num="218" type="stmt" count="1"/>
+      <line num="203" type="stmt" count="6"/>
+      <line num="204" type="stmt" count="3"/>
+      <line num="207" type="stmt" count="3"/>
+      <line num="208" type="stmt" count="2"/>
+      <line num="211" type="stmt" count="1"/>
+      <line num="217" type="method" name="getBanksCardsAsArray" visibility="public" complexity="2" crap="2" count="1"/>
       <line num="219" type="stmt" count="1"/>
       <line num="220" type="stmt" count="1"/>
-      <line num="222" type="stmt" count="1"/>
-      <line num="225" type="method" name="getWinner" visibility="public" complexity="1" crap="1" count="7"/>
-      <line num="227" type="stmt" count="7"/>
-      <line num="230" type="method" name="getDeck" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="233" type="stmt" count="1"/>
-      <line num="237" type="method" name="getFatProbability" visibility="public" complexity="8" crap="8" count="4"/>
-      <line num="240" type="stmt" count="4"/>
+      <line num="221" type="stmt" count="1"/>
+      <line num="223" type="stmt" count="1"/>
+      <line num="226" type="method" name="getWinner" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="228" type="stmt" count="7"/>
+      <line num="231" type="method" name="getDeck" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="234" type="stmt" count="1"/>
+      <line num="238" type="method" name="getFatProbability" visibility="public" complexity="8" crap="8" count="4"/>
       <line num="241" type="stmt" count="4"/>
       <line num="242" type="stmt" count="4"/>
       <line num="243" type="stmt" count="4"/>
@@ -199,38 +198,39 @@
       <line num="252" type="stmt" count="4"/>
       <line num="253" type="stmt" count="4"/>
       <line num="254" type="stmt" count="4"/>
-      <line num="257" type="stmt" count="4"/>
-      <line num="260" type="stmt" count="4"/>
-      <line num="262" type="stmt" count="4"/>
+      <line num="255" type="stmt" count="4"/>
+      <line num="258" type="stmt" count="4"/>
+      <line num="261" type="stmt" count="4"/>
       <line num="263" type="stmt" count="4"/>
       <line num="264" type="stmt" count="4"/>
-      <line num="266" type="stmt" count="4"/>
-      <line num="267" type="stmt" count="1"/>
+      <line num="265" type="stmt" count="4"/>
+      <line num="267" type="stmt" count="4"/>
       <line num="268" type="stmt" count="1"/>
       <line num="269" type="stmt" count="1"/>
-      <line num="271" type="stmt" count="1"/>
-      <line num="274" type="stmt" count="4"/>
-      <line num="275" type="stmt" count="3"/>
+      <line num="270" type="stmt" count="1"/>
+      <line num="272" type="stmt" count="1"/>
+      <line num="275" type="stmt" count="4"/>
       <line num="276" type="stmt" count="3"/>
       <line num="277" type="stmt" count="3"/>
-      <line num="279" type="stmt" count="3"/>
-      <line num="282" type="stmt" count="4"/>
-      <line num="284" type="stmt" count="4"/>
-      <line num="285" type="stmt" count="3"/>
+      <line num="278" type="stmt" count="3"/>
+      <line num="280" type="stmt" count="3"/>
+      <line num="283" type="stmt" count="4"/>
+      <line num="285" type="stmt" count="4"/>
       <line num="286" type="stmt" count="3"/>
       <line num="287" type="stmt" count="3"/>
-      <line num="292" type="stmt" count="4"/>
-      <line num="293" type="stmt" count="1"/>
-      <line num="297" type="stmt" count="3"/>
-      <line num="305" type="method" name="getDrawCards" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="307" type="stmt" count="3"/>
-      <line num="315" type="method" name="getBankCards" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="317" type="stmt" count="1"/>
+      <line num="288" type="stmt" count="3"/>
+      <line num="293" type="stmt" count="4"/>
+      <line num="294" type="stmt" count="1"/>
+      <line num="298" type="stmt" count="3"/>
+      <line num="306" type="method" name="getDrawCards" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="308" type="stmt" count="3"/>
+      <line num="316" type="method" name="getBankCards" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="318" type="stmt" count="1"/>
       <line num="321" type="method" name="setWinner" visibility="public" complexity="1" crap="1" count="6"/>
       <line num="323" type="stmt" count="6"/>
       <line num="326" type="method" name="getBetting" visibility="public" complexity="1" crap="1" count="6"/>
       <line num="328" type="stmt" count="6"/>
-      <metrics loc="331" ncloc="235" classes="1" methods="16" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="107" coveredstatements="107" elements="123" coveredelements="123"/>
+      <metrics loc="331" ncloc="236" classes="1" methods="16" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="107" coveredstatements="107" elements="123" coveredelements="123"/>
     </file>
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Card/Game21Win.php">
       <class name="App\Card\Game21Win" namespace="global">
@@ -886,6 +886,6 @@
       </class>
       <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="17" loc="1786" ncloc="1610" classes="16" methods="89" coveredmethods="42" conditionals="0" coveredconditionals="0" statements="694" coveredstatements="204" elements="783" coveredelements="246"/>
+    <metrics files="17" loc="1786" ncloc="1611" classes="16" methods="89" coveredmethods="42" conditionals="0" coveredconditionals="0" statements="694" coveredstatements="204" elements="783" coveredelements="246"/>
   </project>
 </coverage>

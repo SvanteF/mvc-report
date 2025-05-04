@@ -27,11 +27,11 @@ class Game21
 
 
 
-    public function __construct(Betting $betting, ?DeckOfCards $deck, ?Game21Win $winHelp = null)
+    public function __construct(Betting $betting, ?DeckOfCards $deck)
     {
         $this->betting = $betting;
         $this->deck = $deck ?? (new DeckOfCards());
-        $this->winHelp = $winHelp ?? new Game21Win();
+        $this->winHelp = new Game21Win();
 
         if ($deck === null) {
             $this->deck->shuffleAndGetDeck();

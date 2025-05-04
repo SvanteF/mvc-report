@@ -23,12 +23,16 @@ class Game21
 
     private int $playerGamePoints = 0;
     private int $bankGamePoints = 0;
+    private Game21Win $winHelp;
 
 
-    public function __construct(Betting $betting, ?DeckOfCards $deck)
+
+    public function __construct(Betting $betting, ?DeckOfCards $deck, ?Game21Win $winHelp = null)
     {
         $this->betting = $betting;
         $this->deck = $deck ?? (new DeckOfCards());
+        $this->winHelp = $winHelp ?? new Game21Win();
+
         if ($deck === null) {
             $this->deck->shuffleAndGetDeck();
         }
@@ -121,7 +125,7 @@ class Game21
         return $this->bankGamePoints;
     }
 
-    private function genericWin(SessionInterface $session): bool
+    /*private function genericWin(SessionInterface $session): bool
     {
         if ($this->playerGamePoints === 21 || $this->bankGamePoints > 21) {
             $this->winner = 'player';
@@ -135,9 +139,9 @@ class Game21
             return true;
         }
         return false;
-    }
+    }*/
 
-    private function dumbWin(SessionInterface $session, string $who, string $gameMode): bool
+    /*private function dumbWin(SessionInterface $session, string $who, string $gameMode): bool
     {
         if ($gameMode === 'dumb' && $who === 'bank' && $this->bankGamePoints >= 17) {
             if ($this->bankGamePoints >= $this->playerGamePoints) {
@@ -150,16 +154,12 @@ class Game21
                 $this->betting->clearBet($this->winner, $session);
                 return true;
             }
-
-            /*$this->winner = 'draw';
-            $this->betting->clearBet($this->winner, $session);
-            return true;*/
         }
 
         return false;
-    }
+    }*/
 
-    private function smartWin(SessionInterface $session, string $who, string $gameMode): bool
+    /*private function smartWin(SessionInterface $session, string $who, string $gameMode): bool
     {
         if ($gameMode === 'smart' && $who === 'bank') {
             $inverseRisk = $this->getFatProbability('bank');
@@ -177,14 +177,14 @@ class Game21
         }
 
         return false;
-    }
+    }*/
 
     public function gameOver(SessionInterface $session, string $who): bool
     {
         //Get the game mode(smart or dumb)
         $gameMode = $session->get('gameMode');
 
-        if ($this->genericWin($session)) {
+        /*if ($this->genericWin($session)) {
             return true;
         }
 
@@ -194,7 +194,18 @@ class Game21
 
         if ($this->smartWin($session, $who, $gameMode)) {
             return true;
+        }*/
+
+        if ($this->winHelp->genericWin($this, $session)) {
+            return true;
         }
+        if ($this->winHelp->dumbWin($this, $session, $who, $gameMode)) {
+            return true;
+        }
+        if ($this->winHelp->smartWin($this, $session, $who, $gameMode)) {
+            return true;
+        }
+
 
         return false;
     }
@@ -247,9 +258,6 @@ class Game21
 
         //Get the amount of cards left in the Deck
         $cardsLeft = array_sum($number);
-
-        //Doesn't work with aces...
-        //$okCard = 21 - $this->playerGamePoints;
 
         $playersPoints = 0;
         $banksPoints = 0;
@@ -307,5 +315,16 @@ class Game21
     public function getBankCards(): array
     {
         return $this->bankCards;
+    }
+
+    ///////////////////////////
+    public function setWinner(string $winner): void
+    {
+        $this->winner = $winner;
+    }
+
+    public function getBetting(): Betting
+    {
+        return $this->betting;
     }
 }

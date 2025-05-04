@@ -29,7 +29,7 @@ class DeckOfCards
 
     /**
      * Shuffle the existing deck and return it as an array of Card objects
-     * 
+     *
      * @return Card[]
      */
 
@@ -42,7 +42,7 @@ class DeckOfCards
 
     /**
      * Draw a random card from the deck. If the deck is empty, return null
-     * 
+     *
      * @return array{0: Card, 1: int}|null
      */
     public function drawCard(): ?array
@@ -62,7 +62,7 @@ class DeckOfCards
 
     /**
      * Get the deck as an array of Cards
-     * 
+     *
      * @return Card[]
      */
     public function getDeck(): array
@@ -72,7 +72,7 @@ class DeckOfCards
 
     /**
      * Get the number of remaining cards sorted by value
-     * 
+     *
      * @return array<int|string,int>
      */
     public function getNumberOfCards(): array

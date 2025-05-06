@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Library;
 use App\Repository\LibraryRepository;
 use Doctrine\Persistence\ManagerRegistry;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,10 +32,10 @@ final class LibraryController extends AbstractController
         Request $request
     ): Response {
 
-        $title = $request->request->get('title');
-        $isbn = $request->request->get('isbn');
-        $author = $request->request->get('author');
-        $image = $request->request->get('image');
+        $title = (string) $request->request->get('title');
+        $isbn = (string) $request->request->get('isbn');
+        $author = (string) $request->request->get('author');
+        $image = (string) $request->request->get('image');
 
 
         $entityManager = $doctrine->getManager();
@@ -58,10 +57,10 @@ final class LibraryController extends AbstractController
 
     #[Route('/library/view/{id}', name: 'book_by_id', methods: ["GET"])]
     public function showBookById(
-        LibraryRepository $LibraryRepository,
+        LibraryRepository $libraryRepository,
         int $id
     ): Response {
-        $book = $LibraryRepository->find($id);
+        $book = $libraryRepository->find($id);
 
         $data = [
             'book' => $book
@@ -69,12 +68,12 @@ final class LibraryController extends AbstractController
 
         return $this->render('library/view_one.html.twig', $data);
     }
-    
+
     #[Route('/library/view', name: 'library_view_all', methods: ["GET"])]
     public function viewAllBooks(
-        LibraryRepository $LibraryRepository
+        LibraryRepository $libraryRepository
     ): Response {
-        $library = $LibraryRepository->findAll();
+        $library = $libraryRepository->findAll();
 
         $data = [
             'library' => $library
@@ -87,7 +86,7 @@ final class LibraryController extends AbstractController
     public function deleteLibraryById(
         ManagerRegistry $doctrine,
         Request $request
-        ): Response {
+    ): Response {
         $id = $request->request->get('id');
 
         $entityManager = $doctrine->getManager();
@@ -108,11 +107,10 @@ final class LibraryController extends AbstractController
 
     #[Route('/library/update/{id}', name: 'book_update_get', methods: ["GET"])]
     public function updateBookGet(
-        LibraryRepository $LibraryRepository,
+        LibraryRepository $libraryRepository,
         int $id
-    ): Response
-    {
-        $book = $LibraryRepository->find($id);
+    ): Response {
+        $book = $libraryRepository->find($id);
 
         $data = [
             'book' => $book
@@ -128,10 +126,10 @@ final class LibraryController extends AbstractController
     ): Response {
 
         $id = $request->request->get('id');
-        $title = $request->request->get('title');
-        $isbn = $request->request->get('isbn');
-        $author = $request->request->get('author');
-        $image = $request->request->get('image');
+        $title = (string) $request->request->get('title');
+        $isbn = (string) $request->request->get('isbn');
+        $author = (string) $request->request->get('author');
+        $image = (string) $request->request->get('image');
 
         $entityManager = $doctrine->getManager();
         $book = $entityManager->getRepository(Library::class)->find($id);

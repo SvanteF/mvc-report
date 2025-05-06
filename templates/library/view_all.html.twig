@@ -19,7 +19,7 @@
 
     <p>Klicka på titeln för att enbart se detaljer om boken, <i class="fas fa-trash"></i> för att ta bort den och <i class="fa-solid fa-pen"></i> för att editera.</p>
 
-    <ul>
+    <ul class="no-bullets">
         {% for book in library %}
             <li>
                 <a href="view/{{ book.getId|e }}">{{ book.getTitle|e }} </a>{#({{ book.getIsbn|e }}) {{ book.getAuthor|e }}#} 

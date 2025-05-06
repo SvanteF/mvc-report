@@ -18,6 +18,10 @@ img {
   max-width: 100%;
 }
 
+.no-bullets {
+  list-style-type: none;
+}
+
 header {
   width: 100%;
   border: 2px solid black;

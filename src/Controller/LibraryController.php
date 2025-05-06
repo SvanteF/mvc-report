@@ -36,6 +36,8 @@ final class LibraryController extends AbstractController
         $title = $request->request->get('title');
         $isbn = $request->request->get('isbn');
         $author = $request->request->get('author');
+        $image = $request->request->get('image');
+
 
         $entityManager = $doctrine->getManager();
 
@@ -43,6 +45,7 @@ final class LibraryController extends AbstractController
         $book->setTitle($title);
         $book->setIsbn($isbn);
         $book->setAuthor($author);
+        $book->setImage($image);
 
         // Tell Doctrine you want to (eventually) save the Product
         $entityManager->persist($book);
@@ -78,5 +81,72 @@ final class LibraryController extends AbstractController
         ];
 
         return $this->render('library/view_all.html.twig', $data);
+    }
+
+    #[Route('/library/delete/', name: 'library_delete_by_id', methods: ["POST"])]
+    public function deleteLibraryById(
+        ManagerRegistry $doctrine,
+        Request $request
+        ): Response {
+        $id = $request->request->get('id');
+
+        $entityManager = $doctrine->getManager();
+        $book = $entityManager->getRepository(Library::class)->find($id);
+
+        if (!$book) {
+            throw $this->createNotFoundException(
+                'No book found for id '.$id
+            );
+        }
+
+        $entityManager->remove($book);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('library_view_all');
+    }
+
+
+    #[Route('/library/update/{id}', name: 'book_update_get', methods: ["GET"])]
+    public function updateBookGet(
+        LibraryRepository $LibraryRepository,
+        int $id
+    ): Response
+    {
+        $book = $LibraryRepository->find($id);
+
+        $data = [
+            'book' => $book
+        ];
+
+        return $this->render('library/update.html.twig', $data);
+    }
+
+    #[Route('/library/update', name: 'book_update', methods: ["POST"])]
+    public function updateBookPost(
+        ManagerRegistry $doctrine,
+        Request $request
+    ): Response {
+
+        $title = $request->request->get('title');
+        $isbn = $request->request->get('isbn');
+        $author = $request->request->get('author');
+        $image = $request->request->get('image');
+
+
+        $entityManager = $doctrine->getManager();
+
+        $book = new Library();
+        $book->setTitle($title);
+        $book->setIsbn($isbn);
+        $book->setAuthor($author);
+        $book->setImage($image);
+
+        // Tell Doctrine you want to (eventually) save the Product
+        $entityManager->persist($book);
+
+        // Execute the queries (i.e. the INSERT query)
+        $entityManager->flush();
+
+        return $this->render('library/index.html.twig');
     }
 }

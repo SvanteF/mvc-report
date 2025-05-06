@@ -14,7 +14,19 @@
 
     {% include 'library/navbar.html.twig' %}
 
-    {{ book.getTitle|e }} ({{ book.getIsbn|e }}) {{ book.getAuthor|e }}
+    <p>
+        Titel:{{ book.getTitle|e }}
+    </p>
+    <p>
+        ISBN: {{ book.getIsbn|e }}
+    </p> 
+    <p>
+        Författare: {{ book.getAuthor|e }}
+    </p>
+
+    <br>
+
+    <img src="{{ book.getImage|e }}">
 
 </div>
 {% endblock %}

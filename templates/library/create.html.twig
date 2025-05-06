@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Lägg till bok{% endblock %}
+{% block title %}Uppdatera information{% endblock %}
 
 {% block body %}
 {#
@@ -23,6 +23,8 @@
         <input type="text" id="isbn" name="isbn" placeholder="ISBN:" />
         <br>
         <input type="text" id="author" name="author" placeholder="Författare" />
+        <br>
+        <input type="text" id="image" name="image" placeholder="Länk till bild" />
         <br>
         <button type="submit">Lägg till bok</button>
     </form>

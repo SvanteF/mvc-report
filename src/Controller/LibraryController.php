@@ -149,4 +149,19 @@ final class LibraryController extends AbstractController
             'id' => $book->getId()
         ]);
     }
+
+    #[Route('/library/reset/', name: 'library_reset_get', methods: ["GET"])]
+    public function resetDatabaseGet(): Response {
+    
+        return $this->render('library/reset.html.twig');
+    }
+
+    #[Route('/library/reset/', name: 'library_reset', methods: ["POST"])]
+    public function resetDatabase(
+        LibraryRepository $libraryRepository
+    ): Response {
+        $libraryRepository->resetLibrary();
+    
+        return $this->redirectToRoute('library_view_all');
+    }
 }

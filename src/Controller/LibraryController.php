@@ -127,15 +127,15 @@ final class LibraryController extends AbstractController
         Request $request
     ): Response {
 
+        $id = $request->request->get('id');
         $title = $request->request->get('title');
         $isbn = $request->request->get('isbn');
         $author = $request->request->get('author');
         $image = $request->request->get('image');
 
-
         $entityManager = $doctrine->getManager();
+        $book = $entityManager->getRepository(Library::class)->find($id);
 
-        $book = new Library();
         $book->setTitle($title);
         $book->setIsbn($isbn);
         $book->setAuthor($author);
@@ -147,6 +147,8 @@ final class LibraryController extends AbstractController
         // Execute the queries (i.e. the INSERT query)
         $entityManager->flush();
 
-        return $this->render('library/index.html.twig');
+        return $this->redirectToRoute('book_by_id', [
+            'id' => $book->getId()
+        ]);
     }
 }

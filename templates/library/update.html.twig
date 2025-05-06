@@ -15,17 +15,18 @@
     {% include 'library/navbar.html.twig' %}
 
 
-    <form action="{{ path('book_update_get') }}" method="post">
+    <form action="{{ path('book_update') }}" method="post">
         <label>Uppdatera informationen om titel, ISBN eller författare:</label>
         <br>
-        <input type="text" id="title" name="title" placeholder="{{ book.getTitle|e }}" />
+        <input type="text" id="title" name="title" value="{{ book.getTitle|e }}" />
         <br>
-        <input type="text" id="isbn" name="isbn" placeholder="{{ book.getIsbn|e }}" />
+        <input type="text" id="isbn" name="isbn" value="{{ book.getIsbn|e }}" />
         <br>
-        <input type="text" id="author" name="author" placeholder="{{ book.getAuthor|e }}" />
+        <input type="text" id="author" name="author" value="{{ book.getAuthor|e }}" />
         <br>
-        <input type="text" id="image" name="image" placeholder="{{ book.getImage|e }}" />
+        <input type="text" id="image" name="image" value="{{ book.getImage|e }}" />
         <br>
+        <input type="hidden" name="id" value="{{ book.id }}">
         <button type="submit">Updatera informationen</button>
     </form>
 

@@ -151,8 +151,9 @@ final class LibraryController extends AbstractController
     }
 
     #[Route('/library/reset/', name: 'library_reset_get', methods: ["GET"])]
-    public function resetDatabaseGet(): Response {
-    
+    public function resetDatabaseGet(): Response
+    {
+
         return $this->render('library/reset.html.twig');
     }
 
@@ -161,7 +162,7 @@ final class LibraryController extends AbstractController
         LibraryRepository $libraryRepository
     ): Response {
         $libraryRepository->resetLibrary();
-    
+
         return $this->redirectToRoute('library_view_all');
     }
 }

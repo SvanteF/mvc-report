@@ -4,14 +4,16 @@ namespace App\Controller;
 
 use App\Card\DeckOfCards;
 use App\Card\Player;
+use App\Repository\LibraryRepository;
 use Exception;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ControllerJson
+class ControllerJson extends AbstractController
 {
     #[Route("/api/quote")]
     public function jsonQuote(): Response
@@ -235,6 +237,56 @@ class ControllerJson
         $data[] = [
             'playerPoints' => $game21->getPlayerGamePoints(),
             'bankPoints' => $game21->getBankGamePoints(),
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route("api/library/books", methods: ["GET"])]
+    public function jsonBooks(
+        LibraryRepository $libraryRepository
+    ): Response {
+        $library = $libraryRepository->findAll();
+
+        $books = [];
+        foreach ($library as $book) {
+            $books[] = [
+                'id' => $book->getId(),
+                'title' => $book->getTitle(),
+                'isbn' => $book->getIsbn(),
+                'author' => $book->getAuthor(),
+                'image' => $book->getImage()
+            ];
+        }
+
+        $data = [
+            'library' => $books
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route("api/library/books/{isbn}", methods: ["GET"])]
+    public function jsonBookIsbn(
+        LibraryRepository $libraryRepository,
+        string $isbn
+    ): Response {
+        $book = $libraryRepository->findOneBy(['isbn' => $isbn]);
+
+        $data = [
+            'id' => $book->getId(),
+            'title' => $book->getTitle(),
+            'isbn' => $book->getIsbn(),
+            'author' => $book->getAuthor(),
+            'image' => $book->getImage()
         ];
 
         $response = new JsonResponse($data);

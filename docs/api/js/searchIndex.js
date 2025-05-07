@@ -406,6 +406,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ControllerJson.html#method_jsonScore"
         },                {
+            "fqsen": "\\App\\Controller\\ControllerJson\u003A\u003AjsonBooks\u0028\u0029",
+            "name": "jsonBooks",
+            "summary": "",
+            "url": "classes/App-Controller-ControllerJson.html#method_jsonBooks"
+        },                {
+            "fqsen": "\\App\\Controller\\ControllerJson\u003A\u003AjsonBookIsbn\u0028\u0029",
+            "name": "jsonBookIsbn",
+            "summary": "",
+            "url": "classes/App-Controller-ControllerJson.html#method_jsonBookIsbn"
+        },                {
             "fqsen": "\\App\\Controller\\ControllerTwig",
             "name": "ControllerTwig",
             "summary": "",
@@ -530,6 +540,16 @@ Search.appendIndex(
             "name": "updateBookPost",
             "summary": "",
             "url": "classes/App-Controller-LibraryController.html#method_updateBookPost"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AresetDatabaseGet\u0028\u0029",
+            "name": "resetDatabaseGet",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_resetDatabaseGet"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AresetDatabase\u0028\u0029",
+            "name": "resetDatabase",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_resetDatabase"
         },                {
             "fqsen": "\\App\\Controller\\ProductController",
             "name": "ProductController",
@@ -850,6 +870,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/App-Repository-LibraryRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\LibraryRepository\u003A\u003AresetLibrary\u0028\u0029",
+            "name": "resetLibrary",
+            "summary": "Clear\u0020the\u0020table\u0020and\u0020add\u0020three\u0020standard\u0020books",
+            "url": "classes/App-Repository-LibraryRepository.html#method_resetLibrary"
         },                {
             "fqsen": "\\App\\Repository\\ProductRepository",
             "name": "ProductRepository",

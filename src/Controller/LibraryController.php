@@ -52,7 +52,7 @@ final class LibraryController extends AbstractController
         // Execute the queries (i.e. the INSERT query)
         $entityManager->flush();
 
-        return $this->render('library/index.html.twig');
+        return $this->redirectToRoute('library_view_all');
     }
 
     #[Route('/library/view/{id}', name: 'book_by_id', methods: ["GET"])]

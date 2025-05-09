@@ -1,3 +1,10 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/SvanteF/mvc-report/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/SvanteF/mvc-report/?branch=main)
+
+[![Code Coverage](https://scrutinizer-ci.com/g/SvanteF/mvc-report/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/SvanteF/mvc-report/?branch=main)
+
+[![Build Status](https://scrutinizer-ci.com/g/SvanteF/mvc-report/badges/build.png?b=main)](https://scrutinizer-ci.com/g/SvanteF/mvc-report/build-status/main)
+
+
 ![MVC](/public/img/mvc_small.jpg)
 
 # MVC - Objektorienterade webbteknologier

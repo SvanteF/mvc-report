@@ -16,7 +16,7 @@ build:
                     # version: 8.1.17
                     # version: 8.2.4
                 node:
-                    version: 16
+                    version: 18
         analysis:
             tests:
                 override:
@@ -26,7 +26,7 @@ build:
         override:
             - command: "npm install"
             - command: "npm run build" 
-            
+
             -   command: "composer phpunit"
                 # command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
                 coverage:

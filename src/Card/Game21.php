@@ -235,7 +235,7 @@ class Game21
     }
 
     //Player is deafult
-    public function getFatProbability(string $who = 'player'): float
+    /*public function getFatProbability(string $who = 'player'): float
     {
         //Setting A to 1 since we only want to avoid "getting fat"
         $pointsTable = [
@@ -297,6 +297,7 @@ class Game21
         //Return the propability of not getting fat in percent
         return round($numberOfOkCards / $cardsLeft * 100, 1);
     }
+        */
 
     /**
      * Required for unit tests: Get player's card as an object

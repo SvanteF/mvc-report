@@ -112,6 +112,9 @@ header nav ul li a:hover {
 .two-columns-report .right .reply {
   font-weight: bold;
 }
+.two-columns-report .right .ul-left {
+  text-align: left;
+}
 
 .lucky {
   background-color: #f7931a;

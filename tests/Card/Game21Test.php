@@ -2,6 +2,8 @@
 
 namespace App\Card;
 
+use App\Card\Probability;
+
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -219,7 +221,7 @@ class Game21Test extends TestCase
         $game = new Game21($this->betting, $this->deck);
         $game->getNewCard('player');
         $game->getNewCard('player');
-        $this->assertSame(100.0, $game->getFatProbability('player'));
+        $this->assertSame(100.0, (new Probability())->getFatProbability($game->getDrawCards(), $game->getDeck()));
 
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Card;
 
+use App\Card\Probability;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class Game21Win
@@ -42,7 +43,10 @@ class Game21Win
     public function smartWin(Game21 $game, SessionInterface $session, string $who, string $gameMode): bool
     {
         if ($gameMode === 'smart' && $who === 'bank') {
-            $inverseRisk = $game->getFatProbability('bank');
+            //$inverseRisk = $game->getFatProbability('bank');
+
+            $probability = new Probability();
+            $inverseRisk = $probability->getFatProbability($game->getDrawCards(), $game->getDeck());
 
             if ($game->getBankGamePoints() >= $game->getPlayerGamePoints()) {
                 $game->setWinner('bank');

@@ -10,6 +10,8 @@ namespace App\Controller;
 use App\Card\Betting;
 use App\Card\DeckOfCards;
 use App\Card\Game21;
+use App\Card\Probability;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -71,6 +73,9 @@ class TwentyOneGameController extends AbstractController
         //Added for smart game
         $session->set('deck', $game21->getDeck());
 
+        $probability = new Probability();
+        $fatProbability = $probability->getFatProbability($game21->getDrawCards(), $game21->getDeck());
+        
         return $this->render('game_21_2.html.twig', [
             'playersCards' => $game21->getPlayersCardsAsArray(),
             'playerPoints' => $game21->getPlayerGamePoints(),
@@ -78,7 +83,8 @@ class TwentyOneGameController extends AbstractController
             'playerFunds' => $betting->getPlayerFunds(),
             'bankFunds' => $betting->getBankFunds(),
             'betText' => 'Inget bet lagt än',
-            'probability' => $game21->getFatProbability(),
+            //'probability' => $game21->getFatProbability(),
+            'probability' => $fatProbability,
         ]);
     }
 
@@ -88,8 +94,10 @@ class TwentyOneGameController extends AbstractController
         SessionInterface $session
     ): Response {
         $game21 = $session->get('game21');
-
         $betting = $session->get('betting');
+
+        $probability = new Probability();
+        $fatProbability = $probability->getFatProbability($game21->getDrawCards(), $game21->getDeck());
 
         if ($betting->getBet() == 0) {
             $bet = $request->request->get('playersBet');
@@ -104,7 +112,8 @@ class TwentyOneGameController extends AbstractController
                     'bankFunds' => $betting->getBankFunds(),
                     'playerFunds' => $betting->getPlayerFunds(),
                     'betText' => 'Bet är för högt, det måste vara max saldot för bank eller player',
-                    'probability' => $game21->getFatProbability(),
+                    //'probability' => $game21->getFatProbability(),
+                    'probability' => $fatProbability,
                     ]);
             }
 
@@ -114,9 +123,11 @@ class TwentyOneGameController extends AbstractController
         $game21->getNewCard('player');
 
         $game21->saveToSession($session);
-
         $betting->saveToSession($session);
 
+        $probability = new Probability();
+        $fatProbability = $probability->getFatProbability($game21->getDrawCards(), $game21->getDeck());
+        
         if ($game21->gameOver($session, 'player')) {
             if ($betting->getBankFunds() === 0 || $betting->getPlayerFunds() === 0) {
                 return $this->render('game_over_betting.html.twig', [
@@ -129,7 +140,8 @@ class TwentyOneGameController extends AbstractController
                 'bankPoints' => $game21->getBankGamePoints(),
                 'banksCards' => $game21->getBanksCardsAsArray(),
                 'winner' => $game21->getWinner(),
-                'probability' => $game21->getFatProbability(),
+                //'probability' => $game21->getFatProbability(),
+                'probability' => $fatProbability,
             ]);
         }
 
@@ -139,7 +151,8 @@ class TwentyOneGameController extends AbstractController
          'bet' => $betting->getBet(),
          'bankFunds' => $betting->getBankFunds(),
          'playerFunds' => $betting->getPlayerFunds(),
-         'probability' => $game21->getFatProbability(),
+         //'probability' => $game21->getFatProbability(),
+         'probability' => $fatProbability,
          ]);
     }
 

@@ -35,7 +35,7 @@
                     Codestyle
                     <ul>
                         <li>
-                            Kodstil är en förutsättning för god kodkvalitet är att följa de standarder som 
+                            Kodstil är en förutsättning för god kodkvalitet och ska följa de standarder som 
                             finns inom ett språk eller exempelvis ett projekt. Detta för att koden ska kunna 
                             läsas och förstås av andra och även en själv när man underhåller den. 
                             Kodstil inkluderar namnkonventioner, mått på indrag och hur kommentarer ska
@@ -210,9 +210,6 @@
                     hanteras för att förbättra <strong>codestyle</strong> och att inga buggar i min kod ska 
                     rapporteras av Phpmetrics. 
                 </li>
-                <li>
-                    <strong>Bubblare: game212Post ör hög crap och comlexitet, även dealget och dealpost</strong>
-                </li>
                 <h3>
                     Implementation:
                 </h3>
@@ -222,21 +219,44 @@
                     uppdaterade jag enhetstester som gått sönder och rättade buggar i lint. Coverage är tillbaka på 100%.
                 </li>
                 <li>
-                    Nästa svaghet var komplexiteen i getFatProbability(). Genom att ta med aktuell korthand som parameter kunde
-                    jag ta bort flera beslutspunker som avgjorde om korten var spelarens eller bankens. Enligt Scrutinizer minskade komplexiteten
+                    Nästa svaghet var komplexiteten i getFatProbability(). Genom att ta med aktuell korthand som parameter kunde
+                    jag ta bort flera beslutspunkter som avgjorde om korten var spelarens eller bankens. Enligt Scrutinizer minskade komplexiteten
                     från 8 beslutspunkter till 5. <strong>getFatProbability() har nu "A" istället för "B" i Scrutinizer, bra!</strong>
                 </li>
                 <li>
                     Näst på tur är att minska komplexiteten i getPoints(). Vid närmare genomgång såg jag att en del är duplicerad och bör 
-                    kunna förenklas. En insikt var att om man kan ha en variabel för bankens repektive spelarens poäng kan koden och dess 
+                    kunna förenklas. En insikt var att om man kan ha en variabel för bankens respektive spelarens poäng kan koden och dess 
                     komplexitet minskas betydligt. Enligt Phpmetrics minskade komplexiteten i klassen Game21 från 
                     <strong>17 till 13, bra!</strong> (Utgångläget var till och med <strong>24</strong>, se ovan). För getPoints() specifikt,
                     så <strong>minskade antalet beslutspunkter från 7 till 3 enligt Scrutinizer och har nu även den "A".</strong>
                 </li>
-        </ul>
+                <li>
+                    Vidare vill jag lösa den enda bug som Scrutinizer hittat i min kod, det är brist på en null check 
+                    i klassen LibraryController. Vid närmare inspection har jag denna check på ett korrekt ställe men 
+                    saknade det på fyra andra ställen i koden. Efter detta åtgärdast rapporterar nu Scrutinizer att 
+                    <strong>buggen är borta</strong>.
+                </li>
+            </ul>
             <h2 id="Diskussion">Diskussion</h2>
             <p>
-                ...
+                Min uppfattning är att detta är ett mycket effektivt sätt att arbeta på för att säkerställa kod 
+                med god kodkvalitet. Det är något tungt att göra det i efterhand på sin kod och det ska bli spännande i kommande
+                projekt/uppgifter att integrera det direkt i utvecklingsprocessen. Jag har i ett tidigare liv arbetat
+                med mycket mogna mjukvaruteam (dock ej som utvecklare utan i ledande roll) och sett flera av dessa metoder 
+                och liknande verktyg användas professionellt. Det är riktigt roligt att själv lära sig detta nu!
+            </p>
+            <p>
+                De, för mig, mest uppenbara fördelarna är att koden blir lättare att förstå både för en själv och 
+                andra. Det i sin tur gör att koden kan underhållas och vidareutvecklas lättare. Detta är enligt min
+                uppfattning så man arbetar inom större mjukvaruprojekt. En eventuell nackdel är den stora kostnaden
+                det innebär att skriva tester och underhålla dem respektive koden. Som utvecklare bör man vara selektiv
+                och på sikt lära sig vad som är viktigt att göra och vad som är mindre viktigt. Är exempelvis 100% 
+                coverage alltid viktigt? Troligtvis inte. I varje fall inte för mindre projekt.
+            </p>
+            <p>
+                Vad det gäller andra möjligheter till att arbeta med clean code får jag spekulera lite. Kanske att arbeta 
+                tillsammans i parprogrammering vilket jag har sett exempel på i arbetslivet kan vara ett lämpligt sätt?
+                Då får man väldigt direkt feedback och utbyte av erfarenhet i realtid. 
             </p>
         </article>
     </section>

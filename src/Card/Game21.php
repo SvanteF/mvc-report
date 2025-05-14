@@ -97,6 +97,42 @@ class Game21
             '♚' => 13
         ];
 
+        // Decide whose properties should be updated, player or bank
+        $userTable = [
+            'player' => 'playerGamePoints',
+            'bank' => 'bankGamePoints'
+        ];
+
+        $userPoints = $userTable[$who];
+
+        if ($cardValue === 'A') {
+            $this->$userPoints += ($this->$userPoints + 14 <= 21) ? 14 : 1;
+            return;
+        }
+
+        $this->$userPoints += $pointsTable[$cardValue];
+    }
+
+    /*
+public function getPoints(Card $card, string $who): void
+    {
+        $cardValue = $card->getValue();
+
+        $pointsTable = [
+            '2' => 2,
+            '3' => 3,
+            '4' => 4,
+            '5' => 5,
+            '6' => 6,
+            '7' => 7,
+            '8' => 8,
+            '9' => 9,
+            '10' => 10,
+            '♞' => 11,
+            '♛' => 12,
+            '♚' => 13
+        ];
+
         if ($who === 'player') {
             if ($cardValue === 'A') {
                 $this->playerGamePoints += ($this->playerGamePoints + 14 <= 21) ? 14 : 1;
@@ -114,6 +150,7 @@ class Game21
         $this->bankGamePoints += $pointsTable[$cardValue];
         return;
     }
+    */
 
     public function getPlayerGamePoints(): int
     {

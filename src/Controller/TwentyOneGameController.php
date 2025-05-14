@@ -11,7 +11,6 @@ use App\Card\Betting;
 use App\Card\DeckOfCards;
 use App\Card\Game21;
 use App\Card\Probability;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -75,7 +74,7 @@ class TwentyOneGameController extends AbstractController
 
         $probability = new Probability();
         $fatProbability = $probability->getFatProbability($game21->getDrawCards(), $game21->getDeck());
-        
+
         return $this->render('game_21_2.html.twig', [
             'playersCards' => $game21->getPlayersCardsAsArray(),
             'playerPoints' => $game21->getPlayerGamePoints(),
@@ -127,7 +126,7 @@ class TwentyOneGameController extends AbstractController
 
         $probability = new Probability();
         $fatProbability = $probability->getFatProbability($game21->getDrawCards(), $game21->getDeck());
-        
+
         if ($game21->gameOver($session, 'player')) {
             if ($betting->getBankFunds() === 0 || $betting->getPlayerFunds() === 0) {
                 return $this->render('game_over_betting.html.twig', [

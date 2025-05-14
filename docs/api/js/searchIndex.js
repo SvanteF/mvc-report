@@ -196,11 +196,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Card-Game21.html#method_getDeck"
         },                {
-            "fqsen": "\\App\\Card\\Game21\u003A\u003AgetFatProbability\u0028\u0029",
-            "name": "getFatProbability",
-            "summary": "",
-            "url": "classes/App-Card-Game21.html#method_getFatProbability"
-        },                {
             "fqsen": "\\App\\Card\\Game21\u003A\u003AgetDrawCards\u0028\u0029",
             "name": "getDrawCards",
             "summary": "Required\u0020for\u0020unit\u0020tests\u003A\u0020Get\u0020player\u0027s\u0020card\u0020as\u0020an\u0020object",
@@ -315,6 +310,16 @@ Search.appendIndex(
             "name": "cardHand",
             "summary": "",
             "url": "classes/App-Card-Player.html#property_cardHand"
+        },                {
+            "fqsen": "\\App\\Card\\Probability",
+            "name": "Probability",
+            "summary": "",
+            "url": "classes/App-Card-Probability.html"
+        },                {
+            "fqsen": "\\App\\Card\\Probability\u003A\u003AgetFatProbability\u0028\u0029",
+            "name": "getFatProbability",
+            "summary": "",
+            "url": "classes/App-Card-Probability.html#method_getFatProbability"
         },                {
             "fqsen": "\\App\\Controller\\CardGameController",
             "name": "CardGameController",
@@ -550,6 +555,16 @@ Search.appendIndex(
             "name": "resetDatabase",
             "summary": "",
             "url": "classes/App-Controller-LibraryController.html#method_resetDatabase"
+        },                {
+            "fqsen": "\\App\\Controller\\MetricsController",
+            "name": "MetricsController",
+            "summary": "",
+            "url": "classes/App-Controller-MetricsController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\MetricsController\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-MetricsController.html#method_metrics"
         },                {
             "fqsen": "\\App\\Controller\\ProductController",
             "name": "ProductController",

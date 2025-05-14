@@ -101,9 +101,9 @@ var classes = [
         "nbMethodsPublic": 7,
         "nbMethodsGetter": 7,
         "nbMethodsSetters": 1,
-        "wmc": 23,
-        "ccn": 17,
-        "ccnMethodMax": 7,
+        "wmc": 19,
+        "ccn": 13,
+        "ccnMethodMax": 4,
         "externals": [
             "App\\Card\\Betting",
             "App\\Card\\DeckOfCards",
@@ -118,38 +118,37 @@ var classes = [
         "parents": [],
         "implements": [],
         "lcom": 2,
-        "length": 190,
-        "vocabulary": 53,
-        "volume": 1088.3,
-        "difficulty": 13.5,
-        "effort": 14692.12,
-        "level": 0.07,
-        "bugs": 0.36,
-        "time": 816,
-        "intelligentContent": 80.62,
-        "number_operators": 58,
-        "number_operands": 132,
+        "length": 175,
+        "vocabulary": 57,
+        "volume": 1020.76,
+        "difficulty": 12,
+        "effort": 12249.07,
+        "level": 0.08,
+        "bugs": 0.34,
+        "time": 681,
+        "intelligentContent": 85.06,
+        "number_operators": 47,
+        "number_operands": 128,
         "number_operators_unique": 9,
-        "number_operands_unique": 44,
-        "cloc": 153,
-        "loc": 279,
-        "lloc": 126,
-        "mi": 76.21,
-        "mIwoC": 30.63,
-        "commentWeight": 45.58,
-        "kanDefect": 1.46,
+        "number_operands_unique": 48,
+        "cloc": 192,
+        "loc": 309,
+        "lloc": 117,
+        "mi": 79.04,
+        "mIwoC": 32.07,
+        "commentWeight": 46.98,
+        "kanDefect": 1.25,
         "relativeStructuralComplexity": 100,
-        "relativeDataComplexity": 1.6,
-        "relativeSystemComplexity": 101.6,
+        "relativeDataComplexity": 1.33,
+        "relativeSystemComplexity": 101.33,
         "totalStructuralComplexity": 1500,
-        "totalDataComplexity": 24,
-        "totalSystemComplexity": 1524,
+        "totalDataComplexity": 19.91,
+        "totalSystemComplexity": 1519.91,
         "package": "App\\Card\\",
         "pageRank": 0.04,
         "afferentCoupling": 2,
         "efferentCoupling": 5,
         "instability": 0.71,
-        "numberOfUnitTests": 12,
         "violations": {}
     },
     {
@@ -212,7 +211,6 @@ var classes = [
         "afferentCoupling": 2,
         "efferentCoupling": 1,
         "instability": 0.33,
-        "numberOfUnitTests": 1,
         "violations": {}
     },
     {
@@ -295,7 +293,6 @@ var classes = [
         "afferentCoupling": 1,
         "efferentCoupling": 3,
         "instability": 0.75,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -373,7 +370,6 @@ var classes = [
         "afferentCoupling": 2,
         "efferentCoupling": 1,
         "instability": 0.33,
-        "numberOfUnitTests": 2,
         "violations": {}
     },
     {
@@ -462,7 +458,6 @@ var classes = [
         "afferentCoupling": 6,
         "efferentCoupling": 1,
         "instability": 0.14,
-        "numberOfUnitTests": 7,
         "violations": {}
     },
     {
@@ -529,7 +524,6 @@ var classes = [
         "afferentCoupling": 1,
         "efferentCoupling": 2,
         "instability": 0.67,
-        "numberOfUnitTests": 1,
         "violations": {}
     },
     {
@@ -607,7 +601,6 @@ var classes = [
         "afferentCoupling": 4,
         "efferentCoupling": 0,
         "instability": 0,
-        "numberOfUnitTests": 36,
         "violations": {}
     },
     {
@@ -705,7 +698,6 @@ var classes = [
         "afferentCoupling": 2,
         "efferentCoupling": 1,
         "instability": 0.33,
-        "numberOfUnitTests": 4,
         "violations": {}
     },
     {
@@ -777,7 +769,6 @@ var classes = [
         "afferentCoupling": 1,
         "efferentCoupling": 1,
         "instability": 0.5,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -868,7 +859,6 @@ var classes = [
         "afferentCoupling": 1,
         "efferentCoupling": 1,
         "instability": 0.5,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -948,7 +938,6 @@ var classes = [
         "afferentCoupling": 3,
         "efferentCoupling": 0,
         "instability": 0,
-        "numberOfUnitTests": 1,
         "violations": {}
     },
     {
@@ -1005,7 +994,6 @@ var classes = [
         "afferentCoupling": 0,
         "efferentCoupling": 1,
         "instability": 1,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1084,7 +1072,6 @@ var classes = [
         "afferentCoupling": 1,
         "efferentCoupling": 0,
         "instability": 0,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1183,7 +1170,6 @@ var classes = [
         "afferentCoupling": 2,
         "efferentCoupling": 0,
         "instability": 0,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1263,7 +1249,6 @@ var classes = [
         "afferentCoupling": 1,
         "efferentCoupling": 2,
         "instability": 0.67,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1337,7 +1322,6 @@ var classes = [
         "afferentCoupling": 2,
         "efferentCoupling": 3,
         "instability": 0.6,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1403,7 +1387,6 @@ var classes = [
         "afferentCoupling": 0,
         "efferentCoupling": 2,
         "instability": 1,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1479,7 +1462,6 @@ var classes = [
         "afferentCoupling": 0,
         "efferentCoupling": 3,
         "instability": 1,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1623,7 +1605,6 @@ var classes = [
         "afferentCoupling": 0,
         "efferentCoupling": 8,
         "instability": 1,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1721,7 +1702,6 @@ var classes = [
         "afferentCoupling": 0,
         "efferentCoupling": 2,
         "instability": 1,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1870,7 +1850,6 @@ var classes = [
         "afferentCoupling": 0,
         "efferentCoupling": 8,
         "instability": 1,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1988,7 +1967,6 @@ var classes = [
         "afferentCoupling": 0,
         "efferentCoupling": 8,
         "instability": 1,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -2128,7 +2106,6 @@ var classes = [
         "afferentCoupling": 0,
         "efferentCoupling": 5,
         "instability": 1,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -2277,7 +2254,6 @@ var classes = [
         "afferentCoupling": 0,
         "efferentCoupling": 6,
         "instability": 1,
-        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -2430,7 +2406,6 @@ var classes = [
         "afferentCoupling": 0,
         "efferentCoupling": 9,
         "instability": 1,
-        "numberOfUnitTests": 0,
         "violations": {}
     }
 ]

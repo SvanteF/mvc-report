@@ -3,7 +3,6 @@
 namespace App\Card;
 
 use App\Card\Probability;
-
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;

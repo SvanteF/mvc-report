@@ -29,7 +29,7 @@ class Probability
         ];
 
         $currentPoints = 0;
-        
+
         foreach ($currentHand as $card) {
             $currentPoints += $pointsTable[$card->getValue()];
         }
@@ -59,6 +59,6 @@ class Probability
         return round($numberOfOkCards / $cardsLeft * 100, 1);
     }
 
-   
-   
+
+
 }

@@ -216,18 +216,23 @@
                 <h3>
                     Implementation:
                 </h3>
-                <ul class="ul-left">
-                    <li>
-                        Först skapade jag hjälpklassen Probability för att kunna lyfta ut metoden getFatProbability()
-                        utan att öka komplexiteten i klassen Game21. Istället minskade komplexiteten i den klassen 
-                        vilken också Phpmetrics tidigare klagat på. Nästa steg var att skriva om enhetstester för att 
-                        fixa de buggar som uppstått i Game21Test vid flytten av kod och för att upprättahålla 
-                        100% täckning. Som nästa steg kollade jag att spelet fungerar som förväntant och pushade upp
-                        koden för att se om i varje fall klassen Game21 minskat i komplexitet.
-
-                    </li>
-                </ul>
-            </ul>
+                <li>
+                    Först skapade jag hjälpklassen Probability för att kunna lyfta ut metoden getFatProbability()
+                    dit. Enligt Phpmetrics minskade komplexiteten i klassen Game21 från <strong>24 till 17, bra!</strong>. Därefter
+                    uppdaterade jag enhetstester som gått sönder och rättade buggar i lint. Coverage är tillbaka på 100%.
+                </li>
+                <li>
+                    Nästa svaghet var komplexiteen i getFatProbability(). Genom att ta med aktuell korthand som parameter kunde
+                    jag ta bort flera beslutspunker som avgjorde om korten var spelarens eller bankens. Enligt Scrutinizer minskade komplexiteten
+                    från 8 beslutspunkter till 5. <strong>getFatProbability() har nu "A" istället för "B" i Scrutinizer, bra!</strong>
+                </li>
+                <li>
+                    Näst på tur är att minska komplexiteten i getPoints(). Vid närmare genomgång såg jag att en del är duplicerad och bör 
+                    kunna förenklas. En insikt var att om man kan ha en variabel för bankens repektive spelarens poäng kan koden och dess 
+                    komplexitet minskas betydligt. Enligt Phpmetrics minskade komplexiteten i klassen Game21 från 
+                    <strong>17 till 13, bra!</strong> (Utgångläget var till och med <strong>24</strong>, se ovan).
+                </li>
+        </ul>
             <h2 id="Diskussion">Diskussion</h2>
             <p>
                 ...

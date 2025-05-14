@@ -62,6 +62,12 @@ final class LibraryController extends AbstractController
     ): Response {
         $book = $libraryRepository->find($id);
 
+        if (!$book) {
+            throw $this->createNotFoundException(
+                'No book found for id '.$id
+            );
+        }
+
         $data = [
             'book' => $book
         ];
@@ -112,6 +118,12 @@ final class LibraryController extends AbstractController
     ): Response {
         $book = $libraryRepository->find($id);
 
+        if (!$book) {
+            throw $this->createNotFoundException(
+                'No book found for id '.$id
+            );
+        }
+
         $data = [
             'book' => $book
         ];
@@ -133,6 +145,12 @@ final class LibraryController extends AbstractController
 
         $entityManager = $doctrine->getManager();
         $book = $entityManager->getRepository(Library::class)->find($id);
+
+        if (!$book) {
+            throw $this->createNotFoundException(
+                'No book found for id '.$id
+            );
+        }
 
         $book->setTitle($title);
         $book->setIsbn($isbn);

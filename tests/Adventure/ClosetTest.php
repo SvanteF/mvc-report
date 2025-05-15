@@ -18,18 +18,18 @@ class ClosetTest extends TestCase
         $closet = new Closet($keyId);
 
         $this->assertInstanceOf("\App\Adventure\Closet", $closet);
-        
+
     }
 
     /**
-     * Construct object and verify that an instance is created 
+     * Construct object and verify that an instance is created
      */
     public function testCreateClosetWithoutParameter(): void
     {
         $closet = new Closet();
 
         $this->assertInstanceOf("\App\Adventure\Closet", $closet);
-        
+
     }
 
     /**
@@ -90,9 +90,9 @@ class ClosetTest extends TestCase
 
     }
 
-     /**
-     * Verify that a Thing is removed from Closet it it is open.
-     */
+    /**
+    * Verify that a Thing is removed from Closet it it is open.
+    */
     public function testRemoveThingsFromCloset(): void
     {
         // Add Thing to the closet

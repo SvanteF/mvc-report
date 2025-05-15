@@ -27,7 +27,7 @@ class Room
      * @param Thing[] $things
      * @param Closet[] $closets
      */
-    public function __construct(string $name, array $things = [], array $closets = []) 
+    public function __construct(string $name, array $things = [], array $closets = [])
     {
         $this->name = $name;
         $this->things = $things;

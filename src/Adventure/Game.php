@@ -12,7 +12,7 @@ class Game
     private array $rooms = [];
     private Player $player;
 
-    public function __construct()
+    public function __construct(string $playerName)
     {
         /**
          * Create 2 keys
@@ -56,16 +56,16 @@ class Game
         $hallen = new Room('Hallen', [$laundries[1]]);
         $viggosRoom = new Room('Viggos rum', [$laundries[2]], [$closets[0]]);
         $ameliesRoom = new Room('Amélies rum', [$laundries[3]], [$closets[1]]);
-        $fabiansRoom = new Room ('Fabians rum', [$laundries[4]], [$closets[2]]);
-        $grovkok = new Room ('Grovkök');
+        $fabiansRoom = new Room('Fabians rum', [$laundries[4]], [$closets[2]]);
+        $grovkok = new Room('Grovkök');
 
         /**
          * Connect hallen to all other rooms
          */
-        $hallen->setDoorTo('norr',$viggosRoom);
-        $hallen->setDoorTo('öst',$ameliesRoom);
-        $hallen->setDoorTo('syd',$fabiansRoom);
-        $hallen->setDoorTo('väst',$grovkok);
+        $hallen->setDoorTo('norr', $viggosRoom);
+        $hallen->setDoorTo('öst', $ameliesRoom);
+        $hallen->setDoorTo('syd', $fabiansRoom);
+        $hallen->setDoorTo('väst', $grovkok);
 
         /**
          * Connect all oterh rooms to hallen
@@ -81,7 +81,7 @@ class Game
         /**
          * Add player and start position
          */
-        $this->player = new Player($hallen);
+        $this->player = new Player($hallen, $playerName);
     }
 
     /**

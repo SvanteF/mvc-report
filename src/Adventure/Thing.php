@@ -9,7 +9,7 @@ class Thing
     private string $type;
     private bool $visible = true;
 
-    public function __construct(string $type) 
+    public function __construct(string $type)
     {
         $this->type = $type;
     }
@@ -19,7 +19,7 @@ class Thing
         return $this->type;
     }
 
-    public function setVisiblity(bool $visible): void 
+    public function setVisiblity(bool $visible): void
     {
         $this->visible = $visible;
     }

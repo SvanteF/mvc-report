@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 class KeyTest extends TestCase
 {
     /**
-     * Construct object and verify that the correct instance is created as well as correvt type & visibility. 
+     * Construct object and verify that the correct instance is created as well as correvt type & visibility.
      * Also verify that the correct Id is read
      */
     public function testKey(): void

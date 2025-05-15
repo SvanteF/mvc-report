@@ -6,22 +6,24 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class Player
 {
-
     private Room $currentRoom;
+
+    private string $playerName;
 
     /**
      * @var Laundry[]
      */
-    private array $basket = []; 
+    private array $basket = [];
 
     /**
      * @var Key[]
      */
     private array $pocket = [];
 
-    public function __construct(Room $startRoom)
+    public function __construct(Room $startRoom, string $playerName)
     {
         $this->currentRoom = $startRoom;
+        $this->playerName = $playerName;
         $this->basket = [];
         $this->pocket = [];
     }
@@ -36,12 +38,13 @@ class Player
         $this->pocket[] = $key;
     }
 
+
     /**
-     * @return Room
+     * @return string
      */
-    public function getCurrentRoom(): Room
+    public function getName(): string
     {
-        return $this->currentRoom;
+        return $this->playerName;
     }
 
     /**
@@ -50,6 +53,12 @@ class Player
     public function getBasket(): array
     {
         return $this->basket;
+    }
+
+
+    public function emptyBasket(): void
+    {
+        $this->basket = [];
     }
 
     /**
@@ -62,8 +71,8 @@ class Player
 
     /**
      * Move the player
-     * 
-     * 
+     *
+     *
      */
     public function move(string $where): bool
     {
@@ -77,12 +86,12 @@ class Player
 
     /**
      * Collect a thing from a room
-     * 
+     *
      * @return bool
      */
     public function collectThingFromRoom(Thing $thing): bool
-    { 
-        if($this->currentRoom->removeThing($thing)) {
+    {
+        if ($this->currentRoom->removeThing($thing)) {
             if ($thing instanceof Key) {
                 $this->pocket[] = $thing;
             } elseif ($thing instanceof Laundry) {
@@ -95,12 +104,12 @@ class Player
 
     /**
      * Collect a thing from a closet
-     * 
+     *
      * @return bool
      */
     public function collectThingFromCloset(Closet $closet, Thing $thing): bool
-    { 
-        if($closet->removeThing($thing)) {
+    {
+        if ($closet->removeThing($thing)) {
             if ($thing instanceof Key) {
                 $this->pocket[] = $thing;
             } elseif ($thing instanceof Laundry) {
@@ -113,17 +122,34 @@ class Player
 
     /**
      * Unlock a closet with a key
-     * 
+     *
      * @return bool
      */
     public function unlockCloset(Closet $closet): bool
     {
-        foreach ($this->pocket as $key) {
+        foreach ($this->pocket as $position => $key) {
             if ($closet->unlock($key)) {
+                unset($this->pocket[$position]);
+                $this->pocket = array_values($this->pocket);
                 return true;
             }
-
         }
         return false;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLaundryCount(): int
+    {
+        return count($this->basket);
+    }
+
+    /**
+     * @return Room
+     */
+    public function getCurrentRoom(): Room
+    {
+        return $this->currentRoom;
     }
 }

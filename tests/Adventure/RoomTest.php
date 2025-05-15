@@ -95,8 +95,8 @@ class RoomTest extends TestCase
      */
     public function testsetAndGetDoorToRoom(): void
     {
-        $hallen = new Room ('Hallen');
-        $grovkoket = new Room ('Grovköket');
+        $hallen = new Room('Hallen');
+        $grovkoket = new Room('Grovköket');
 
         // Add door between hallen and grovköket
         $hallen->setDoorTo('grovköket', $grovkoket);

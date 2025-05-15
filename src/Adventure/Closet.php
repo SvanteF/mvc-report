@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class Closet
 {
     private bool $locked;
-    
+
     private ?int $keyId = null;
 
     /**
@@ -21,14 +21,14 @@ class Closet
         $this->locked = $keyId !== null;
     }
 
-    /*public function lock(): void 
+    /*public function lock(): void
     {
         $this->locked = true;
     }*/
 
     /**
      * Unlock a door
-     * 
+     *
      * @return bool
      */
     public function unlock(Key $key): bool

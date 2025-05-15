@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class Closet
 {
-    private bool $locked = false;
+    private bool $locked;
     
     private ?int $keyId = null;
 

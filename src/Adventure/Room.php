@@ -39,13 +39,15 @@ class Room
         $this->things[] = $thing;
     }
 
-    public function removeThing(Thing $thing): void
+    public function removeThing(Thing $thing): bool
     {
         $position = array_search($thing, $this->things, true);
         if ($position !== false) {
             unset($this->things[$position]);
             $this->things = array_values($this->things);
+            return true;
         }
+        return false;
     }
 
     public function getName(): string

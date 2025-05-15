@@ -42,7 +42,7 @@ header nav ul li {
 header nav ul li a {
   text-decoration: underline;
   color: #333;
-  font-size: 2em;
+  font-size: 1.6em;
   padding: 10px;
 }
 header nav ul li a:hover {

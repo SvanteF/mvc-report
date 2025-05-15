@@ -131,7 +131,6 @@ class PlayerTest extends TestCase
 
         $hallen = new Room($name, $things, $closets);
         $player = new Player($hallen, $playerName);
-        $key = new Key($keyId);
 
         $grovkok = new Room('grovkök', $things, $closets);
         $hallen->setDoorTo('väst', $grovkok);

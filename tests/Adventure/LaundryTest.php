@@ -21,7 +21,7 @@ class LaundryTest extends TestCase
         $this->assertTrue($laundry->getVisibility());
 
         // Change visibility and test
-        $laundry->setVisiblity(false);
+        $laundry->setVisibility(false);
         $this->assertFalse($laundry->getVisibility());
     }
 }

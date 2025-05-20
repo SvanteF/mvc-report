@@ -70,11 +70,10 @@ class PlayerTest extends TestCase
         $things = [];
         $closets = [];
         $playerName = 'John Doe';
-        $keyId = 0;
 
         $startRoom = new Room($name, $things, $closets);
         $player = new Player($startRoom, $playerName);
-        $key = new Key($keyId);
+        $key = new Key();
 
         $player->addKeyToPocket($key);
 
@@ -89,33 +88,40 @@ class PlayerTest extends TestCase
     {
         $name = 'Hallen';
         $playerName = 'John Doe';
-        $keyId = 0;
-        $wrongKeyId = 1;
+        $closetId = 1;
 
         $things = [];
         $closets = [];
-        $closets[0] = new Closet($keyId);
+
+        $key1 = new Key(); // id = 1
+        $key2 = new Key(); // id = 2
+
+        $closets[0] = new Closet($closetId, $key1->getId());
 
         $startRoom = new Room($name, $things, $closets);
         $player = new Player($startRoom, $playerName);
-        $key1 = new Key($keyId);
-        $key2 = new Key($wrongKeyId);
 
 
         // Get the closet added above in room 'Hallen' in position 0.
         $closet = $startRoom->getClosets()[0];
 
+        // Verify that fasle is returned if there is no key in the pocket
+        $this->assertFalse($player->useKeyOnCloset($key1->getId(), $closet));
+
         // Give the wrong key to the player
         $player->addKeyToPocket($key2);
 
         // Verify that the player did not unlock the closet with the key
-        $this->assertFalse($player->unlockCloset($closet));
+        $this->assertFalse($player->useKeyOnCloset($key2->getId(), $closet));
+
+        // Throw away the wrong key
+        $player->emptyPocket();
 
         // Give the rigth key to the player
         $player->addKeyToPocket($key1);
 
         // Verify that the player unlocked the closet with the key
-        $this->assertTrue($player->unlockCloset($closet));
+        $this->assertTrue($player->useKeyOnCloset($key1->getId(), $closet));
     }
 
     /**
@@ -127,13 +133,14 @@ class PlayerTest extends TestCase
         $things = [];
         $closets = [];
         $playerName = 'John Doe';
-        $keyId = 0;
 
         $hallen = new Room($name, $things, $closets);
         $player = new Player($hallen, $playerName);
 
         $grovkok = new Room('grovkök', $things, $closets);
+
         $hallen->setDoorTo('väst', $grovkok);
+        $grovkok->setDoorTo('öst', $hallen);
 
         // Verify that player cannot move in a non valid direction from current room (in this case hallen)
         $this->assertFalse($player->move('öst'));
@@ -143,6 +150,15 @@ class PlayerTest extends TestCase
 
         // Verify that the player now is in grovköket
         $this->assertSame($grovkok, $player->getCurrentRoom());
+
+        // Change curret room to $hallen
+        $player->setCurrentRoom($hallen);
+
+        // Verify that the player now is in hallen
+        $this->assertSame($hallen, $player->getCurrentRoom());
+
+
+
     }
 
     /**
@@ -152,23 +168,22 @@ class PlayerTest extends TestCase
     {
         $name = 'Hallen';
         $playerName = 'John Doe';
-        $keyId = 0;
         $things = [];
         $closets = [];
         $things[0] = new Laundry();
-        $things[1] = new Key($keyId);
+        $things[1] = new Key();
 
         $hallen = new Room($name, $things, $closets);
         $player = new Player($hallen, $playerName);
 
         // Verify that the player collects an instance of Laundry in the basket
         $this->assertTrue($player->collectThingFromRoom($things[0]));
-        $this->assertContains($things[0], $player->getBasket()); 
-        
+        $this->assertContains($things[0], $player->getBasket());
+
         // Verify that the player collects an instance of Key in the pocket
         $this->assertTrue($player->collectThingFromRoom($things[1]));
         $this->assertContains($things[1], $player->getPocket());
-        
+
         // Verify that it is not possible to collect a thing more than once
         $this->assertFalse($player->collectThingFromRoom($things[1]));
     }
@@ -180,12 +195,11 @@ class PlayerTest extends TestCase
     {
         $name = 'Hallen';
         $playerName = 'John Doe';
-        $keyId = 0;
         $things = [];
         $closets = [];
         $things[0] = new Laundry();
-        $things[1] = new Key($keyId);
-        $closets[0] = new Closet();
+        $things[1] = new Key();
+        $closets[0] = new Closet(0);
 
         $closets[0]->addThing($things[0]);
         $closets[0]->addThing($things[1]);
@@ -195,12 +209,12 @@ class PlayerTest extends TestCase
 
         // Verify that the player collects an instance of Laundry in the basket
         $this->assertTrue($player->collectThingFromCloset($closets[0], $things[0]));
-        $this->assertContains($things[0], $player->getBasket()); 
-        
+        $this->assertContains($things[0], $player->getBasket());
+
         // Verify that the player collects an instance of Key in the pocket
         $this->assertTrue($player->collectThingFromCloset($closets[0], $things[1]));
         $this->assertContains($things[1], $player->getPocket());
-        
+
         // Verify that it is not possible to collect a thing more than once
         $this->assertFalse($player->collectThingFromCloset($closets[0], $things[1]));
     }

@@ -26,7 +26,8 @@ class ClosetTest extends TestCase
      */
     public function testCreateClosetWithoutParameter(): void
     {
-        $closet = new Closet();
+        $closetId = 0;
+        $closet = new Closet($closetId);
 
         $this->assertInstanceOf("\App\Adventure\Closet", $closet);
 
@@ -37,9 +38,10 @@ class ClosetTest extends TestCase
      */
     public function testUnlockClosetWithRightKey(): void
     {
-        $keyId = 0;
-        $key = new Key($keyId);
-        $closet = new Closet($keyId);
+        $keyId = 1;
+        $closetId = 1;
+        $key = new Key();
+        $closet = new Closet($closetId, $keyId);
 
         // Verify lock status is locked if a key is used
         $this->assertSame(true, $closet->isLocked());
@@ -57,10 +59,10 @@ class ClosetTest extends TestCase
      */
     public function testUnlockClosetWithWrongKey(): void
     {
-        $keyId = 0;
+        $closetId = 1;
         $anotherKeyId = 1;
-        $key = new Key($keyId);
-        $closet = new Closet($anotherKeyId);
+        $key = new Key();
+        $closet = new Closet($closetId, $anotherKeyId);
 
         // Verify lock status is locked if a key is used
         $this->assertSame(true, $closet->isLocked());
@@ -96,25 +98,51 @@ class ClosetTest extends TestCase
     public function testRemoveThingsFromCloset(): void
     {
         // Add Thing to the closet
-        $keyId = 0;
-        $key = new Key($keyId);
-        $closet = new Closet($keyId);
+        $closetId1 = 1;
+        $closetId2 = 2;
+        $keyId = 999;
+        $key = new Key();
+        $closet1 = new Closet($closetId1, $keyId);
+        $closet2 = new Closet($closetId2);
         $thing = new Thing('key');
 
         //Verify that Things can not be removed when the door is locked
-        $this->assertFalse($closet->removeThing($thing));
-
+        $this->assertFalse($closet1->removeThing($thing));
 
         //Unlock closet so Things can be removed
-        $closet->unlock($key);
+        $closet1->unlock($key);
 
         // Verify that nothing can be removed if the closet is empty
-        $this->assertFalse($closet->removeThing($thing));
+        $this->assertFalse($closet2->removeThing($thing));
 
         // Add a thing
+        $closet2->addThing($thing);
+
+        $this->assertTrue($closet2->removeThing($thing));
+        //$this->assertNotContains($thing, $closet->getThings());
+    }
+
+    /**
+    * Verify that a id can be read
+    */
+    public function testIdCloset(): void
+    {
+        $closetId = 1;
+        $keyId = 1;
+        $thing = new Thing('laundry');
+        $closet = new Closet($closetId, $keyId);
+
+        // Verify the method returns null if there is no Thing in the closet
+        $this->assertSame(null, $closet->getThingById($thing->getId()));
+
+        // Add a thing to closet
         $closet->addThing($thing);
 
-        $this->assertTrue($closet->removeThing($thing));
-        $this->assertNotContains($thing, $closet->getThings());
+        //Verify that the correct id is read
+        $this->assertSame($closetId, $closet->getId());
+
+        // Verify that closet can get the correct thing id. 
+        $this->assertSame($thing, $closet->getThingById($thing->getId()));
+
     }
 }

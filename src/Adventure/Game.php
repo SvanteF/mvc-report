@@ -19,7 +19,7 @@ class Game
          */
         $keys = [];
         for ($i = 0; $i < 2; $i++) {
-            $keys[] = new Key($i);
+            $keys[] = new Key();
         }
 
         /**
@@ -34,9 +34,13 @@ class Game
          * Create 3 closets
          */
         $closets = [];
-        for ($i = 0; $i < 3; $i++) {
-            $closets[] = new Closet();
-        }
+        /*for ($i = 0; $i < 3; $i++) {
+            $closets[] = new Closet($i);
+        }*/
+        $closets[] = new Closet(1);
+        $closets[] = new Closet(2);
+        $closets[] = new Closet(3, 2);
+
 
         /**
          * Add laundry to closets
@@ -54,7 +58,7 @@ class Game
          * Create all 5 rooms
          */
         $hallen = new Room('Hallen', [$laundries[1]]);
-        $viggosRoom = new Room('Viggos rum', [$laundries[2]], [$closets[0]]);
+        $viggosRoom = new Room('Viggos rum', [$laundries[2], $keys[1]], [$closets[0]]);
         $ameliesRoom = new Room('Amélies rum', [$laundries[3]], [$closets[1]]);
         $fabiansRoom = new Room('Fabians rum', [$laundries[4]], [$closets[2]]);
         $grovkok = new Room('Grovkök');
@@ -68,7 +72,7 @@ class Game
         $hallen->setDoorTo('väst', $grovkok);
 
         /**
-         * Connect all oterh rooms to hallen
+         * Connect all other rooms to hallen
          */
         $viggosRoom->setDoorTo('syd', $hallen);
         $ameliesRoom->setDoorTo('väst', $hallen);

@@ -69,6 +69,11 @@ class Player
         return $this->pocket;
     }
 
+    public function emptyPocket(): void
+    {
+        $this->pocket = [];
+    }
+
     /**
      * Move the player
      *
@@ -125,7 +130,7 @@ class Player
      *
      * @return bool
      */
-    public function unlockCloset(Closet $closet): bool
+    /*public function unlockCloset(Closet $closet): bool
     {
         foreach ($this->pocket as $position => $key) {
             if ($closet->unlock($key)) {
@@ -135,7 +140,26 @@ class Player
             }
         }
         return false;
+    }*/
+
+    public function useKeyOnCloset(int $keyId, Closet $closet): bool
+    {
+        foreach ($this->pocket as $index => $key) {
+            //Right key
+            if ($key->getId() === $keyId) {
+                if ($closet->unlock($key)) {
+                    unset($this->pocket[$index]);
+                    $this->pocket = array_values($this->pocket);
+                    return true;
+                }
+                // Wrong key
+                return false;
+            }
+        }
+        // No key in the pocket
+        return false;
     }
+
 
     /**
      * @return int
@@ -151,5 +175,10 @@ class Player
     public function getCurrentRoom(): Room
     {
         return $this->currentRoom;
+    }
+
+    public function setCurrentRoom(Room $room): void
+    {
+        $this->currentRoom = $room;
     }
 }

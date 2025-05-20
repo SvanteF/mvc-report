@@ -103,5 +103,39 @@ class RoomTest extends TestCase
 
         //Verify the Rooms are the same
         $this->assertSame($grovkoket, $hallen->getDoorTo('grovköket'));
+
+        // Verify that 1 door has been added
+        $this->assertCount(1, $hallen->getAvailableDoors());
+    }
+
+     /**
+    * Verify that a id can be read
+    */
+    public function testIdRoom(): void
+    {
+
+        $closetId = 1;
+        $closets = [];
+        $closets[0] = new Closet($closetId);
+
+        $thing = new Thing('laundry');
+        $room1 = new Room ('rumMedGarderob', [], $closets);
+        $room2 = new Room('rumUtanGarderob');
+
+        // Verify that there is no closet in the room
+        $this->assertNull($room2->getClosetById($closetId));
+
+        // Verify that the right closet is fetched with the right id
+        $this->assertSame($closets[0], $room1->getClosetById($closetId));
+
+        // Verify the method returns null if there is no Thing in the room
+        $this->assertSame(null, $room1->getThingById($thing->getId()));
+
+        // Add a thing to closet
+        $room1->addThing($thing);
+
+        // Verify that room can get the correct thing id. 
+        $this->assertSame($thing, $room1->getThingById($thing->getId()));
+
     }
 }

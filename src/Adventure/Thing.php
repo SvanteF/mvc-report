@@ -7,11 +7,16 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class Thing
 {
     private string $type;
+    private static int $idCounter = 1;
+    private int $id;
     private bool $visible = true;
+
 
     public function __construct(string $type)
     {
         $this->type = $type;
+        $this->id = self::$idCounter;
+        self::$idCounter++;
     }
 
     public function getType(): string
@@ -19,7 +24,7 @@ class Thing
         return $this->type;
     }
 
-    public function setVisiblity(bool $visible): void
+    public function setVisibility(bool $visible): void
     {
         $this->visible = $visible;
     }
@@ -27,6 +32,11 @@ class Thing
     public function getVisibility(): bool
     {
         return $this->visible;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
     }
 
 }

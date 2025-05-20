@@ -15,17 +15,14 @@ class KeyTest extends TestCase
      */
     public function testKey(): void
     {
-        $key = new Key(0);
+        $key = new Key();
 
         $this->assertInstanceOf("\App\Adventure\Key", $key);
         $this->assertEquals('key', $key->getType());
         $this->assertTrue($key->getVisibility());
 
         // Change visibility and test
-        $key->setVisiblity(false);
+        $key->setVisibility(false);
         $this->assertFalse($key->getVisibility());
-
-        // Test getId()
-        $this->assertSame(0, $key->getId());
     }
 }

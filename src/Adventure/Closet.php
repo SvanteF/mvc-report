@@ -8,6 +8,8 @@ class Closet
 {
     private bool $locked;
 
+    private int $id;
+
     private ?int $keyId = null;
 
     /**
@@ -15,10 +17,19 @@ class Closet
      */
     private array $things = [];
 
-    public function __construct(?int $keyId = null)
+    public function __construct(int $id, ?int $keyId = null)
     {
+        $this->id = $id;
         $this->keyId = $keyId;
         $this->locked = $keyId !== null;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
     }
 
     /*public function lock(): void
@@ -43,6 +54,16 @@ class Closet
     public function isLocked(): bool
     {
         return $this->locked;
+    }
+
+    public function getThingById(int $id): ?Thing
+    {
+        foreach ($this->things as $thing) {
+            if ($thing->getId() === $id) {
+                return $thing;
+            }
+        }
+        return null;
     }
 
     public function addThing(Thing $thing): void
@@ -73,5 +94,4 @@ class Closet
     {
         return $this->things;
     }
-
 }

@@ -2,11 +2,11 @@
 
 namespace App\Adventure;
 
-//use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
 class Room
 {
     private string $name;
+    private string $roomInfo;
+    //private string $image;
 
     /**
      * @var array<string, Room>
@@ -16,7 +16,7 @@ class Room
     /**
      * @var Thing[]
      */
-    private array $things;
+    private array $things = [];
 
     /**
      * @var Closet[]
@@ -27,11 +27,12 @@ class Room
      * @param Thing[] $things
      * @param Closet[] $closets
      */
-    public function __construct(string $name, array $things = [], array $closets = [])
+    public function __construct(string $name, array $things = [], array $closets = [], string $roomInfo = "")
     {
         $this->name = $name;
         $this->things = $things;
         $this->closets = $closets;
+        $this->roomInfo = $roomInfo;
     }
 
     public function addThing(Thing $thing): void
@@ -55,12 +56,30 @@ class Room
         return $this->name;
     }
 
+    public function getRoomInfo(): string
+    {
+        return $this->roomInfo;
+    }
+
     /**
      * @return Thing[]
      */
     public function getThings(): array
     {
         return $this->things;
+    }
+
+    /**
+     * @return ?Thing
+     */
+    public function getThingById(int $id): ?Thing
+    {
+        foreach ($this->things as $thing) {
+            if ($thing->getId() === $id) {
+                return $thing;
+            }
+        }
+        return null;
     }
 
     /**
@@ -71,6 +90,19 @@ class Room
         return $this->closets;
     }
 
+    /**
+     * @return ?Closet
+     */
+    public function getClosetById(int $id): ?Closet
+    {
+        foreach ($this->closets as $closet) {
+            if ($closet->getId() === $id) {
+                return $closet;
+            }
+        }
+        return null;
+    }
+
     public function setDoorTo(string $where, Room $room): void
     {
         $this->doorTo[$where] = $room;
@@ -79,5 +111,13 @@ class Room
     public function getDoorTo(string $where): ?Room
     {
         return $this->doorTo[$where] ?? null;
+    }
+
+    /**
+     * @return array<string, Room>
+     */
+    public function getAvailableDoors(): array
+    {
+        return $this->doorTo;
     }
 }

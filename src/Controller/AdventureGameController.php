@@ -73,7 +73,7 @@ class AdventureGameController extends AbstractController
         $player = $game->getPlayer();
         $room = $player->getCurrentRoom();
 
-        if ($closetId) {
+        if ($closetId !== null) {
             $closet = $room->getClosetById($closetId);
             $thing = $closet->getThingById($thingId);
             if ($thing) {
@@ -119,7 +119,7 @@ class AdventureGameController extends AbstractController
 
             return $this->redirectToRoute('adventure_play');
         } 
-        
+
         $this->addFlash(
             'warning',
             'Det var fel nyckel, garderoben är fortfarande låst'

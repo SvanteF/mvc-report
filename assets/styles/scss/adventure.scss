@@ -1,0 +1,27 @@
+.two-columns-adventure {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    font-size: 1.2em;
+
+    .left, .center, .right {
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    /*.right p{
+        text-align: left;
+    }
+    
+
+    .right .reply {
+        font-weight: bold;
+    }
+
+    .right .ul-left{
+        text-align: left;
+    }*/
+}

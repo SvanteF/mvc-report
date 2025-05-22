@@ -6,7 +6,7 @@ class Room
 {
     private string $name;
     private string $roomInfo;
-    //private string $image;
+    private string $image;
 
     /**
      * @var array<string, Room>
@@ -27,12 +27,13 @@ class Room
      * @param Thing[] $things
      * @param Closet[] $closets
      */
-    public function __construct(string $name, array $things = [], array $closets = [], string $roomInfo = "")
+    public function __construct(string $name, array $things = [], array $closets = [], string $roomInfo = "", string $image = "")
     {
         $this->name = $name;
         $this->things = $things;
         $this->closets = $closets;
         $this->roomInfo = $roomInfo;
+        $this->image = $image;
     }
 
     public function addThing(Thing $thing): void
@@ -56,9 +57,14 @@ class Room
         return $this->name;
     }
 
-    public function getRoomInfo(): string
+    public function getInfo(): string
     {
         return $this->roomInfo;
+    }
+
+    public function getImage(): string
+    {
+        return $this->image;
     }
 
     /**

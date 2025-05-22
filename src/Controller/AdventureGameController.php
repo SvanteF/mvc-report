@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AdventureGameController extends AbstractController
 {
-    #[Route("/adventure", name: "adventure_start")]
+    #[Route("/proj", name: "adventure_start")]
     public function adventureStart(
     ): Response {
         return $this->render('adventure/start.html.twig');
@@ -128,5 +128,20 @@ class AdventureGameController extends AbstractController
         $session->set('Game', $game);
 
         return $this->redirectToRoute('adventure_play');
+    }
+
+    #[Route("/adventure/game/over", name: "adventure_game_over")]
+    public function gameOver(
+        SessionInterface $session
+    ): Response
+    {
+        $session->remove('Game');
+        return $this->render('adventure/over.html.twig');
+    }
+
+     #[Route("/proj/about", name: "adventure_about")]
+    public function adventureAbout(
+    ): Response {
+        return $this->render('adventure/about.html.twig');
     }
 }

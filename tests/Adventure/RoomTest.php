@@ -138,4 +138,21 @@ class RoomTest extends TestCase
         $this->assertSame($thing, $room1->getThingById($thing->getId()));
 
     }
+
+    /**
+     * Verify that the correct info and image are read
+     */
+
+    public function testInfoAndImageRoom(): void
+    {
+        $info = "Testar att de funkar";
+        $image = "img/test.png";
+        $room = new Room('testRum', [], [], $info, $image);
+
+        //Verify that getInfo() returns the correct string
+        $this->assertSame($info, $room->getInfo());
+
+        //Verify that getImage() returns the correct string
+        $this->assertSame($image, $room->getImage());
+    }
 }

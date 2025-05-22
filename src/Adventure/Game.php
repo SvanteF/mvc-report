@@ -14,6 +14,26 @@ class Game
 
     public function __construct(string $playerName)
     {
+
+        /**
+         * Info about the rooms
+         */
+        $infoHallen = "Här kommer text som handlar om hallen";
+        $infoViggosRum = "Här kommer text som handlar om Viggos rum";
+        $infoAmeliesRum = "Här kommer text som handlar om Amélies rum";
+        $infoFabiansRum = "Här kommer text som handlar om Fabians rum";
+        $infoGrovkok = "Här kommer text som handlar om grovköket";
+
+        /**
+         * Room images
+         */
+        $imageHallen = "img/uml.png";
+        $imageViggosRum = "img/uml.png";
+        $imageAmeliesRum = "img/uml.png";
+        $imageFabiansRum = "img/uml.png";
+        $imageGrovkok = "img/uml.png";
+
+
         /**
          * Create 2 keys
          */
@@ -57,11 +77,11 @@ class Game
         /**
          * Create all 5 rooms
          */
-        $hallen = new Room('Hallen', [$laundries[1]]);
-        $viggosRoom = new Room('Viggos rum', [$laundries[2], $keys[1]], [$closets[0]]);
-        $ameliesRoom = new Room('Amélies rum', [$laundries[3]], [$closets[1]]);
-        $fabiansRoom = new Room('Fabians rum', [$laundries[4]], [$closets[2]]);
-        $grovkok = new Room('Grovkök');
+        $hallen = new Room('Hallen', [$laundries[1]], [], $infoHallen, $imageHallen);
+        $viggosRoom = new Room('Viggos rum', [$laundries[2], $keys[1]], [$closets[0]], $infoViggosRum, $imageViggosRum);
+        $ameliesRoom = new Room('Amélies rum', [$laundries[3]], [$closets[1]], $infoAmeliesRum, $imageAmeliesRum);
+        $fabiansRoom = new Room('Fabians rum', [$laundries[4]], [$closets[2]], $infoFabiansRum, $imageFabiansRum);
+        $grovkok = new Room('Grovkök', [], [], $infoGrovkok, $imageGrovkok);
 
         /**
          * Connect hallen to all other rooms

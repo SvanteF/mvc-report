@@ -1,0 +1,26 @@
+{% extends 'adventure/generic.html.twig' %}
+
+{% block title %}API | Laundry Master{% endblock %}
+
+{% block body %} 
+
+    <section class="api">
+        <h2>Sammanställning av JSON routes</h2>
+      
+        <p>..........................................................................</p>
+        <p>Hämtar dagens citat</p>
+        <form action="api/quote/" method="GET">
+            <button type="submit">GET api/quote</button>
+        </form>
+        <p>..........................................................................</p>
+
+        <p>Returnerar hela kortleken sorterad per färg och värde.</p>
+        <form action="api/deck/" method="GET">
+            <button type="submit">GET api/deck</button>
+        </form>
+        <p>..........................................................................</p>
+
+    </section>
+    
+
+{% endblock %}

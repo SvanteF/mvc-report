@@ -10,9 +10,7 @@
 
     <section class="two-columns-adventure">
         <article class="left">
-            <img src="{{ asset(room.getImage()) }}" alt="Room map of {{ room.getName() }}">
-
-            <p>
+             <p>
                 {{ room.getInfo() }}
             </p>
 
@@ -21,9 +19,9 @@
             <p>
                 Du har {{ player.getLaundryCount() }} smutsiga plagg i tvättkorgen.
             </p>
-                {% if player.getLaundryCount() < 6 %}
+                {% if player.getLaundryCount() < 15 %}
 
-                Du kan starta tvättmaskinen först när du har 6 plagg. Leta vidare och kom tillbaka!
+                Du kan starta tvättmaskinen först när du har 15 plagg. Leta vidare och kom tillbaka!
 
                 {% else %}
 
@@ -37,13 +35,17 @@
 
 
             {% endif %}
+
+            <img src="{{ asset(room.getImage()) }}" alt="Room map of {{ room.getName() }}">
         </article>
         
         <aside class="center">
             <h3>
-                {{ room.getName() }}
+                {{ room.getName() }}. 
             </h3>
             <p>
+                Gå till:
+                <br>
                 {% for where, nextRoom in room.getAvailableDoors() %}
                 {#<a href="/adventure/game/move/{{ where }}">{{ where}} ({{ nextRoom.getName() }})</a>#}
                 <a href="{{ path('adventure_move', {'where': where}) }}">{{ where}} ({{ nextRoom.getName() }})</a>
@@ -117,7 +119,7 @@
             <h5>
                 Tvättkorgen:
             </h5>
-            <ul>
+            {#<ul>
                 {% for thing in player.getBasket()%}
                     <li>
                         {{ thing.getType() }}, id: {{ thing.getId() }}
@@ -127,7 +129,14 @@
                     Tvättkorgen är tom
                 </li>
                 {% endfor %}
-            </ul>
+            </ul>#}
+            <p>
+                {% if player.getBasket()|length == 0 %}
+                    Tvättkorgen är tom
+                {% else %}
+                    Antal plagg: {{ player.getBasket()|length }}
+                {% endif %}
+            </p>
             <h5>
                 Fickan:
             </h5>

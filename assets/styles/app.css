@@ -138,6 +138,24 @@ header nav ul li a:hover {
   text-align: left;
 }
 
+.adventure_main {
+  background-color: #222;
+  color: #ff1744;
+}
+.adventure_main a {
+  color: #baff39;
+  text-decoration: underline;
+}
+.adventure_main a:hover {
+  color: #eaff90;
+  text-decoration: none;
+}
+
+.adventure_header {
+  font-size: 0.5em;
+  padding: 3px 0;
+}
+
 .two-columns-adventure {
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;

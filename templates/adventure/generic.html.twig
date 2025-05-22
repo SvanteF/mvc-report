@@ -18,7 +18,7 @@
         {% endblock %}
     </head>
     <body>
-        <header>
+        <header class="adventure_header">
             <nav>
                 <ul>
                     <li><a href="{{ path('index') }}">ME</a></li>
@@ -37,7 +37,7 @@
             </nav>
         </header>
         
-        <main>{% block body %}{% endblock %}</main>
+        <main class="adventure_main">{% block body %}{% endblock %}</main>
 
         <footer>
             <a class="link-course" href="https://github.com/dbwebb-se/mvc" target="_blank">

@@ -16,19 +16,19 @@ class Game
      * Info about the rooms
      */
     private string $infoHallen = "Du befinner dig i hallen. Härifrån kan du nå alla sovrum. Finns det smutskläder här? Plocka upp dem i så fall.";
-    private string $infoViggosRum = "Här kommer text som handlar om Viggos rum";
-    private string $infoAmeliesRum = "Här kommer text som handlar om Amélies rum";
-    private string $infoFabiansRum = "Här kommer text som handlar om Fabians rum";
-    private string $infoGrovkok = "Här kommer text som handlar om grovköket";
+    private string $infoViggosRum = "Välkommen till Viggos rum. Här var det ju ganska välstädat ändå. Men vad gömmer sig i garderoberna?";
+    private string $infoAmeliesRum = "Aj aj. Du har gått in i tonåringens rum. Lycka till.";
+    private string $infoFabiansRum = "Hos Fabian är det lite stökigt och massor av lego på golvet. Akta fötterna och se till att få med all tvätt. Och du, vad är det som ligger där på golvet bredvid smutstvätten?";
+    private string $infoGrovkok = "Välkommen till tvättmaskinens hem.";
 
     /**
      * Room images
      */
     private string $imageHallen = "img/hallen.png";
-    private string $imageViggosRum = "img/uml.png";
-    private string $imageAmeliesRum = "img/uml.png";
-    private string $imageFabiansRum = "img/uml.png";
-    private string $imageGrovkok = "img/uml.png";
+    private string $imageViggosRum = "img/viggo.png";
+    private string $imageAmeliesRum = "img/amelie.png";
+    private string $imageFabiansRum = "img/fabian.png";
+    private string $imageGrovkok = "img/grovkok.png";
 
     public function __construct(string $playerName)
     {

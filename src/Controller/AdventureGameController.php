@@ -13,29 +13,39 @@ class AdventureGameController extends AbstractController
 {
     #[Route("/proj", name: "adventure_start")]
     public function adventureStart(
+        SessionInterface $session
     ): Response {
-        return $this->render('adventure/start.html.twig');
+        $previousName = $session->get('previousName', '');
+        return $this->render('adventure/start.html.twig', [
+            'previousName' => $previousName,
+        ]);
     }
 
-    #[Route("/adventure/game/new", name: "adventure_new_game")]
+    /*#[Route("/adventure/game/new", name: "adventure_new_game")]
     public function newGame(SessionInterface $session): Response
     {
         $session->remove('Game');
         return $this->redirectToRoute('adventure_play');
-    }
+    }*/
 
-    #[Route("/adventure/game/play", name: "adventure_play")]
-    public function gameStart(
+    #[Route("/proj/game/new", name: "adventure_play", methods: ["POST"])]
+    public function gameNew(
+        Request $request,
         SessionInterface $session
     ): Response {
+        $name = trim($request->request->get('name'));
         $game = $session->get('Game');
-        if (!$game) {
-            $game = new Game('hoppjerka');
+
+          if ($name == '') {
+            $this->addFlash('warning', 'Du glömde ditt namn, vänligen skriv in det innan du börjar');
+            return $this->redirectToRoute('adventure_start');
         }
 
-        $player = $game->getPlayer();
-
+        $game = new Game($name);
+        $session->set('previousName', $name);
         $session->set('Game', $game);
+        
+        $player = $game->getPlayer();
 
         return $this->render('adventure/play.html.twig', [
             'room' => $player->getCurrentRoom(),
@@ -43,7 +53,27 @@ class AdventureGameController extends AbstractController
         ]);
     }
 
-    #[Route("/adventure/game/move/{where}", name: "adventure_move")]
+    
+    #[Route("/proj/game", name: "adventure_game", methods: ["GET"])]
+    public function gamePlay(
+        SessionInterface $session
+        ): Response {
+
+        $game = $session->get('Game');
+
+        if (!$game) {
+            return $this->redirectToRoute('adventure_start');
+        }
+
+        $player = $game->getPlayer();
+
+        return $this->render('adventure/play.html.twig', [
+            'room' => $player->getCurrentRoom(),
+            'player' => $player,
+        ]);
+    }
+
+    #[Route("/proj/game/move/{where}", name: "adventure_move")]
     public function gameMove(
         string $where,
         SessionInterface $session
@@ -63,7 +93,8 @@ class AdventureGameController extends AbstractController
         ]);
     }
 
-    #[Route("/adventure/game/collect/{thingId}/{closetId}", name: "adventure_collect", methods: ["POST"], defaults: ["closetId" => null])]
+
+    #[Route("/proj/game/collect/{thingId}/{closetId}", name: "adventure_collect", methods: ["POST"], defaults: ["closetId" => null])]
     public function gameCollect(
         int $thingId,
         ?int $closetId,
@@ -80,7 +111,7 @@ class AdventureGameController extends AbstractController
                 $player->collectThingFromCloset($closet, $thing);
             }
             $session->set('Game', $game);
-            return $this->redirectToRoute('adventure_play');
+            return $this->redirectToRoute('adventure_game');
         } 
 
         $thing = $room->getThingById($thingId);
@@ -89,10 +120,10 @@ class AdventureGameController extends AbstractController
         }
         $session->set('Game', $game);
 
-        return $this->redirectToRoute('adventure_play');
+        return $this->redirectToRoute('adventure_game');
     }
 
-    #[Route("/adventure/game/unlock/{closetId}", name: "adventure_unlock", methods: ["POST"])]
+    #[Route("/proj/game/unlock/{closetId}", name: "adventure_unlock", methods: ["POST"])]
     public function unlockCloset(
         int $closetId,
         Request $request,
@@ -117,7 +148,7 @@ class AdventureGameController extends AbstractController
             );
             $session->set('Game', $game);
 
-            return $this->redirectToRoute('adventure_play');
+            return $this->redirectToRoute('adventure_game');
         } 
 
         $this->addFlash(
@@ -127,10 +158,10 @@ class AdventureGameController extends AbstractController
         
         $session->set('Game', $game);
 
-        return $this->redirectToRoute('adventure_play');
+        return $this->redirectToRoute('adventure_game');
     }
 
-    #[Route("/adventure/game/over", name: "adventure_game_over")]
+    #[Route("/proj/game/over", name: "adventure_game_over")]
     public function gameOver(
         SessionInterface $session
     ): Response
@@ -143,5 +174,10 @@ class AdventureGameController extends AbstractController
     public function adventureAbout(
     ): Response {
         return $this->render('adventure/about.html.twig');
+    }
+
+     #[Route("/proj/quick", name: "adventure_quick")]
+    public function adventureQuick(): Response {
+        return $this->render('adventure/quick.html.twig');
     }
 }

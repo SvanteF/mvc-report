@@ -141,15 +141,30 @@ header nav ul li a:hover {
 .adventure_body {
   background-color: #222;
   color: #ff1744;
+  font-family: "IBM Plex Mono", monospace;
 }
 
+.adventure_main {
+  /*.flash-error { 
+      color: #ff1744;
+      font-size: 1.5em;
+  }*/
+  /*.flash-info { 
+      color: #18ffff; 
+      font-size: 1.5em;
+  }*/
+}
 .adventure_main .glow-yellow {
   color: #ffe066;
   text-shadow: 0 0 8px #baff39, 0 0 2px #ff1744;
+  font-family: "VT323", monospace;
+  font-size: 1.3em;
 }
 .adventure_main .glow-red {
   color: #ff1744;
   text-shadow: 0 0 8px #ff9100, 0 0 16px #fff176;
+  font-family: "VT323", monospace;
+  font-size: 1.5em;
 }
 .adventure_main a {
   color: #baff39;
@@ -159,14 +174,31 @@ header nav ul li a:hover {
   color: #eaff90;
   text-decoration: none;
 }
-
-.adventure_header {
-  font-size: 0.5em;
-  padding: 2px 0;
+.adventure_main .flash-success {
+  color: #82ff39;
+  font-size: 1.5em;
+}
+.adventure_main .flash-warning {
+  color: #ffe785;
+  font-size: 1.5em;
 }
 
-.adventure_navbar {
-  font-size: 1em;
+.adventure_header {
+  background-color: #222;
+  font-size: 0.5em;
+  padding: 2px 0;
+  border: 3px solid #ff1744;
+  border-radius: 5px;
+}
+.adventure_header nav ul li a {
+  text-decoration: underline;
+  color: #ffe066;
+  font-size: 1.6em;
+  padding: 0px;
+}
+.adventure_header nav ul li a:hover {
+  background-color: rgba(255, 23, 68, 0.5);
+  border-radius: 1px;
 }
 
 .two-columns-adventure {
@@ -174,28 +206,35 @@ header nav ul li a:hover {
   grid-template-columns: 4fr 1fr 1fr;
   gap: 5px;
   margin: 3px;
-  font-size: 1em;
-  /*.right p{
-      text-align: left;
-  }
-
-
-  .right .reply {
-      font-weight: bold;
-  }
-
-  .right .ul-left{
-      text-align: left;
-  }*/
 }
 .two-columns-adventure .left, .two-columns-adventure .center, .two-columns-adventure .right {
   border: 3px solid #ff1744;
   border-radius: 5px;
   padding: 5px;
 }
+.two-columns-adventure form {
+  font-size: 0.2em;
+}
 
 .text-left {
   text-align: left;
+}
+
+.adventure-footer {
+  background-color: #222;
+  padding: 2px 0;
+  border: 3px solid #ff1744;
+  border-radius: 5px;
+  padding: 20px 0;
+}
+.adventure-footer .link-course, .adventure-footer .link-mine {
+  color: #ffe066;
+  font-size: 1.2em;
+  padding: 10px;
+}
+.adventure-footer .link-course:hover, .adventure-footer .link-mine:hover {
+  background-color: rgba(255, 23, 68, 0.5);
+  border-radius: 1px;
 }
 
 footer {

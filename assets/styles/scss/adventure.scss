@@ -1,17 +1,23 @@
 .adventure_body {
    background-color: #222;
-color:#ff1744;    
+   color:#ff1744;    
+   font-family: 'IBM Plex Mono', monospace;
+
 }
 
 .adventure_main {
      .glow-yellow {
         color: #ffe066;
         text-shadow: 0 0 8px #baff39, 0 0 2px #ff1744;
+        font-family: 'VT323', monospace;
+        font-size: 1.3em;
     }
 
     .glow-red {
         color: #ff1744;
-        text-shadow: 0 0 8px #ff9100,0 0 16px #fff176;   
+        text-shadow: 0 0 8px #ff9100,0 0 16px #fff176;  
+        font-family: 'VT323', monospace;
+        font-size: 1.5em;
     }
 
     a {
@@ -23,18 +29,51 @@ color:#ff1744;
             text-decoration: none;
         }
     }
+
+    .flash-success { 
+        color: #82ff39; 
+        font-size: 1.5em;
+    }
+    /*.flash-error { 
+        color: #ff1744;
+        font-size: 1.5em;
+    }*/
+    .flash-warning { 
+        color: #ffe785; 
+        font-size: 1.5em;
+    }
+    /*.flash-info { 
+        color: #18ffff; 
+        font-size: 1.5em;
+    }*/
+
 }
 
-
-
 .adventure_header {
+    background-color: #222;
     font-size: 0.5em;
     padding: 2px 0;
 
-}
+    border: 3px solid #ff1744;
+    border-radius: 5px;
 
-.adventure_navbar {
-    font-size: 1em;
+    nav {
+        ul {
+          li {
+            a {
+              text-decoration:underline;
+              color: #ffe066;
+              font-size: 1.6em;
+              padding: 0px;
+      
+              &:hover {
+                background-color: rgba(255, 23, 68, 0.5); 
+                border-radius: 1px;
+              }
+            }
+          }
+        }
+    }
 }
 
 .two-columns-adventure {
@@ -43,28 +82,39 @@ color:#ff1744;
     gap: 5px;
     margin: 3px;
 
-    font-size: 1em;
-
     .left, .center, .right {
         border: 3px solid #ff1744;
         border-radius: 5px;
         padding: 5px;
     }
 
-    /*.right p{
-        text-align: left;
+     form {
+        font-size: 0.2em;
     }
-    
-
-    .right .reply {
-        font-weight: bold;
-    }
-
-    .right .ul-left{
-        text-align: left;
-    }*/
 }
 
 .text-left {
     text-align: left;
+}
+
+.adventure-footer {
+
+    background-color: #222;
+    padding: 2px 0;
+
+    border: 3px solid #ff1744;
+    border-radius: 5px;
+    padding: 20px 0;
+
+    .link-course, .link-mine {
+        color: #ffe066;
+        font-size: 1.2em;
+        padding: 10px;
+        
+        &:hover {
+            background-color: rgba(255, 23, 68, 0.5); 
+            border-radius: 1px;
+        }
+    }
+
 }

@@ -52,9 +52,9 @@
             
             {% for thing in room.getThings() %}
                 {% if thing.getType() == 'laundry' %}
-                    Smutstvätt id: {{ thing.getId() }}
+                    Smutstvätt {#id: {{ thing.getId() }}#}
                 {% else %}
-                    Nyckel id: {{ thing.getId() }}
+                    Nyckel {#id:{{ thing.getId() }}#}
                 {% endif %}
                 {#{{ thing.getType() }}, id: {{ thing.getId() }}#}
                 <form action="{{ path('adventure_collect', {'thingId': thing.getId()}) }}" style="display:inline;" method="post">
@@ -77,10 +77,10 @@
                 {% if closet.isLocked() %}
                 {% if player.getPocket() %}
                     {% for key in player.getPocket() %}
-                            Nyckel, id: {{ key.getId() }}
+                            Nyckel{#, id: {{ key.getId() }}#}
                             <form action="{{ path('adventure_unlock', {'closetId': closet.getId()}) }}" style="display:inline;" method="post" >
                                 <input type="hidden" name="keyId" value="{{ key.getId() }}">
-                                <button type="submit">Använd nyckel</button>
+                                <button type="submit">Använd</button>
                             </form>
                         <br>
                     {% endfor %}
@@ -97,9 +97,9 @@
                     {% for thing in closet.getThings() %}
                         {#{{ thing.getType() }} (id: {{ thing.getId() }})#}
                           {% if thing.getType() == 'laundry' %}
-                            Smutstvätt id: {{ thing.getId() }}
+                            Smutstvätt {#id: {{ thing.getId() }}#}
                         {% else %}
-                            Nyckel id: {{ thing.getId() }}
+                            Nyckel {#id: {{ thing.getId() }}#}
                         {% endif %}
                         <form action="{{ path('adventure_collect', {'thingId': thing.getId(), 'closetId': closet.getId()}) }}" style="display:inline;" method="post">
                             <button type="submit"><i class="fa-solid fa-plus"></i></button>
@@ -116,6 +116,7 @@
             <h3 class="glow-yellow">
                 Spelare: {{ player.getName() }}
             </h3>
+            <br>
             <h4 class="glow-yellow">
                 Tvättkorgen
             </h4>
@@ -131,7 +132,7 @@
             </h4>
             <p>
                 {% for thing in player.getPocket()%}
-                        Nyckel, id: {{ thing.getId() }}
+                        Nyckel{#, id: {{ thing.getId() }}#}
                     <br>
                 {% else %}
                         Fickan är tom

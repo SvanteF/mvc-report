@@ -10,7 +10,8 @@ filter:
         src/Entity/Library.php, 
         src/Entity/Product.php,
         src/Repository/LibraryRepository.php,
-        src/Repository/ProductRepository.php
+        src/Repository/ProductRepository.php,
+        src/Controller
     ]
 
 

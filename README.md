@@ -37,6 +37,9 @@ symfony server:start
 
 You can reach it here http://127.0.0.1:8000.
 
-### Här ska det stå text
+### Content and purpose
+
+
+
 
 

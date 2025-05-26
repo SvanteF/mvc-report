@@ -33,7 +33,9 @@ class AdventureGameController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
-        $name = trim($request->request->get('name'));
+        $name = (string) ($request->request->get('name'));
+        $name = trim($name);
+        
         $game = $session->get('Game');
 
           if ($name == '') {

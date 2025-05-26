@@ -37,9 +37,37 @@ symfony server:start
 
 You can reach it here http://127.0.0.1:8000.
 
-### Content and purpose
+### Purpose and content
+
+This repository is home to the code written by the author during the course "DV1608 V25 lp4 Objektorienterade webbteknologier". It also contains examples provided by Blekinge Tekniska Högskola. 
+
+All tasks from the course can be found in the /src/ directory.
+
+Most importantly, the project `Adventure - Laundry Master` is located in src/Adventure/.
+
+A selection of important directories:
+- `/docs/`
+    - Coverage and documentation
+- `/public/`
+    - Public web
+- `/src/`
+    - Source code
+- `/templates/`
+    - Twig files
+- `/tests/`
+    - Test of source code
+- `/tools/`
+    - Tools for development phpdoc, phpmd, phpmetrics and phpstan
 
 
-
-
-
+List of important web routes:
+- `/proj`
+    - The main project of the course. It is an adventure game titled Laundry Master.
+- `/me`
+    - Introduction of the author.
+- `/about`
+    - Information about the course.
+- `/report`
+    - All the reports from the course's modules.
+- `/API`
+    - JSON routes.

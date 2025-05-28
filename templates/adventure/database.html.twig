@@ -6,6 +6,16 @@
   
 {% include 'adventure/navbar.html.twig' %}
 
+{% include 'flash.html.twig' %}
+
+<h3 class="text-left glow-yellow">
+    Återställ databasen (varning: all historik om spelare och higscore tas bort)
+</h3>
+
+<form action="{{ path('proj_reset') }}" method="post">
+    <button type="submit">Återställ databasen</button>
+</form>
+
 <p class="text-left">
     Info om databasen
 </p>

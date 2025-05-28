@@ -237,6 +237,15 @@ header nav ul li a:hover {
   border-radius: 1px;
 }
 
+.highscore-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+.highscore-table th, .highscore-table td {
+  padding: 0.5em;
+  text-align: center;
+}
+
 footer {
   width: 100%;
   border: 2px solid black;

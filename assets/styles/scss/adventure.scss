@@ -118,3 +118,13 @@
     }
 
 }
+
+.highscore-table {
+    border-collapse: collapse;
+    margin: 0 auto;
+
+    th, td {
+        padding: 0.5em;
+        text-align: center;
+    }
+}

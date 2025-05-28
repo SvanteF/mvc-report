@@ -8,6 +8,8 @@ use App\Entity\PlayerEntity;
 use App\Entity\Highscore;
 use App\Repository\PlayerRepository;
 use App\Repository\HighscoreRepository;
+use DateTimeImmutable;
+use Doctrine\ORM\EntityManager;
 use Doctrine\Persistence\ManagerRegistry;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,13 +29,6 @@ class AdventureGameController extends AbstractController
             'previousName' => $previousName,
         ]);
     }
-
-    /*#[Route("/adventure/game/new", name: "adventure_new_game")]
-    public function newGame(SessionInterface $session): Response
-    {
-        $session->remove('Game');
-        return $this->redirectToRoute('adventure_play');
-    }*/
 
     #[Route("/proj/game/new", name: "adventure_play", methods: ["POST"])]
     public function gameNew(
@@ -57,10 +52,13 @@ class AdventureGameController extends AbstractController
         $entityManager->persist($playerEntity);
         $entityManager->flush();
 
+        // Start the clock
+        $startTime = new DateTimeImmutable();
 
         $game = new Game($name);
         $session->set('previousName', $name);
         $session->set('player_id', $playerEntity->getId());
+        $session->set('start_time', $startTime->getTimestamp());
         $session->set('Game', $game);
         
         $player = $game->getPlayer();
@@ -181,11 +179,38 @@ class AdventureGameController extends AbstractController
 
     #[Route("/proj/game/over", name: "adventure_game_over")]
     public function gameOver(
+        ManagerRegistry $doctrine,
         SessionInterface $session
     ): Response
     {
+        // Calculate the duration of the game
+        $startTimestamp = $session->get('start_time');
+        $endTime = new DateTimeImmutable();
+        $endTimestamp = $endTime->getTimestamp();
+        $gameDuration = $endTimestamp - $startTimestamp;
+
+        // Get PlayerEntiry from session
+        $playerId = $session->get('player_id');
+        $playerEntity = $doctrine->getRepository(PlayerEntity::class)->find($playerId);
+
+        // Create highscore
+        $highscore = new Highscore();
+        $highscore->setPlayer($playerEntity);
+        $highscore->setScore($gameDuration);
+        $highscore->setCreated(new DateTimeImmutable('now', new \DateTimeZone('Europe/Stockholm')));
+
+        $entityManager = $doctrine->getManager();
+        $entityManager->persist($highscore);
+        $entityManager->flush();
+
+
         $session->remove('Game');
-        return $this->render('adventure/over.html.twig');
+        $session->remove('start_time');
+        $session->remove('player_id');
+
+        return $this->render('adventure/over.html.twig', [
+            'game_duration' => $gameDuration,
+        ]);
     }
 
     #[Route("/proj/about", name: "adventure_about")]
@@ -205,15 +230,7 @@ class AdventureGameController extends AbstractController
         return $this->render('adventure/quick.html.twig');
     }
 
-    #[Route('/proj/entity', name: 'app_proj_entity')]
-    public function index(): Response
-    {
-        return $this->render('adventure/index.html.twig', [
-            'controller_name' => 'AdventureEntityController',
-        ]);
-    }
-
-   #[Route('/proj/entity/delete', name: 'player_entity_reset', methods: ["POST"])]
+   #[Route('/proj/entity/delete', name: 'proj_reset', methods: ["POST"])]
     public function resetDatabase(
         PlayerRepository $playerRepository,
         HighscoreRepository $highscoreRepository
@@ -221,7 +238,24 @@ class AdventureGameController extends AbstractController
         $playerRepository->resetPlayer();
         $highscoreRepository->resetHighscore();
 
-        return $this->redirectToRoute('adventure_start');
+        $this->addFlash('success', 'Databasen har återställts');
+
+
+        return $this->redirectToRoute('adventure_about_database');
     }
 
+    #[Route("/proj/highscore", name: "adventure_highscore")]
+    public function adventureHighscore(
+        ManagerRegistry $doctrine
+    ): Response {
+
+        $entityManager = $doctrine->getManager();
+
+        // Sort results ascending on score and limit to 10
+        $highscores = $entityManager->getRepository(Highscore::class)->findBy([], ['score' => 'ASC'], 10);
+
+        return $this->render('adventure/highscore.html.twig', [
+            'highscores' => $highscores,
+        ]);
+    }
 }

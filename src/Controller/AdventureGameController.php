@@ -3,6 +3,13 @@
 namespace App\Controller;
 
 use App\Adventure\Game;
+
+use App\Entity\PlayerEntity;
+use App\Entity\Highscore;
+use App\Repository\PlayerRepository;
+use App\Repository\HighscoreRepository;
+use Doctrine\Persistence\ManagerRegistry;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,21 +37,30 @@ class AdventureGameController extends AbstractController
 
     #[Route("/proj/game/new", name: "adventure_play", methods: ["POST"])]
     public function gameNew(
+        ManagerRegistry $doctrine,
         Request $request,
         SessionInterface $session
     ): Response {
         $name = (string) ($request->request->get('name'));
         $name = trim($name);
-        
-        $game = $session->get('Game');
 
           if ($name == '') {
             $this->addFlash('warning', 'Du glömde ditt namn, vänligen skriv in det innan du börjar');
             return $this->redirectToRoute('adventure_start');
         }
 
+        // Create a new PlayerEntitity with every new game
+        $playerEntity = new PlayerEntity();
+        $playerEntity->setName($name);
+
+        $entityManager = $doctrine->getManager();
+        $entityManager->persist($playerEntity);
+        $entityManager->flush();
+
+
         $game = new Game($name);
         $session->set('previousName', $name);
+        $session->set('player_id', $playerEntity->getId());
         $session->set('Game', $game);
         
         $player = $game->getPlayer();
@@ -172,14 +188,40 @@ class AdventureGameController extends AbstractController
         return $this->render('adventure/over.html.twig');
     }
 
-     #[Route("/proj/about", name: "adventure_about")]
+    #[Route("/proj/about", name: "adventure_about")]
     public function adventureAbout(
     ): Response {
         return $this->render('adventure/about.html.twig');
     }
 
-     #[Route("/proj/quick", name: "adventure_quick")]
+    #[Route("/proj/about/database", name: "adventure_about_database")]
+    public function adventureAboutDatabase(
+    ): Response {
+        return $this->render('adventure/database.html.twig');
+    }
+
+    #[Route("/proj/quick", name: "adventure_quick")]
     public function adventureQuick(): Response {
         return $this->render('adventure/quick.html.twig');
     }
+
+    #[Route('/proj/entity', name: 'app_proj_entity')]
+    public function index(): Response
+    {
+        return $this->render('adventure/index.html.twig', [
+            'controller_name' => 'AdventureEntityController',
+        ]);
+    }
+
+   #[Route('/proj/entity/delete', name: 'player_entity_reset', methods: ["POST"])]
+    public function resetDatabase(
+        PlayerRepository $playerRepository,
+        HighscoreRepository $highscoreRepository
+    ): Response {
+        $playerRepository->resetPlayer();
+        $highscoreRepository->resetHighscore();
+
+        return $this->redirectToRoute('adventure_start');
+    }
+
 }

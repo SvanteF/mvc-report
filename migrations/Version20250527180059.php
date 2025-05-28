@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20250509083503 extends AbstractMigration
+final class Version20250527180059 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -21,7 +21,16 @@ final class Version20250509083503 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql(<<<'SQL'
+            CREATE TABLE highscore (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, player_id INTEGER NOT NULL, score INTEGER NOT NULL, created DATETIME NOT NULL, CONSTRAINT FK_901BB39299E6F5DF FOREIGN KEY (player_id) REFERENCES player_entity (id) NOT DEFERRABLE INITIALLY IMMEDIATE)
+        SQL);
+        $this->addSql(<<<'SQL'
+            CREATE INDEX IDX_901BB39299E6F5DF ON highscore (player_id)
+        SQL);
+        $this->addSql(<<<'SQL'
             CREATE TABLE library (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, title VARCHAR(255) NOT NULL, isbn VARCHAR(255) DEFAULT NULL, author VARCHAR(255) DEFAULT NULL, image VARCHAR(255) DEFAULT NULL)
+        SQL);
+        $this->addSql(<<<'SQL'
+            CREATE TABLE player_entity (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name VARCHAR(255) NOT NULL)
         SQL);
         $this->addSql(<<<'SQL'
             CREATE TABLE product (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name VARCHAR(255) NOT NULL, value INTEGER NOT NULL)
@@ -47,7 +56,13 @@ final class Version20250509083503 extends AbstractMigration
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql(<<<'SQL'
+            DROP TABLE highscore
+        SQL);
+        $this->addSql(<<<'SQL'
             DROP TABLE library
+        SQL);
+        $this->addSql(<<<'SQL'
+            DROP TABLE player_entity
         SQL);
         $this->addSql(<<<'SQL'
             DROP TABLE product

@@ -9,6 +9,7 @@ use App\Entity\Highscore;
 use App\Repository\PlayerRepository;
 use App\Repository\HighscoreRepository;
 use DateTimeImmutable;
+use DateTimeZone;
 use Doctrine\ORM\EntityManager;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -197,7 +198,7 @@ class AdventureGameController extends AbstractController
         $highscore = new Highscore();
         $highscore->setPlayer($playerEntity);
         $highscore->setScore($gameDuration);
-        $highscore->setCreated(new DateTimeImmutable('now', new \DateTimeZone('Europe/Stockholm')));
+        $highscore->setCreated(new DateTimeImmutable('now', new DateTimeZone('Europe/Stockholm')));
 
         $entityManager = $doctrine->getManager();
         $entityManager->persist($highscore);
@@ -230,32 +231,4 @@ class AdventureGameController extends AbstractController
         return $this->render('adventure/quick.html.twig');
     }
 
-   #[Route('/proj/entity/delete', name: 'proj_reset', methods: ["POST"])]
-    public function resetDatabase(
-        PlayerRepository $playerRepository,
-        HighscoreRepository $highscoreRepository
-    ): Response {
-        $playerRepository->resetPlayer();
-        $highscoreRepository->resetHighscore();
-
-        $this->addFlash('success', 'Databasen har återställts');
-
-
-        return $this->redirectToRoute('adventure_about_database');
-    }
-
-    #[Route("/proj/highscore", name: "adventure_highscore")]
-    public function adventureHighscore(
-        ManagerRegistry $doctrine
-    ): Response {
-
-        $entityManager = $doctrine->getManager();
-
-        // Sort results ascending on score and limit to 10
-        $highscores = $entityManager->getRepository(Highscore::class)->findBy([], ['score' => 'ASC'], 10);
-
-        return $this->render('adventure/highscore.html.twig', [
-            'highscores' => $highscores,
-        ]);
-    }
 }

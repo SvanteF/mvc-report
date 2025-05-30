@@ -35,7 +35,7 @@
             <file>src/Repository/LibraryRepository.php</file>
             <file>src/Repository/ProductRepository.php</file>
 
-            <directory suffix=".php">src/Controller</directory>
+            <!--<directory suffix=".php">src/Controller</directory>-->
         </exclude>
         <report>
           <clover outputFile="docs/coverage.clover"/>

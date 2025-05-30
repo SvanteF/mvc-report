@@ -38,6 +38,9 @@ build:
             - command: "npm install"
             - command: "npm run build" 
 
+            - command: "php bin/console doctrine:database:create --env=test --if-not-exists"
+            - command: "php bin/console doctrine:migrations:migrate --env=test --no-interaction"
+
             -   command: "composer phpunit"
                 # command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
                 coverage:

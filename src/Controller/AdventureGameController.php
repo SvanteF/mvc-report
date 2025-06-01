@@ -21,6 +21,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AdventureGameController extends AbstractController
 {
+    /**
+     * Start Adventure, render the projects start page
+     */
     #[Route("/proj", name: "adventure_start")]
     public function adventureStart(
         SessionInterface $session
@@ -31,6 +34,9 @@ class AdventureGameController extends AbstractController
         ]);
     }
 
+    /**
+     * Start a new game and render the play page
+     */
     #[Route("/proj/game/new", name: "adventure_play", methods: ["POST"])]
     public function gameNew(
         ManagerRegistry $doctrine,
@@ -70,7 +76,9 @@ class AdventureGameController extends AbstractController
         ]);
     }
 
-    
+    /**
+     * Read the game from the session and render the play page
+     */
     #[Route("/proj/game", name: "adventure_game", methods: ["GET"])]
     public function gamePlay(
         SessionInterface $session
@@ -90,6 +98,9 @@ class AdventureGameController extends AbstractController
         ]);
     }
 
+    /**
+     * Move the player from one room to another of the valid rooms available
+     */
     #[Route("/proj/game/move/{where}", name: "adventure_move")]
     public function gameMove(
         string $where,
@@ -110,6 +121,9 @@ class AdventureGameController extends AbstractController
         ]);
     }
 
+    /**
+     * Collect a thing (key or laundry) from a closet or a room (if closetId equals null).
+     */
 
     #[Route("/proj/game/collect/{thingId}/{closetId}", name: "adventure_collect", methods: ["POST"], defaults: ["closetId" => null])]
     public function gameCollect(
@@ -140,6 +154,9 @@ class AdventureGameController extends AbstractController
         return $this->redirectToRoute('adventure_game');
     }
 
+    /**
+     * Unlock a closet
+     */
     #[Route("/proj/game/unlock/{closetId}", name: "adventure_unlock", methods: ["POST"])]
     public function unlockCloset(
         int $closetId,
@@ -178,6 +195,9 @@ class AdventureGameController extends AbstractController
         return $this->redirectToRoute('adventure_game');
     }
 
+    /**
+     * Calculate duration and load game over
+     */
     #[Route("/proj/game/over", name: "adventure_game_over")]
     public function gameOver(
         ManagerRegistry $doctrine,
@@ -214,18 +234,27 @@ class AdventureGameController extends AbstractController
         ]);
     }
 
+    /**
+     * Load about page
+     */
     #[Route("/proj/about", name: "adventure_about")]
     public function adventureAbout(
     ): Response {
         return $this->render('adventure/about.html.twig');
     }
 
+    /**
+     * Load about database page
+     */
     #[Route("/proj/about/database", name: "adventure_about_database")]
     public function adventureAboutDatabase(
     ): Response {
         return $this->render('adventure/database.html.twig');
     }
 
+    /**
+     * Load the quick solution page
+     */
     #[Route("/proj/quick", name: "adventure_quick")]
     public function adventureQuick(): Response {
         return $this->render('adventure/quick.html.twig');

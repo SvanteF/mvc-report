@@ -20,6 +20,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AdventureDatabaseController extends AbstractController
 {
+    /**
+     * Delete the database
+     */
     #[Route('/proj/entity/delete', name: 'proj_reset', methods: ["POST"])]
     public function resetDatabase(
         PlayerRepository $playerRepository,
@@ -34,6 +37,9 @@ class AdventureDatabaseController extends AbstractController
         return $this->redirectToRoute('adventure_about_database');
     }
 
+    /**
+     * Load the highscore page
+     */
     #[Route("/proj/highscore", name: "adventure_highscore")]
     public function adventureHighscore(
         ManagerRegistry $doctrine
@@ -48,4 +54,5 @@ class AdventureDatabaseController extends AbstractController
             'highscores' => $highscores,
         ]);
     }
+
 }

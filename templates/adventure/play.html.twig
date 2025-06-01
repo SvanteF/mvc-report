@@ -77,7 +77,7 @@
                 {% if closet.isLocked() %}
                 {% if player.getPocket() %}
                     {% for key in player.getPocket() %}
-                            Nyckel{#, id: {{ key.getId() }}#}
+                            Nyckel, {#id: {{ key.getId() }}#}
                             <form action="{{ path('adventure_unlock', {'closetId': closet.getId()}) }}" style="display:inline;" method="post" >
                                 <input type="hidden" name="keyId" value="{{ key.getId() }}">
                                 <button type="submit">Använd</button>

@@ -35,6 +35,16 @@
             <file>src/Repository/LibraryRepository.php</file>
             <file>src/Repository/ProductRepository.php</file>
 
+            <file>src/Controller/CardGameController.php</file>
+            <file>src/Controller/ControllerJson.php</file>
+            <file>src/Controller/ControllerTwig.php</file>
+            <file>src/Controller/DiceGameController.php</file>
+            <file>src/Controller/LibraryController.php</file>
+            <file>src/Controller/MetricsController.php</file>
+            <file>src/Controller/ProductController.php</file>
+            <file>src/Controller/SessionController.php</file>
+            <file>src/Controller/TwentyOneGameController.php</file>
+
             <!--<directory suffix=".php">src/Controller</directory>-->
         </exclude>
         <report>

@@ -213,7 +213,9 @@ class AdventureGameController extends AbstractController
 
         // Create highscore
         $highscore = new Highscore();
-        $highscore->setPlayer($playerEntity);
+        if ($playerEntity !== null) {
+            $highscore->setPlayer($playerEntity);
+        }
         $highscore->setScore($gameDuration);
         $highscore->setCreated(new DateTimeImmutable('now', new DateTimeZone('Europe/Stockholm')));
 

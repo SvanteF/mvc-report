@@ -271,6 +271,8 @@ class AdventureControllerJson extends AbstractController
     {
         $game = $session->get("Game");
 
+        $data = [];
+
         // Catch error if no game or player exists in the session
         if (!$game || !$game->getPlayer()) {
 

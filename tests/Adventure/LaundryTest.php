@@ -18,10 +18,10 @@ class LaundryTest extends TestCase
 
         $this->assertInstanceOf("\App\Adventure\Laundry", $laundry);
         $this->assertEquals('laundry', $laundry->getType());
-        $this->assertTrue($laundry->getVisibility());
+        $this->assertTrue($laundry->isVisible());
 
         // Change visibility and test
         $laundry->setVisibility(false);
-        $this->assertFalse($laundry->getVisibility());
+        $this->assertFalse($laundry->isVisible());
     }
 }

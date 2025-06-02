@@ -19,10 +19,10 @@ class KeyTest extends TestCase
 
         $this->assertInstanceOf("\App\Adventure\Key", $key);
         $this->assertEquals('key', $key->getType());
-        $this->assertTrue($key->getVisibility());
+        $this->assertTrue($key->isVisible());
 
         // Change visibility and test
         $key->setVisibility(false);
-        $this->assertFalse($key->getVisibility());
+        $this->assertFalse($key->isVisible());
     }
 }

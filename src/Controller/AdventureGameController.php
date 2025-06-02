@@ -6,11 +6,9 @@ use App\Adventure\Game;
 
 use App\Entity\PlayerEntity;
 use App\Entity\Highscore;
-use App\Repository\PlayerRepository;
-use App\Repository\HighscoreRepository;
+
 use DateTimeImmutable;
 use DateTimeZone;
-use Doctrine\ORM\EntityManager;
 use Doctrine\Persistence\ManagerRegistry;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -124,7 +122,6 @@ class AdventureGameController extends AbstractController
     /**
      * Collect a thing (key or laundry) from a closet or a room (if closetId equals null).
      */
-
     #[Route("/proj/game/collect/{thingId}/{closetId}", name: "adventure_collect", methods: ["POST"], defaults: ["closetId" => null])]
     public function gameCollect(
         int $thingId,
@@ -259,5 +256,4 @@ class AdventureGameController extends AbstractController
     public function adventureQuick(): Response {
         return $this->render('adventure/quick.html.twig');
     }
-
 }

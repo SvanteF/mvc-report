@@ -2,8 +2,9 @@
 
 namespace App\Adventure;
 
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
+/**
+ * Class Player in the game Laundry Master
+ */
 class Player
 {
     private Room $currentRoom;
@@ -20,6 +21,9 @@ class Player
      */
     private array $pocket = [];
 
+     /**
+     * Constructor of Player
+     */
     public function __construct(Room $startRoom, string $playerName)
     {
         $this->currentRoom = $startRoom;
@@ -28,11 +32,17 @@ class Player
         $this->pocket = [];
     }
 
+    /**
+     * Add laundry to the player's basket
+     */
     public function addLaundryToBasket(Laundry $laundry): void
     {
         $this->basket[] = $laundry;
     }
 
+    /**
+     * Add a key to the player's pocket
+     */
     public function addKeyToPocket(Key $key): void
     {
         $this->pocket[] = $key;
@@ -40,6 +50,8 @@ class Player
 
 
     /**
+     * Get the player's name
+     * 
      * @return string
      */
     public function getName(): string
@@ -48,6 +60,8 @@ class Player
     }
 
     /**
+     * Get all laundry from the basket
+     * 
      * @return Laundry[]
      */
     public function getBasket(): array
@@ -55,13 +69,17 @@ class Player
         return $this->basket;
     }
 
-
+    /**
+     * Empty the player's basket
+     */
     public function emptyBasket(): void
     {
         $this->basket = [];
     }
 
     /**
+     * Get all keys from from the player's pocket.
+     * 
      * @return Key[]
      */
     public function getPocket(): array
@@ -69,6 +87,9 @@ class Player
         return $this->pocket;
     }
 
+    /**
+     * Empty the player's pocket
+     */
     public function emptyPocket(): void
     {
         $this->pocket = [];
@@ -77,7 +98,7 @@ class Player
     /**
      * Move the player
      *
-     *
+     * @return bool
      */
     public function move(string $where): bool
     {
@@ -130,18 +151,6 @@ class Player
      *
      * @return bool
      */
-    /*public function unlockCloset(Closet $closet): bool
-    {
-        foreach ($this->pocket as $position => $key) {
-            if ($closet->unlock($key)) {
-                unset($this->pocket[$position]);
-                $this->pocket = array_values($this->pocket);
-                return true;
-            }
-        }
-        return false;
-    }*/
-
     public function useKeyOnCloset(int $keyId, Closet $closet): bool
     {
         foreach ($this->pocket as $index => $key) {
@@ -162,6 +171,8 @@ class Player
 
 
     /**
+     * Get the number of laundry in the basket
+     * 
      * @return int
      */
     public function getLaundryCount(): int
@@ -170,6 +181,8 @@ class Player
     }
 
     /**
+     * Get the current room
+     * 
      * @return Room
      */
     public function getCurrentRoom(): Room
@@ -177,6 +190,9 @@ class Player
         return $this->currentRoom;
     }
 
+    /**
+     * Set the current room
+     */
     public function setCurrentRoom(Room $room): void
     {
         $this->currentRoom = $room;

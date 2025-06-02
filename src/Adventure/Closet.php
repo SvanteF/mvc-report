@@ -4,6 +4,9 @@ namespace App\Adventure;
 
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+/**
+ * Class Closet in the game Laundry Master
+ */
 class Closet
 {
     private bool $locked;

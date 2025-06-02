@@ -22,7 +22,8 @@ class AdventureDatabaseControllerTest extends WebTestCase
    public function testResetDatabase(): void
    {
         $client = static::createClient();
-
+        
+        // @phpstan-ignore-next-line
         $entityManager = static::getContainer()->get('doctrine')->getManager();
 
         // Create a new player

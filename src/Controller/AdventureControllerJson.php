@@ -3,12 +3,9 @@
 namespace App\Controller;
 
 use App\Adventure\Game;
-use App\Adventure\Player;
 use App\Adventure\Laundry;
 use App\Adventure\Key;
 
-use App\Repository\LibraryRepository;
-use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -95,7 +92,6 @@ class AdventureControllerJson extends AbstractController
     /**
      * Add laundry to basket
      */
-
     #[Route("/proj/api/basket/add", methods: ["POST"])]
     public function jsonBasketPOST(
         SessionInterface $session
@@ -140,7 +136,6 @@ class AdventureControllerJson extends AbstractController
     /**
      * Get player's basket
      */
-
     #[Route("/proj/api/basket", methods: ["GET"])]
     public function jsonBasketGET(
         SessionInterface $session
@@ -183,7 +178,6 @@ class AdventureControllerJson extends AbstractController
     /**
      * Add key to player's pocket
      */
-
     #[Route("/proj/api/pocket/add", methods: ["POST"])]
     public function jsonPocketPOST(
         SessionInterface $session
@@ -228,7 +222,6 @@ class AdventureControllerJson extends AbstractController
     /**
      * Get player's pocket
      */
-
     #[Route("/proj/api/pocket", methods: ["GET"])]
     public function jsonPocketGET(
         SessionInterface $session
@@ -271,7 +264,6 @@ class AdventureControllerJson extends AbstractController
     /**
      * Get info about the current room
      */
-
     #[Route("/proj/api/room", methods: ["GET"])]
     public function jsonRoomGET(
         SessionInterface $session

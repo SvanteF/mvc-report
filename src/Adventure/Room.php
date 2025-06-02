@@ -2,6 +2,9 @@
 
 namespace App\Adventure;
 
+/**
+ * Class Room in the game Laundry Master
+ */
 class Room
 {
     private string $name;
@@ -24,6 +27,8 @@ class Room
     private array $closets = [];
 
     /**
+     * Constructor of Room
+     * 
      * @param Thing[] $things
      * @param Closet[] $closets
      */
@@ -36,11 +41,19 @@ class Room
         $this->image = $image;
     }
 
+    /**
+     * Add Thing to a room
+     */
     public function addThing(Thing $thing): void
     {
         $this->things[] = $thing;
     }
 
+    /**
+     * Remove a Thing from a room
+     * 
+     * @return bool
+     */
     public function removeThing(Thing $thing): bool
     {
         $position = array_search($thing, $this->things, true);
@@ -52,22 +65,39 @@ class Room
         return false;
     }
 
+    /**
+     * Get name of room
+     * 
+     * @return string
+     */
     public function getName(): string
     {
         return $this->name;
     }
 
+     /**
+     * Get info of room
+     * 
+     * @return string
+     */
     public function getInfo(): string
     {
         return $this->roomInfo;
     }
 
+     /**
+     * Get image of room
+     * 
+     * @return string
+     */
     public function getImage(): string
     {
         return $this->image;
     }
 
     /**
+     * Get the Things in the room
+     * 
      * @return Thing[]
      */
     public function getThings(): array
@@ -76,6 +106,8 @@ class Room
     }
 
     /**
+     * Get Things in the room by id
+     * 
      * @return ?Thing
      */
     public function getThingById(int $id): ?Thing
@@ -89,6 +121,8 @@ class Room
     }
 
     /**
+     * Get closets in the room
+     * 
      * @return Closet[]
      */
     public function getClosets(): array
@@ -97,6 +131,8 @@ class Room
     }
 
     /**
+     * Get closet in the room by id
+     * 
      * @return ?Closet
      */
     public function getClosetById(int $id): ?Closet
@@ -109,17 +145,25 @@ class Room
         return null;
     }
 
+    /**
+     * Set where a door leads
+     */
     public function setDoorTo(string $where, Room $room): void
     {
         $this->doorTo[$where] = $room;
     }
 
+    /**
+     * Get where a door leads
+     */
     public function getDoorTo(string $where): ?Room
     {
         return $this->doorTo[$where] ?? null;
     }
 
     /**
+     * Get all available doors in the room
+     * 
      * @return array<string, Room>
      */
     public function getAvailableDoors(): array

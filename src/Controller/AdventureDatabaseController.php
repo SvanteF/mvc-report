@@ -2,14 +2,10 @@
 
 namespace App\Controller;
 
-use App\Adventure\Game;
-
-use App\Entity\PlayerEntity;
 use App\Entity\Highscore;
 use App\Repository\PlayerRepository;
 use App\Repository\HighscoreRepository;
-use DateTimeImmutable;
-use Doctrine\ORM\EntityManager;
+
 use Doctrine\Persistence\ManagerRegistry;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

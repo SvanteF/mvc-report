@@ -2,8 +2,9 @@
 
 namespace App\Adventure;
 
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
+/**
+ * Class Game in the game Laundry Master
+ */
 class Game
 {
     /**
@@ -30,6 +31,9 @@ class Game
     private string $imageFabiansRum = "img/fabian.png";
     private string $imageGrovkok = "img/grovkok.png";
 
+    /**
+     * Construcor of Game
+     */
     public function __construct(string $playerName)
     {
         /**

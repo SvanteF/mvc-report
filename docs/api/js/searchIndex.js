@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\Adventure\\Closet",
             "name": "Closet",
-            "summary": "",
+            "summary": "Class\u0020Closet\u0020in\u0020the\u0020game\u0020Laundry\u0020Master",
             "url": "classes/App-Adventure-Closet.html"
         },                {
             "fqsen": "\\App\\Adventure\\Closet\u003A\u003A__construct\u0028\u0029",
@@ -68,12 +68,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Adventure\\Game",
             "name": "Game",
-            "summary": "",
+            "summary": "Class\u0020Game\u0020in\u0020the\u0020game\u0020Laundry\u0020Master",
             "url": "classes/App-Adventure-Game.html"
         },                {
             "fqsen": "\\App\\Adventure\\Game\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Construcor\u0020of\u0020Game",
             "url": "classes/App-Adventure-Game.html#method___construct"
         },                {
             "fqsen": "\\App\\Adventure\\Game\u003A\u003AgetPlayer\u0028\u0029",
@@ -148,67 +148,67 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Adventure\\Key",
             "name": "Key",
-            "summary": "",
+            "summary": "Class\u0020Key\u0020in\u0020the\u0020game\u0020Laundry\u0020Master.\u0020A\u0020key\u0020can\u0020open\u0020closets",
             "url": "classes/App-Adventure-Key.html"
         },                {
             "fqsen": "\\App\\Adventure\\Key\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020of\u0020Key",
             "url": "classes/App-Adventure-Key.html#method___construct"
         },                {
             "fqsen": "\\App\\Adventure\\Laundry",
             "name": "Laundry",
-            "summary": "",
+            "summary": "Class\u0020Laundry\u0020in\u0020the\u0020game\u0020Laundry\u0020Master.\u0020Laundry\u0020can\u0020be\u0020in\u0020a\u0020Room\u0020or\u0020Closet",
             "url": "classes/App-Adventure-Laundry.html"
         },                {
             "fqsen": "\\App\\Adventure\\Laundry\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020of\u0020Laundry",
             "url": "classes/App-Adventure-Laundry.html#method___construct"
         },                {
             "fqsen": "\\App\\Adventure\\Player",
             "name": "Player",
-            "summary": "",
+            "summary": "Class\u0020Player\u0020in\u0020the\u0020game\u0020Laundry\u0020Master",
             "url": "classes/App-Adventure-Player.html"
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020of\u0020Player",
             "url": "classes/App-Adventure-Player.html#method___construct"
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003AaddLaundryToBasket\u0028\u0029",
             "name": "addLaundryToBasket",
-            "summary": "",
+            "summary": "Add\u0020laundry\u0020to\u0020the\u0020player\u0027s\u0020basket",
             "url": "classes/App-Adventure-Player.html#method_addLaundryToBasket"
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003AaddKeyToPocket\u0028\u0029",
             "name": "addKeyToPocket",
-            "summary": "",
+            "summary": "Add\u0020a\u0020key\u0020to\u0020the\u0020player\u0027s\u0020pocket",
             "url": "classes/App-Adventure-Player.html#method_addKeyToPocket"
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003AgetName\u0028\u0029",
             "name": "getName",
-            "summary": "",
+            "summary": "Get\u0020the\u0020player\u0027s\u0020name",
             "url": "classes/App-Adventure-Player.html#method_getName"
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003AgetBasket\u0028\u0029",
             "name": "getBasket",
-            "summary": "",
+            "summary": "Get\u0020all\u0020laundry\u0020from\u0020the\u0020basket",
             "url": "classes/App-Adventure-Player.html#method_getBasket"
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003AemptyBasket\u0028\u0029",
             "name": "emptyBasket",
-            "summary": "",
+            "summary": "Empty\u0020the\u0020player\u0027s\u0020basket",
             "url": "classes/App-Adventure-Player.html#method_emptyBasket"
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003AgetPocket\u0028\u0029",
             "name": "getPocket",
-            "summary": "",
+            "summary": "Get\u0020all\u0020keys\u0020from\u0020from\u0020the\u0020player\u0027s\u0020pocket.",
             "url": "classes/App-Adventure-Player.html#method_getPocket"
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003AemptyPocket\u0028\u0029",
             "name": "emptyPocket",
-            "summary": "",
+            "summary": "Empty\u0020the\u0020player\u0027s\u0020pocket",
             "url": "classes/App-Adventure-Player.html#method_emptyPocket"
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003Amove\u0028\u0029",
@@ -233,17 +233,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003AgetLaundryCount\u0028\u0029",
             "name": "getLaundryCount",
-            "summary": "",
+            "summary": "Get\u0020the\u0020number\u0020of\u0020laundry\u0020in\u0020the\u0020basket",
             "url": "classes/App-Adventure-Player.html#method_getLaundryCount"
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003AgetCurrentRoom\u0028\u0029",
             "name": "getCurrentRoom",
-            "summary": "",
+            "summary": "Get\u0020the\u0020current\u0020room",
             "url": "classes/App-Adventure-Player.html#method_getCurrentRoom"
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003AsetCurrentRoom\u0028\u0029",
             "name": "setCurrentRoom",
-            "summary": "",
+            "summary": "Set\u0020the\u0020current\u0020room",
             "url": "classes/App-Adventure-Player.html#method_setCurrentRoom"
         },                {
             "fqsen": "\\App\\Adventure\\Player\u003A\u003A\u0024currentRoom",
@@ -268,7 +268,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Adventure\\Room",
             "name": "Room",
-            "summary": "",
+            "summary": "Class\u0020Room\u0020in\u0020the\u0020game\u0020Laundry\u0020Master",
             "url": "classes/App-Adventure-Room.html"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003A__construct\u0028\u0029",
@@ -368,7 +368,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Adventure\\Thing",
             "name": "Thing",
-            "summary": "",
+            "summary": "Class\u0020Thing\u0020in\u0020the\u0020game\u0020Laundry\u0020Master",
             "url": "classes/App-Adventure-Thing.html"
         },                {
             "fqsen": "\\App\\Adventure\\Thing\u003A\u003A__construct\u0028\u0029",

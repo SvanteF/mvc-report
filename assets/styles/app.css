@@ -24,6 +24,7 @@ img {
 
 header {
   width: 100%;
+  box-sizing: border-box;
   border: 2px solid black;
   border-radius: 5px;
   background-color: #aaa;
@@ -31,6 +32,7 @@ header {
 }
 header nav ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   list-style: none;
   padding: 0;
@@ -125,6 +127,7 @@ header nav ul li a:hover {
 }
 
 .api {
+  max-width: 100%;
   background-color: #ddd;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -138,22 +141,32 @@ header nav ul li a:hover {
   text-align: left;
 }
 
+footer {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 20px 0;
+  margin-top: auto;
+  background-color: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer .link-course, footer .link-mine {
+  font-size: 1.2em;
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
 .adventure_body {
   background-color: #222;
   color: #ff1744;
   font-family: "IBM Plex Mono", monospace;
 }
 
-.adventure_main {
-  /*.flash-error { 
-      color: #ff1744;
-      font-size: 1.5em;
-  }*/
-  /*.flash-info { 
-      color: #18ffff; 
-      font-size: 1.5em;
-  }*/
-}
 .adventure_main .glow-yellow {
   color: #ffe066;
   text-shadow: 0 0 8px #baff39, 0 0 2px #ff1744;
@@ -190,13 +203,13 @@ header nav ul li a:hover {
   border: 3px solid #ff1744;
   border-radius: 5px;
 }
-.adventure_header nav ul li a {
+.adventure_header nav a {
   text-decoration: underline;
   color: #ffe066;
   font-size: 1.6em;
   padding: 0px;
 }
-.adventure_header nav ul li a:hover {
+.adventure_header nav a:hover {
   background-color: rgba(255, 23, 68, 0.5);
   border-radius: 1px;
 }
@@ -246,17 +259,75 @@ header nav ul li a:hover {
   text-align: center;
 }
 
-footer {
-  width: 100%;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 20px 0;
-  margin-top: auto;
-  background-color: #aaa;
-}
-footer .link-course, footer .link-mine {
-  font-size: 1.2em;
-  padding: 10px;
+@media (max-width: 800px) {
+  p {
+    font-size: 1.5em;
+    margin: 10px;
+    padding: 5px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  form input,
+  form button,
+  form label {
+    font-size: 1.5em;
+    max-width: 50%;
+    text-align: center;
+    margin: 5px;
+  }
+  .two-columns-adventure,
+  .two-columns-report {
+    grid-template-columns: 1fr;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  .two-columns-adventure .left,
+  .two-columns-adventure .center,
+  .two-columns-adventure .right,
+  .two-columns-report .left,
+  .two-columns-report .right {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    margin-bottom: 10px;
+  }
+  img, pre, code {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+  .api {
+    max-width: 100vw;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .api form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .api input,
+  .api button {
+    display: block;
+    width: 100%;
+    max-width: 100vw;
+    margin: 10px 0;
+    box-sizing: border-box;
+    font-size: 1em;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .adventure_main,
+  header,
+  footer {
+    padding: 0 10px;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -34,19 +34,11 @@
         color: #82ff39; 
         font-size: 1.5em;
     }
-    /*.flash-error { 
-        color: #ff1744;
-        font-size: 1.5em;
-    }*/
+
     .flash-warning { 
         color: #ffe785; 
         font-size: 1.5em;
     }
-    /*.flash-info { 
-        color: #18ffff; 
-        font-size: 1.5em;
-    }*/
-
 }
 
 .adventure_header {
@@ -58,20 +50,17 @@
     border-radius: 5px;
 
     nav {
-        ul {
-          li {
-            a {
-              text-decoration:underline;
-              color: #ffe066;
-              font-size: 1.6em;
-              padding: 0px;
-      
-              &:hover {
-                background-color: rgba(255, 23, 68, 0.5); 
-                border-radius: 1px;
-              }
+
+        a {
+            text-decoration:underline;
+            color: #ffe066;
+            font-size: 1.6em;
+            padding: 0px;
+    
+            &:hover {
+            background-color: rgba(255, 23, 68, 0.5); 
+            border-radius: 1px;
             }
-          }
         }
     }
 }
@@ -128,3 +117,5 @@
         text-align: center;
     }
 }
+
+

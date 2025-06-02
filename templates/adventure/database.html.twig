@@ -74,12 +74,50 @@
             </p>
             <h2 id="enhetstester">Enhetstester</h2>
             <p>
-                JAg har implmenterat enhetstester mot databasen och lokalt har jag 100% coverage. I 
-                Scrutinizer är det 100% för Entity och 87.5% för Repository. 
+                Jag har implementerat enhetstester mot databasen och har 100% coverage, både lokalt
+                och i Scrutinizer. Testerna lägger till data, hämtar den och tar bort den i filerna
+                AdventureDatabaseControllerTest.php och AdventureGameControllerTest.php. Gällande 
+                Scrutinizer behövde jag inte göra något speciellt för att testerna skulle fungera, 
+                troligtvis för att jag använder SQLite och inte MariaDB.
             </p>
             <h2 id="ORM">ORM</h2>
             <p>
-                ORM
+                Låt oss titta på fördelar, nackdelar, likheter och skillnader mellan ORM och med 
+                tidigare arbetssätt.
+            </p>
+            <h3 class="text-left">
+                Fördelar
+            </h3>
+            <p>
+                Att arbeta med ORM, på den nivån jag gjort hittills, går klart snabbare än att att skriva 
+                kod i SQL. I vårt fall arbetar vi i kursen istället med objekt i PHP. Därför kan man spara 
+                en hel del tid jämfört med att arbeta med SQL. En annan mer generell fördel är också att 
+                fler personer i ett team kan arbeta med databasen då det inte kräver några extra 
+                kunskaper om SQL.
+            </p>
+            <p>
+                ORM gör det också möjligt att mer enkelt byta mellan databaser vilket jag tänker
+                kan vara kraftfullt ute i industrin och minska beroenden av enskilda leverantörer.
+            </p>
+            <h3 class="text-left">
+                Nackdelar
+            </h3>
+            <p>
+                En stor nackdel som jag upplever är att jag faktiskt inte riktigt vet vad varje kommando
+                gör. Jag har från våra exempel i kursen och dokumentation hittat kommandon som utför det
+                jag vill, utan att jag vet hur de gör det. Dock har jag en grundförståelse från tidigare
+                databaskurs. En annan nackdel jag förstått finns är att det är svårare att optimera
+                prestanda med ORM jämfört med att arbeta direkt med SQL. Jag har dock inte själv märkt
+                av det i denna kurs.
+            </p>
+             <h3 class="text-left">
+                Likheter och skillnader
+            </h3>
+            <p>
+                Detta var en svårare fråga men jag tänker att en skillnad är att man i ORM arbetar med objekt
+                medan man i SQL arbetar direkt med information i databasen. I slutändan är det dock samma 
+                resultat (förhoppningsvis) man som slutanvändare efterfrågar. Valet av arbetssätt ligger istället på den person
+                eller team som arbetar med koden.
             </p>
            
         </article>

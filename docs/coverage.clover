@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1748848751">
-  <project timestamp="1748848751">
+<coverage generated="1748850179">
+  <project timestamp="1748850179">
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Adventure/Closet.php">
       <class name="App\Adventure\Closet" namespace="global">
         <metrics complexity="14" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="23" elements="31" coveredelements="31"/>
@@ -528,19 +528,19 @@
       <line num="28" type="stmt" count="2"/>
       <line num="31" type="method" name="getScore" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="33" type="stmt" count="2"/>
-      <line num="36" type="method" name="setScore" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="38" type="stmt" count="4"/>
-      <line num="39" type="stmt" count="4"/>
+      <line num="36" type="method" name="setScore" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="38" type="stmt" count="5"/>
+      <line num="39" type="stmt" count="5"/>
       <line num="42" type="method" name="getCreated" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="44" type="stmt" count="2"/>
-      <line num="47" type="method" name="setCreated" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="49" type="stmt" count="4"/>
-      <line num="50" type="stmt" count="4"/>
+      <line num="47" type="method" name="setCreated" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="49" type="stmt" count="5"/>
+      <line num="50" type="stmt" count="5"/>
       <line num="53" type="method" name="getPlayer" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="55" type="stmt" count="2"/>
-      <line num="58" type="method" name="setPlayer" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="60" type="stmt" count="4"/>
-      <line num="61" type="stmt" count="4"/>
+      <line num="58" type="method" name="setPlayer" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="60" type="stmt" count="5"/>
+      <line num="61" type="stmt" count="5"/>
       <metrics loc="65" ncloc="65" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="17" coveredelements="17"/>
     </file>
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Entity/PlayerEntity.php">
@@ -551,9 +551,9 @@
       <line num="21" type="stmt" count="5"/>
       <line num="24" type="method" name="getName" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="26" type="stmt" count="1"/>
-      <line num="29" type="method" name="setName" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="31" type="stmt" count="8"/>
-      <line num="33" type="stmt" count="8"/>
+      <line num="29" type="method" name="setName" visibility="public" complexity="1" crap="1" count="9"/>
+      <line num="31" type="stmt" count="9"/>
+      <line num="33" type="stmt" count="9"/>
       <metrics loc="36" ncloc="36" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
     </file>
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Kernel.php">

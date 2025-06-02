@@ -34,7 +34,7 @@ class AdventureDatabaseControllerTest extends WebTestCase
         $highscore = new Highscore();
         $highscore->setScore(123);
         $highscore->setPlayer($player);
-        $highscore->setCreated(new DateTimeImmutable()); // <-- Lägg till denna rad!
+        $highscore->setCreated(new DateTimeImmutable());
         $entityManager->persist($highscore);
 
         $entityManager->flush();

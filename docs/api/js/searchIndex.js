@@ -741,50 +741,60 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-AdventureControllerJson.html"
         },                {
-            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonQuote\u0028\u0029",
-            "name": "jsonQuote",
-            "summary": "",
-            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonQuote"
+            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AprojApi\u0028\u0029",
+            "name": "projApi",
+            "summary": "Main\u0020route\u0020for\u0020proj\/api",
+            "url": "classes/App-Controller-AdventureControllerJson.html#method_projApi"
         },                {
-            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonDeck\u0028\u0029",
-            "name": "jsonDeck",
-            "summary": "",
-            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonDeck"
+            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonNamePOST\u0028\u0029",
+            "name": "jsonNamePOST",
+            "summary": "Set\u0020player\u0027s\u0020name",
+            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonNamePOST"
         },                {
-            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonDeckShuffle\u0028\u0029",
-            "name": "jsonDeckShuffle",
-            "summary": "",
-            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonDeckShuffle"
+            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonNameGET\u0028\u0029",
+            "name": "jsonNameGET",
+            "summary": "Get\u0020player\u0027s\u0020name",
+            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonNameGET"
         },                {
-            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonDeckDraw\u0028\u0029",
-            "name": "jsonDeckDraw",
-            "summary": "",
-            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonDeckDraw"
+            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonBasketPOST\u0028\u0029",
+            "name": "jsonBasketPOST",
+            "summary": "Add\u0020laundry\u0020to\u0020basket",
+            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonBasketPOST"
         },                {
-            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonDeckDrawMany\u0028\u0029",
-            "name": "jsonDeckDrawMany",
-            "summary": "",
-            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonDeckDrawMany"
+            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonBasketGET\u0028\u0029",
+            "name": "jsonBasketGET",
+            "summary": "Get\u0020player\u0027s\u0020basket",
+            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonBasketGET"
         },                {
-            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonDeal\u0028\u0029",
-            "name": "jsonDeal",
-            "summary": "",
-            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonDeal"
+            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonPocketPOST\u0028\u0029",
+            "name": "jsonPocketPOST",
+            "summary": "Add\u0020key\u0020to\u0020player\u0027s\u0020pocket",
+            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonPocketPOST"
         },                {
-            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonScore\u0028\u0029",
-            "name": "jsonScore",
-            "summary": "",
-            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonScore"
+            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonPocketGET\u0028\u0029",
+            "name": "jsonPocketGET",
+            "summary": "Get\u0020player\u0027s\u0020pocket",
+            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonPocketGET"
         },                {
-            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonBooks\u0028\u0029",
-            "name": "jsonBooks",
-            "summary": "",
-            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonBooks"
+            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonRoomGET\u0028\u0029",
+            "name": "jsonRoomGET",
+            "summary": "Get\u0020info\u0020about\u0020the\u0020current\u0020room",
+            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonRoomGET"
         },                {
-            "fqsen": "\\App\\Controller\\AdventureControllerJson\u003A\u003AjsonBookIsbn\u0028\u0029",
-            "name": "jsonBookIsbn",
+            "fqsen": "\\App\\Controller\\AdventureDatabaseController",
+            "name": "AdventureDatabaseController",
             "summary": "",
-            "url": "classes/App-Controller-AdventureControllerJson.html#method_jsonBookIsbn"
+            "url": "classes/App-Controller-AdventureDatabaseController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\AdventureDatabaseController\u003A\u003AresetDatabase\u0028\u0029",
+            "name": "resetDatabase",
+            "summary": "Delete\u0020the\u0020database",
+            "url": "classes/App-Controller-AdventureDatabaseController.html#method_resetDatabase"
+        },                {
+            "fqsen": "\\App\\Controller\\AdventureDatabaseController\u003A\u003AadventureHighscore\u0028\u0029",
+            "name": "adventureHighscore",
+            "summary": "Load\u0020the\u0020highscore\u0020page",
+            "url": "classes/App-Controller-AdventureDatabaseController.html#method_adventureHighscore"
         },                {
             "fqsen": "\\App\\Controller\\AdventureGameController",
             "name": "AdventureGameController",
@@ -793,47 +803,52 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\AdventureGameController\u003A\u003AadventureStart\u0028\u0029",
             "name": "adventureStart",
-            "summary": "",
+            "summary": "Start\u0020Adventure,\u0020render\u0020the\u0020projects\u0020start\u0020page",
             "url": "classes/App-Controller-AdventureGameController.html#method_adventureStart"
         },                {
             "fqsen": "\\App\\Controller\\AdventureGameController\u003A\u003AgameNew\u0028\u0029",
             "name": "gameNew",
-            "summary": "",
+            "summary": "Start\u0020a\u0020new\u0020game\u0020and\u0020render\u0020the\u0020play\u0020page",
             "url": "classes/App-Controller-AdventureGameController.html#method_gameNew"
         },                {
             "fqsen": "\\App\\Controller\\AdventureGameController\u003A\u003AgamePlay\u0028\u0029",
             "name": "gamePlay",
-            "summary": "",
+            "summary": "Read\u0020the\u0020game\u0020from\u0020the\u0020session\u0020and\u0020render\u0020the\u0020play\u0020page",
             "url": "classes/App-Controller-AdventureGameController.html#method_gamePlay"
         },                {
             "fqsen": "\\App\\Controller\\AdventureGameController\u003A\u003AgameMove\u0028\u0029",
             "name": "gameMove",
-            "summary": "",
+            "summary": "Move\u0020the\u0020player\u0020from\u0020one\u0020room\u0020to\u0020another\u0020of\u0020the\u0020valid\u0020rooms\u0020available",
             "url": "classes/App-Controller-AdventureGameController.html#method_gameMove"
         },                {
             "fqsen": "\\App\\Controller\\AdventureGameController\u003A\u003AgameCollect\u0028\u0029",
             "name": "gameCollect",
-            "summary": "",
+            "summary": "Collect\u0020a\u0020thing\u0020\u0028key\u0020or\u0020laundry\u0029\u0020from\u0020a\u0020closet\u0020or\u0020a\u0020room\u0020\u0028if\u0020closetId\u0020equals\u0020null\u0029.",
             "url": "classes/App-Controller-AdventureGameController.html#method_gameCollect"
         },                {
             "fqsen": "\\App\\Controller\\AdventureGameController\u003A\u003AunlockCloset\u0028\u0029",
             "name": "unlockCloset",
-            "summary": "",
+            "summary": "Unlock\u0020a\u0020closet",
             "url": "classes/App-Controller-AdventureGameController.html#method_unlockCloset"
         },                {
             "fqsen": "\\App\\Controller\\AdventureGameController\u003A\u003AgameOver\u0028\u0029",
             "name": "gameOver",
-            "summary": "",
+            "summary": "Calculate\u0020duration\u0020and\u0020load\u0020game\u0020over",
             "url": "classes/App-Controller-AdventureGameController.html#method_gameOver"
         },                {
             "fqsen": "\\App\\Controller\\AdventureGameController\u003A\u003AadventureAbout\u0028\u0029",
             "name": "adventureAbout",
-            "summary": "",
+            "summary": "Load\u0020about\u0020page",
             "url": "classes/App-Controller-AdventureGameController.html#method_adventureAbout"
+        },                {
+            "fqsen": "\\App\\Controller\\AdventureGameController\u003A\u003AadventureAboutDatabase\u0028\u0029",
+            "name": "adventureAboutDatabase",
+            "summary": "Load\u0020about\u0020database\u0020page",
+            "url": "classes/App-Controller-AdventureGameController.html#method_adventureAboutDatabase"
         },                {
             "fqsen": "\\App\\Controller\\AdventureGameController\u003A\u003AadventureQuick\u0028\u0029",
             "name": "adventureQuick",
-            "summary": "",
+            "summary": "Load\u0020the\u0020quick\u0020solution\u0020page",
             "url": "classes/App-Controller-AdventureGameController.html#method_adventureQuick"
         },                {
             "fqsen": "\\App\\Controller\\CardGameController",
@@ -1266,6 +1281,66 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Dice-DiceHand.html#property_hand"
         },                {
+            "fqsen": "\\App\\Entity\\Highscore",
+            "name": "Highscore",
+            "summary": "",
+            "url": "classes/App-Entity-Highscore.html"
+        },                {
+            "fqsen": "\\App\\Entity\\Highscore\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/App-Entity-Highscore.html#method_getId"
+        },                {
+            "fqsen": "\\App\\Entity\\Highscore\u003A\u003AgetScore\u0028\u0029",
+            "name": "getScore",
+            "summary": "",
+            "url": "classes/App-Entity-Highscore.html#method_getScore"
+        },                {
+            "fqsen": "\\App\\Entity\\Highscore\u003A\u003AsetScore\u0028\u0029",
+            "name": "setScore",
+            "summary": "",
+            "url": "classes/App-Entity-Highscore.html#method_setScore"
+        },                {
+            "fqsen": "\\App\\Entity\\Highscore\u003A\u003AgetCreated\u0028\u0029",
+            "name": "getCreated",
+            "summary": "",
+            "url": "classes/App-Entity-Highscore.html#method_getCreated"
+        },                {
+            "fqsen": "\\App\\Entity\\Highscore\u003A\u003AsetCreated\u0028\u0029",
+            "name": "setCreated",
+            "summary": "",
+            "url": "classes/App-Entity-Highscore.html#method_setCreated"
+        },                {
+            "fqsen": "\\App\\Entity\\Highscore\u003A\u003AgetPlayer\u0028\u0029",
+            "name": "getPlayer",
+            "summary": "",
+            "url": "classes/App-Entity-Highscore.html#method_getPlayer"
+        },                {
+            "fqsen": "\\App\\Entity\\Highscore\u003A\u003AsetPlayer\u0028\u0029",
+            "name": "setPlayer",
+            "summary": "",
+            "url": "classes/App-Entity-Highscore.html#method_setPlayer"
+        },                {
+            "fqsen": "\\App\\Entity\\Highscore\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/App-Entity-Highscore.html#property_id"
+        },                {
+            "fqsen": "\\App\\Entity\\Highscore\u003A\u003A\u0024score",
+            "name": "score",
+            "summary": "",
+            "url": "classes/App-Entity-Highscore.html#property_score"
+        },                {
+            "fqsen": "\\App\\Entity\\Highscore\u003A\u003A\u0024created",
+            "name": "created",
+            "summary": "",
+            "url": "classes/App-Entity-Highscore.html#property_created"
+        },                {
+            "fqsen": "\\App\\Entity\\Highscore\u003A\u003A\u0024player",
+            "name": "player",
+            "summary": "",
+            "url": "classes/App-Entity-Highscore.html#property_player"
+        },                {
             "fqsen": "\\App\\Entity\\Library",
             "name": "Library",
             "summary": "",
@@ -1341,6 +1416,36 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-Library.html#property_image"
         },                {
+            "fqsen": "\\App\\Entity\\PlayerEntity",
+            "name": "PlayerEntity",
+            "summary": "",
+            "url": "classes/App-Entity-PlayerEntity.html"
+        },                {
+            "fqsen": "\\App\\Entity\\PlayerEntity\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/App-Entity-PlayerEntity.html#method_getId"
+        },                {
+            "fqsen": "\\App\\Entity\\PlayerEntity\u003A\u003AgetName\u0028\u0029",
+            "name": "getName",
+            "summary": "",
+            "url": "classes/App-Entity-PlayerEntity.html#method_getName"
+        },                {
+            "fqsen": "\\App\\Entity\\PlayerEntity\u003A\u003AsetName\u0028\u0029",
+            "name": "setName",
+            "summary": "",
+            "url": "classes/App-Entity-PlayerEntity.html#method_setName"
+        },                {
+            "fqsen": "\\App\\Entity\\PlayerEntity\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/App-Entity-PlayerEntity.html#property_id"
+        },                {
+            "fqsen": "\\App\\Entity\\PlayerEntity\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/App-Entity-PlayerEntity.html#property_name"
+        },                {
             "fqsen": "\\App\\Entity\\Product",
             "name": "Product",
             "summary": "",
@@ -1391,6 +1496,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Kernel.html"
         },                {
+            "fqsen": "\\App\\Repository\\HighscoreRepository",
+            "name": "HighscoreRepository",
+            "summary": "",
+            "url": "classes/App-Repository-HighscoreRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\HighscoreRepository\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Repository-HighscoreRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\HighscoreRepository\u003A\u003AresetHighscore\u0028\u0029",
+            "name": "resetHighscore",
+            "summary": "Clear\u0020the\u0020table\u0020player_entity",
+            "url": "classes/App-Repository-HighscoreRepository.html#method_resetHighscore"
+        },                {
             "fqsen": "\\App\\Repository\\LibraryRepository",
             "name": "LibraryRepository",
             "summary": "",
@@ -1405,6 +1525,21 @@ Search.appendIndex(
             "name": "resetLibrary",
             "summary": "Clear\u0020the\u0020table\u0020and\u0020add\u0020three\u0020standard\u0020books",
             "url": "classes/App-Repository-LibraryRepository.html#method_resetLibrary"
+        },                {
+            "fqsen": "\\App\\Repository\\PlayerRepository",
+            "name": "PlayerRepository",
+            "summary": "",
+            "url": "classes/App-Repository-PlayerRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\PlayerRepository\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Repository-PlayerRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\PlayerRepository\u003A\u003AresetPlayer\u0028\u0029",
+            "name": "resetPlayer",
+            "summary": "Clear\u0020the\u0020table\u0020player_entity",
+            "url": "classes/App-Repository-PlayerRepository.html#method_resetPlayer"
         },                {
             "fqsen": "\\App\\Repository\\ProductRepository",
             "name": "ProductRepository",
@@ -1795,6 +1930,181 @@ Search.appendIndex(
             "name": "testPlayerGiveCardAndGetHand",
             "summary": "Construct\u0020Player\u0020object\u0020as\u0020well\u0020as\u0020a\u0020Card\u0020object\u0020\u0028required\u0020for\u0020testing\u0029.\u0020Verify\u0020that\nthe\u0020retrieved\u0020card\u0020is\u0020the\u0020same\u0020as\u0020was\u0020initially\u0020created",
             "url": "classes/App-Card-PlayerTest.html#method_testPlayerGiveCardAndGetHand"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJson2Test",
+            "name": "AdventureControllerJson2Test",
+            "summary": "",
+            "url": "classes/App-Tests-Controller-AdventureControllerJson2Test.html"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJson2Test\u003A\u003AtestAdventureJsonAddKeyToPocketNoActiveSession\u0028\u0029",
+            "name": "testAdventureJsonAddKeyToPocketNoActiveSession",
+            "summary": "Test\u0020POST\u0020json\u0020route\u0020\u002D\u0020Add\u0020key\u0020to\u0020pocket\u0020without\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureControllerJson2Test.html#method_testAdventureJsonAddKeyToPocketNoActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJson2Test\u003A\u003AtestAdventureJsonAddKeyToPocketActiveSession\u0028\u0029",
+            "name": "testAdventureJsonAddKeyToPocketActiveSession",
+            "summary": "Test\u0020POST\u0020json\u0020route\u0020\u002D\u0020Add\u0020key\u0020to\u0020pocket\u0020with\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureControllerJson2Test.html#method_testAdventureJsonAddKeyToPocketActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJson2Test\u003A\u003AtestAdventureJsonGetKeyFromPocketNoActiveSession\u0028\u0029",
+            "name": "testAdventureJsonGetKeyFromPocketNoActiveSession",
+            "summary": "Test\u0020GET\u0020json\u0020route\u0020\u002D\u0020Get\u0020key\u0020from\u0020pocket\u0020without\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureControllerJson2Test.html#method_testAdventureJsonGetKeyFromPocketNoActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJson2Test\u003A\u003AtestAdventureJsonGetKeyFromPocketActiveSession\u0028\u0029",
+            "name": "testAdventureJsonGetKeyFromPocketActiveSession",
+            "summary": "Test\u0020GET\u0020json\u0020route\u0020\u002D\u0020Get\u0020key\u0020from\u0020pocket\u0020with\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureControllerJson2Test.html#method_testAdventureJsonGetKeyFromPocketActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJson2Test\u003A\u003AtestAdventureJsonGetRoomNoActiveSession\u0028\u0029",
+            "name": "testAdventureJsonGetRoomNoActiveSession",
+            "summary": "Test\u0020GET\u0020json\u0020route\u0020\u002D\u0020Get\u0020information\u0020about\u0020the\u0020current\u0020room\u0020without\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureControllerJson2Test.html#method_testAdventureJsonGetRoomNoActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJson2Test\u003A\u003AtestAdventureJsonGetRoomActiveSession\u0028\u0029",
+            "name": "testAdventureJsonGetRoomActiveSession",
+            "summary": "Test\u0020GET\u0020json\u0020route\u0020\u002D\u0020Get\u0020information\u0020about\u0020the\u0020current\u0020room\u0020with\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureControllerJson2Test.html#method_testAdventureJsonGetRoomActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJsonTest",
+            "name": "AdventureControllerJsonTest",
+            "summary": "",
+            "url": "classes/App-Tests-Controller-AdventureControllerJsonTest.html"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJsonTest\u003A\u003AtestAdventureApi\u0028\u0029",
+            "name": "testAdventureApi",
+            "summary": "Test\u0020GET\u0020main\u0020route\u0020for\u0020\/proj\/api",
+            "url": "classes/App-Tests-Controller-AdventureControllerJsonTest.html#method_testAdventureApi"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJsonTest\u003A\u003AtestAdventureJsonSetPlayer\u0028\u0029",
+            "name": "testAdventureJsonSetPlayer",
+            "summary": "Test\u0020POST\u0020json\u0020route\u0020for\u0020setting\u0020a\u0020players\u0020name",
+            "url": "classes/App-Tests-Controller-AdventureControllerJsonTest.html#method_testAdventureJsonSetPlayer"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJsonTest\u003A\u003AtestAdventureJsonGetPlayerNoActiveSession\u0028\u0029",
+            "name": "testAdventureJsonGetPlayerNoActiveSession",
+            "summary": "Test\u0020GET\u0020json\u0020route\u0020\u002D\u0020player\u0027s\u0020name\u0020without\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureControllerJsonTest.html#method_testAdventureJsonGetPlayerNoActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJsonTest\u003A\u003AtestAdventureJsonGetPlayerActiveSession\u0028\u0029",
+            "name": "testAdventureJsonGetPlayerActiveSession",
+            "summary": "Test\u0020GET\u0020json\u0020route\u0020\u002D\u0020player\u0027s\u0020name\u0020with\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureControllerJsonTest.html#method_testAdventureJsonGetPlayerActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJsonTest\u003A\u003AtestAdventureJsonAddLaundryToBasketNoActiveSession\u0028\u0029",
+            "name": "testAdventureJsonAddLaundryToBasketNoActiveSession",
+            "summary": "Test\u0020POST\u0020json\u0020route\u0020\u002D\u0020Add\u0020laundry\u0020to\u0020basket\u0020without\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureControllerJsonTest.html#method_testAdventureJsonAddLaundryToBasketNoActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJsonTest\u003A\u003AtestAdventureJsonAddLaundryToBasketActiveSession\u0028\u0029",
+            "name": "testAdventureJsonAddLaundryToBasketActiveSession",
+            "summary": "Test\u0020POST\u0020json\u0020route\u0020\u002D\u0020Add\u0020laundry\u0020to\u0020basket\u0020with\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureControllerJsonTest.html#method_testAdventureJsonAddLaundryToBasketActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJsonTest\u003A\u003AtestAdventureJsonGetLaundryFromBasketNoActiveSession\u0028\u0029",
+            "name": "testAdventureJsonGetLaundryFromBasketNoActiveSession",
+            "summary": "Test\u0020GET\u0020json\u0020route\u0020\u002D\u0020Get\u0020laundry\u0020from\u0020basket\u0020without\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureControllerJsonTest.html#method_testAdventureJsonGetLaundryFromBasketNoActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureControllerJsonTest\u003A\u003AtestAdventureJsonGetLaundryFromBasketActiveSession\u0028\u0029",
+            "name": "testAdventureJsonGetLaundryFromBasketActiveSession",
+            "summary": "Test\u0020GET\u0020json\u0020route\u0020\u002D\u0020Get\u0020laundry\u0020from\u0020basket\u0020with\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureControllerJsonTest.html#method_testAdventureJsonGetLaundryFromBasketActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureDatabaseControllerTest",
+            "name": "AdventureDatabaseControllerTest",
+            "summary": "",
+            "url": "classes/App-Tests-Controller-AdventureDatabaseControllerTest.html"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureDatabaseControllerTest\u003A\u003AtestResetDatabase\u0028\u0029",
+            "name": "testResetDatabase",
+            "summary": "Test\u0020POST\u0020route\u0020\/proj\/entity\/delete",
+            "url": "classes/App-Tests-Controller-AdventureDatabaseControllerTest.html#method_testResetDatabase"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureDatabaseControllerTest\u003A\u003AtestAdventureHighscorePageLoads\u0028\u0029",
+            "name": "testAdventureHighscorePageLoads",
+            "summary": "Test\u0020GET\u0020route\u0020\/proj\/highscore",
+            "url": "classes/App-Tests-Controller-AdventureDatabaseControllerTest.html#method_testAdventureHighscorePageLoads"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureDatabaseControllerTest\u003A\u003AtestAdventureGettersAndSetters\u0028\u0029",
+            "name": "testAdventureGettersAndSetters",
+            "summary": "Test\u0020all\u0020setters\u0020and\u0020getters\u0020for\u0020highscore",
+            "url": "classes/App-Tests-Controller-AdventureDatabaseControllerTest.html#method_testAdventureGettersAndSetters"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureDatabaseControllerTest\u003A\u003AtestHighscoreGetId\u0028\u0029",
+            "name": "testHighscoreGetId",
+            "summary": "",
+            "url": "classes/App-Tests-Controller-AdventureDatabaseControllerTest.html#method_testHighscoreGetId"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureDatabaseControllerTest\u003A\u003AtestAdventureGettersAndSettersHighscore\u0028\u0029",
+            "name": "testAdventureGettersAndSettersHighscore",
+            "summary": "Test\u0020all\u0020setters\u0020and\u0020getters\u0020for\u0020highscore",
+            "url": "classes/App-Tests-Controller-AdventureDatabaseControllerTest.html#method_testAdventureGettersAndSettersHighscore"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureDatabaseControllerTest\u003A\u003AtestAdventureGettersAndSettersPlayer\u0028\u0029",
+            "name": "testAdventureGettersAndSettersPlayer",
+            "summary": "Test\u0020remaining\u0020setters\u0020and\u0020getters\u0020for\u0020player",
+            "url": "classes/App-Tests-Controller-AdventureDatabaseControllerTest.html#method_testAdventureGettersAndSettersPlayer"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureDatabaseControllerTest\u003A\u003AtestAdventureQuick\u0028\u0029",
+            "name": "testAdventureQuick",
+            "summary": "Test\u0020GET\u0020quick\u0020solution\u0020page",
+            "url": "classes/App-Tests-Controller-AdventureDatabaseControllerTest.html#method_testAdventureQuick"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest",
+            "name": "AdventureGameControllerTest",
+            "summary": "",
+            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventureLoadStartPage\u0028\u0029",
+            "name": "testAdventureLoadStartPage",
+            "summary": "Test\u0020GET\u0020route\u0020\/proj",
+            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventureLoadStartPage"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventureNewGameEmptyName\u0028\u0029",
+            "name": "testAdventureNewGameEmptyName",
+            "summary": "Test\u0020POST\u0020route\u0020\/proj\/game\/new\u0020without\u0020name",
+            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventureNewGameEmptyName"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventureNewGameWithName\u0028\u0029",
+            "name": "testAdventureNewGameWithName",
+            "summary": "Test\u0020POST\u0020route\u0020\/proj\/game\/new\u0020with\u0020name",
+            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventureNewGameWithName"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventureGamePlayWithActiveSession\u0028\u0029",
+            "name": "testAdventureGamePlayWithActiveSession",
+            "summary": "Test\u0020GET\u0020route\u0020\/proj\/game\u0020with\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventureGamePlayWithActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventureGamePlayWithoutActiveSession\u0028\u0029",
+            "name": "testAdventureGamePlayWithoutActiveSession",
+            "summary": "Test\u0020GET\u0020route\u0020\/proj\/game\u0020without\u0020an\u0020active\u0020session",
+            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventureGamePlayWithoutActiveSession"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventureGameMove\u0028\u0029",
+            "name": "testAdventureGameMove",
+            "summary": "Test\u0020GET\u0020route\u0020\/proj\/game\/move\/\u007Bwhere\u007D",
+            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventureGameMove"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventuregameCollectFromRoom\u0028\u0029",
+            "name": "testAdventuregameCollectFromRoom",
+            "summary": "Test\u0020POST\u0020route\u0020\/proj\/game\/collect\/\u007BthingId\u007D\/\u007BclosetId\u007D.\u0020ClosedId\u0020\u003D\u00200",
+            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventuregameCollectFromRoom"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventureGameOver\u0028\u0029",
+            "name": "testAdventureGameOver",
+            "summary": "Test\u0020GET\u0020Game\u0020over",
+            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventureGameOver"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventureAbout\u0028\u0029",
+            "name": "testAdventureAbout",
+            "summary": "Test\u0020Get\u0020About",
+            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventureAbout"
+        },                {
+            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventureAboutDatabase\u0028\u0029",
+            "name": "testAdventureAboutDatabase",
+            "summary": "Test\u0020GET\u0020about\u0020database",
+            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventureAboutDatabase"
         },                {
             "fqsen": "\\App\\Tests\\Controller\\LibraryControllerTest",
             "name": "LibraryControllerTest",

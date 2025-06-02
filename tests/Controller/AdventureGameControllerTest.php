@@ -207,17 +207,4 @@ class AdventureGameControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('body', 'Återställ databasen');
     }
-
-    /**
-     * Test GET quick solution page
-     */
-    public function testAdventureQuick(): void
-    {
-        $client = static::createClient();
-
-        $client->request('GET', '/proj/quick');
-
-        $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('body', 'Så här kan du spela genom spelet snabbt och enkelt');
-    }
 }

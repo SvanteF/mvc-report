@@ -11,6 +11,7 @@ use App\Entity\Highscore;
 use DateTimeImmutable;
 use DateTimeZone;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 
 class AdventureDatabaseControllerTest extends WebTestCase
@@ -53,7 +54,7 @@ class AdventureDatabaseControllerTest extends WebTestCase
         // Create a new highscore and player entity as well as creating a date
         $highscore = new Highscore();
         $player = new PlayerEntity();
-        $date = new \DateTimeImmutable();
+        $date = new DateTimeImmutable();
 
         // Set value to score, player and date
         $highscore->setScore(666);
@@ -68,19 +69,20 @@ class AdventureDatabaseControllerTest extends WebTestCase
 
 public function testHighscoreGetId(): void
 {
+    // @phpstan-ignore-next-line
     $entityManager = static::getContainer()->get('doctrine')->getManager();
 
     // Skapa en spelare först
-    $player = new \App\Entity\PlayerEntity();
+    $player = new PlayerEntity();
     $player->setName('Testspelare');
     $entityManager->persist($player);
     $entityManager->flush();
 
     // Skapa highscore med koppling till spelaren och datum
-    $highscore = new \App\Entity\Highscore();
+    $highscore = new Highscore();
     $highscore->setScore(123);
     $highscore->setPlayer($player);
-    $highscore->setCreated(new \DateTimeImmutable()); // <-- Lägg till denna rad!
+    $highscore->setCreated(new DateTimeImmutable()); // <-- Lägg till denna rad!
     $entityManager->persist($highscore);
     $entityManager->flush();
 
@@ -93,6 +95,7 @@ public function testHighscoreGetId(): void
      */
     public function testAdventureGettersAndSettersHighscore(): void
     {
+        // @phpstan-ignore-next-line
         $entityManager = static::getContainer()->get('doctrine')->getManager();
 
         // Create a new player entity and persist it
@@ -103,7 +106,7 @@ public function testHighscoreGetId(): void
 
         // Create a new highscore and set values
         $highscore = new Highscore();
-        $date = new \DateTimeImmutable();
+        $date = new DateTimeImmutable();
         $highscore->setScore(1);
         $highscore->setPlayer($player);
         $highscore->setCreated($date);
@@ -132,4 +135,16 @@ public function testHighscoreGetId(): void
         $this->assertEquals('Test Name', $player->getName());
     }
 
+    /**
+     * Test GET quick solution page
+     */
+    public function testAdventureQuick(): void
+    {
+        $client = static::createClient();
+
+        $client->request('GET', '/proj/quick');
+
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('body', 'Så här kan du spela genom spelet snabbt och enkelt');
+    }
 }

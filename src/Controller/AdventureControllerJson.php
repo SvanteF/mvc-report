@@ -169,7 +169,7 @@ class AdventureControllerJson extends AbstractController
 
         foreach ($basket as $laundry) {
             $data[] = [
-                'laundry, id' => $laundry->getId()
+                'laundry_id' => $laundry->getId()
             ];
         }
 

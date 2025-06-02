@@ -23,10 +23,29 @@ class AdventureDatabaseControllerTest extends WebTestCase
    {
         $client = static::createClient();
 
+        $entityManager = static::getContainer()->get('doctrine')->getManager();
+
+        // Create a new player
+        $player = new PlayerEntity();
+        $player->setName('Test Name');
+        $entityManager->persist($player);
+
+        // Create a new highscore and connect to player
+        $highscore = new Highscore();
+        $highscore->setScore(123);
+        $highscore->setPlayer($player);
+        $highscore->setCreated(new DateTimeImmutable()); // <-- Lägg till denna rad!
+        $entityManager->persist($highscore);
+
+        $entityManager->flush();
+
         $client->request('POST', '/proj/entity/delete');
 
-        // Verify that an emty name redirects to /proj/about/database
+        // Verify that an empty name redirects to /proj/about/database
         $this->assertResponseRedirects('/proj/about/database');
+        $entityManager->clear();
+
+        $this->assertCount(0, $entityManager->getRepository(Highscore::class)->findAll());
 
         // Verify the right output of the flash message.
         $client->followRedirect();
@@ -72,13 +91,13 @@ public function testHighscoreGetId(): void
     // @phpstan-ignore-next-line
     $entityManager = static::getContainer()->get('doctrine')->getManager();
 
-    // Skapa en spelare först
+    // Create a new player
     $player = new PlayerEntity();
-    $player->setName('Testspelare');
+    $player->setName('Test Name');
     $entityManager->persist($player);
     $entityManager->flush();
 
-    // Skapa highscore med koppling till spelaren och datum
+    // Create a new highscore and connect to player
     $highscore = new Highscore();
     $highscore->setScore(123);
     $highscore->setPlayer($player);

@@ -63,7 +63,7 @@ class AdventureControllerJsonTest extends WebTestCase
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
         
-        // Verify that an error is thown if there is no game
+        // Verify that an error is thrown if there is no game
         $this->assertEquals('No game has been created, create it first', $data['error']);
     }
 
@@ -127,7 +127,7 @@ class AdventureControllerJsonTest extends WebTestCase
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
        
-        // Verify that laundy has been added to the basket
+        // Verify that laundry has been added to the basket
         $this->assertArrayHasKey('laundry_id', $data[0]);
     }
 
@@ -171,7 +171,7 @@ class AdventureControllerJsonTest extends WebTestCase
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
         
-        // Verify that that laundry was read correctly
+        // Verify that laundry was read correctly
         $this->assertArrayHasKey('laundry_id', $data[0]);
     }
 }

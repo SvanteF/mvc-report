@@ -93,7 +93,7 @@ class ClosetTest extends TestCase
     }
 
     /**
-    * Verify that a Thing is removed from Closet it it is open.
+    * Verify that a Thing is removed from Closet if it is open.
     */
     public function testRemoveThingsFromCloset(): void
     {
@@ -119,7 +119,6 @@ class ClosetTest extends TestCase
         $closet2->addThing($thing);
 
         $this->assertTrue($closet2->removeThing($thing));
-        //$this->assertNotContains($thing, $closet->getThings());
     }
 
     /**

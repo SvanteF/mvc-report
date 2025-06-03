@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1748855970">
-  <project timestamp="1748855970">
+<coverage generated="1748926376">
+  <project timestamp="1748926376">
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Adventure/Closet.php">
       <class name="App\Adventure\Closet" namespace="global">
         <metrics complexity="14" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="23" elements="31" coveredelements="31"/>
@@ -11,32 +11,32 @@
       <line num="27" type="stmt" count="24"/>
       <line num="33" type="method" name="getId" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="35" type="stmt" count="3"/>
-      <line num="48" type="method" name="unlock" visibility="public" complexity="3" crap="3" count="4"/>
-      <line num="50" type="stmt" count="4"/>
-      <line num="51" type="stmt" count="2"/>
-      <line num="52" type="stmt" count="2"/>
+      <line num="43" type="method" name="unlock" visibility="public" complexity="3" crap="3" count="4"/>
+      <line num="45" type="stmt" count="4"/>
+      <line num="46" type="stmt" count="2"/>
+      <line num="47" type="stmt" count="2"/>
+      <line num="49" type="stmt" count="3"/>
+      <line num="52" type="method" name="isLocked" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="54" type="stmt" count="3"/>
-      <line num="57" type="method" name="isLocked" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="59" type="stmt" count="3"/>
-      <line num="62" type="method" name="getThingById" visibility="public" complexity="3" crap="3" count="1"/>
+      <line num="57" type="method" name="getThingById" visibility="public" complexity="3" crap="3" count="1"/>
+      <line num="59" type="stmt" count="1"/>
+      <line num="60" type="stmt" count="1"/>
+      <line num="61" type="stmt" count="1"/>
       <line num="64" type="stmt" count="1"/>
-      <line num="65" type="stmt" count="1"/>
-      <line num="66" type="stmt" count="1"/>
-      <line num="69" type="stmt" count="1"/>
-      <line num="72" type="method" name="addThing" visibility="public" complexity="1" crap="1" count="17"/>
-      <line num="74" type="stmt" count="17"/>
-      <line num="77" type="method" name="removeThing" visibility="public" complexity="3" crap="3" count="2"/>
+      <line num="67" type="method" name="addThing" visibility="public" complexity="1" crap="1" count="17"/>
+      <line num="69" type="stmt" count="17"/>
+      <line num="72" type="method" name="removeThing" visibility="public" complexity="3" crap="3" count="2"/>
+      <line num="75" type="stmt" count="2"/>
+      <line num="76" type="stmt" count="1"/>
+      <line num="79" type="stmt" count="2"/>
       <line num="80" type="stmt" count="2"/>
-      <line num="81" type="stmt" count="1"/>
-      <line num="84" type="stmt" count="2"/>
+      <line num="81" type="stmt" count="2"/>
+      <line num="82" type="stmt" count="2"/>
+      <line num="83" type="stmt" count="2"/>
       <line num="85" type="stmt" count="2"/>
-      <line num="86" type="stmt" count="2"/>
-      <line num="87" type="stmt" count="2"/>
-      <line num="88" type="stmt" count="2"/>
-      <line num="90" type="stmt" count="2"/>
-      <line num="96" type="method" name="getThings" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="98" type="stmt" count="1"/>
-      <metrics loc="101" ncloc="79" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="23" elements="31" coveredelements="31"/>
+      <line num="91" type="method" name="getThings" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="93" type="stmt" count="1"/>
+      <metrics loc="96" ncloc="78" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="23" elements="31" coveredelements="31"/>
     </file>
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Adventure/Game.php">
       <class name="App\Adventure\Game" namespace="global">
@@ -50,40 +50,40 @@
       <line num="51" type="stmt" count="13"/>
       <line num="52" type="stmt" count="13"/>
       <line num="58" type="stmt" count="13"/>
+      <line num="60" type="stmt" count="13"/>
+      <line num="61" type="stmt" count="13"/>
       <line num="62" type="stmt" count="13"/>
       <line num="63" type="stmt" count="13"/>
       <line num="64" type="stmt" count="13"/>
-      <line num="65" type="stmt" count="13"/>
-      <line num="66" type="stmt" count="13"/>
+      <line num="70" type="stmt" count="13"/>
+      <line num="71" type="stmt" count="13"/>
       <line num="72" type="stmt" count="13"/>
       <line num="73" type="stmt" count="13"/>
       <line num="74" type="stmt" count="13"/>
-      <line num="75" type="stmt" count="13"/>
-      <line num="76" type="stmt" count="13"/>
+      <line num="81" type="stmt" count="13"/>
+      <line num="82" type="stmt" count="13"/>
       <line num="83" type="stmt" count="13"/>
       <line num="84" type="stmt" count="13"/>
-      <line num="85" type="stmt" count="13"/>
-      <line num="86" type="stmt" count="13"/>
+      <line num="90" type="stmt" count="13"/>
+      <line num="91" type="stmt" count="13"/>
       <line num="92" type="stmt" count="13"/>
       <line num="93" type="stmt" count="13"/>
       <line num="94" type="stmt" count="13"/>
-      <line num="95" type="stmt" count="13"/>
-      <line num="96" type="stmt" count="13"/>
+      <line num="99" type="stmt" count="13"/>
+      <line num="100" type="stmt" count="13"/>
       <line num="101" type="stmt" count="13"/>
       <line num="102" type="stmt" count="13"/>
-      <line num="103" type="stmt" count="13"/>
-      <line num="104" type="stmt" count="13"/>
+      <line num="107" type="stmt" count="13"/>
+      <line num="108" type="stmt" count="13"/>
       <line num="109" type="stmt" count="13"/>
       <line num="110" type="stmt" count="13"/>
-      <line num="111" type="stmt" count="13"/>
-      <line num="112" type="stmt" count="13"/>
-      <line num="115" type="stmt" count="13"/>
-      <line num="120" type="stmt" count="13"/>
-      <line num="126" type="method" name="getPlayer" visibility="public" complexity="1" crap="1" count="13"/>
-      <line num="128" type="stmt" count="13"/>
-      <line num="134" type="method" name="getRooms" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="136" type="stmt" count="1"/>
-      <metrics loc="139" ncloc="82" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="38" elements="41" coveredelements="41"/>
+      <line num="113" type="stmt" count="13"/>
+      <line num="118" type="stmt" count="13"/>
+      <line num="124" type="method" name="getPlayer" visibility="public" complexity="1" crap="1" count="13"/>
+      <line num="126" type="stmt" count="13"/>
+      <line num="132" type="method" name="getRooms" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="134" type="stmt" count="1"/>
+      <metrics loc="137" ncloc="83" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="38" elements="41" coveredelements="41"/>
     </file>
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Adventure/Key.php">
       <class name="App\Adventure\Key" namespace="global">
@@ -230,7 +230,7 @@
     </file>
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Controller/AdventureControllerJson.php">
       <class name="App\Controller\AdventureControllerJson" namespace="global">
-        <metrics complexity="23" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="144" coveredstatements="144" elements="152" coveredelements="152"/>
+        <metrics complexity="23" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="145" coveredstatements="145" elements="153" coveredelements="153"/>
       </class>
       <line num="22" type="method" name="projApi" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="25" type="stmt" count="1"/>
@@ -363,28 +363,29 @@
       <line num="261" type="stmt" count="1"/>
       <line num="267" type="method" name="jsonRoomGET" visibility="public" complexity="3" crap="3" count="2"/>
       <line num="272" type="stmt" count="2"/>
-      <line num="275" type="stmt" count="2"/>
-      <line num="277" type="stmt" count="1"/>
-      <line num="278" type="stmt" count="1"/>
+      <line num="274" type="stmt" count="2"/>
+      <line num="277" type="stmt" count="2"/>
       <line num="279" type="stmt" count="1"/>
+      <line num="280" type="stmt" count="1"/>
       <line num="281" type="stmt" count="1"/>
-      <line num="282" type="stmt" count="1"/>
       <line num="283" type="stmt" count="1"/>
       <line num="284" type="stmt" count="1"/>
       <line num="285" type="stmt" count="1"/>
-      <line num="288" type="stmt" count="1"/>
-      <line num="289" type="stmt" count="1"/>
+      <line num="286" type="stmt" count="1"/>
+      <line num="287" type="stmt" count="1"/>
+      <line num="290" type="stmt" count="1"/>
       <line num="291" type="stmt" count="1"/>
-      <line num="292" type="stmt" count="1"/>
       <line num="293" type="stmt" count="1"/>
       <line num="294" type="stmt" count="1"/>
       <line num="295" type="stmt" count="1"/>
+      <line num="296" type="stmt" count="1"/>
       <line num="297" type="stmt" count="1"/>
-      <line num="298" type="stmt" count="1"/>
       <line num="299" type="stmt" count="1"/>
       <line num="300" type="stmt" count="1"/>
       <line num="301" type="stmt" count="1"/>
-      <metrics loc="304" ncloc="272" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="144" coveredstatements="144" elements="152" coveredelements="152"/>
+      <line num="302" type="stmt" count="1"/>
+      <line num="303" type="stmt" count="1"/>
+      <metrics loc="306" ncloc="274" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="145" coveredstatements="145" elements="153" coveredelements="153"/>
     </file>
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Controller/AdventureDatabaseController.php">
       <class name="App\Controller\AdventureDatabaseController" namespace="global">
@@ -405,7 +406,7 @@
     </file>
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Controller/AdventureGameController.php">
       <class name="App\Controller\AdventureGameController" namespace="global">
-        <metrics complexity="17" methods="10" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="101" coveredstatements="74" elements="111" coveredelements="82"/>
+        <metrics complexity="18" methods="10" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="102" coveredstatements="75" elements="112" coveredelements="83"/>
       </class>
       <line num="25" type="method" name="adventureStart" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="29" type="stmt" count="2"/>
@@ -492,7 +493,7 @@
       <line num="188" type="stmt" count="0"/>
       <line num="190" type="stmt" count="0"/>
       <line num="192" type="stmt" count="0"/>
-      <line num="198" type="method" name="gameOver" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="198" type="method" name="gameOver" visibility="public" complexity="2" crap="2" count="1"/>
       <line num="205" type="stmt" count="1"/>
       <line num="206" type="stmt" count="1"/>
       <line num="207" type="stmt" count="1"/>
@@ -502,23 +503,24 @@
       <line num="215" type="stmt" count="1"/>
       <line num="216" type="stmt" count="1"/>
       <line num="217" type="stmt" count="1"/>
-      <line num="218" type="stmt" count="1"/>
+      <line num="219" type="stmt" count="1"/>
       <line num="220" type="stmt" count="1"/>
-      <line num="221" type="stmt" count="1"/>
       <line num="222" type="stmt" count="1"/>
-      <line num="225" type="stmt" count="1"/>
-      <line num="226" type="stmt" count="1"/>
+      <line num="223" type="stmt" count="1"/>
+      <line num="224" type="stmt" count="1"/>
       <line num="227" type="stmt" count="1"/>
+      <line num="228" type="stmt" count="1"/>
       <line num="229" type="stmt" count="1"/>
-      <line num="230" type="stmt" count="1"/>
       <line num="231" type="stmt" count="1"/>
-      <line num="237" type="method" name="adventureAbout" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="240" type="stmt" count="1"/>
-      <line num="246" type="method" name="adventureAboutDatabase" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="249" type="stmt" count="2"/>
-      <line num="255" type="method" name="adventureQuick" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="257" type="stmt" count="1"/>
-      <metrics loc="260" ncloc="225" classes="1" methods="10" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="101" coveredstatements="74" elements="111" coveredelements="82"/>
+      <line num="232" type="stmt" count="1"/>
+      <line num="233" type="stmt" count="1"/>
+      <line num="239" type="method" name="adventureAbout" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="242" type="stmt" count="1"/>
+      <line num="248" type="method" name="adventureAboutDatabase" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="251" type="stmt" count="2"/>
+      <line num="257" type="method" name="adventureQuick" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="259" type="stmt" count="1"/>
+      <metrics loc="262" ncloc="227" classes="1" methods="10" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="102" coveredstatements="75" elements="112" coveredelements="83"/>
     </file>
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Entity/Highscore.php">
       <class name="App\Entity\Highscore" namespace="global">
@@ -590,6 +592,6 @@
       <line num="31" type="stmt" count="1"/>
       <metrics loc="35" ncloc="29" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="15" loc="1549" ncloc="1174" classes="14" methods="80" coveredmethods="78" conditionals="0" coveredconditionals="0" statements="419" coveredstatements="392" elements="499" coveredelements="470"/>
+    <metrics files="15" loc="1546" ncloc="1178" classes="14" methods="80" coveredmethods="78" conditionals="0" coveredconditionals="0" statements="421" coveredstatements="394" elements="501" coveredelements="472"/>
   </project>
 </coverage>

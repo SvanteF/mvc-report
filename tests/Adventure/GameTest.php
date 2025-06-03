@@ -20,7 +20,7 @@ class GameTest extends TestCase
 
         $this->assertInstanceOf("\App\Adventure\Game", $game);
 
-        //Verify that a plaer was created
+        //Verify that a player was created
         $player = $game->getPlayer();
         $this->assertInstanceOf("\App\Adventure\Player", $player);
 

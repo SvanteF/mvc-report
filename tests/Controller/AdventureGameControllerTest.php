@@ -40,7 +40,7 @@ class AdventureGameControllerTest extends WebTestCase
             'name' => ''
         ]);
 
-        // Verify that an emty name redirects to /proj
+        // Verify that an empty name redirects to /proj
         $this->assertResponseRedirects('/proj');
         
         // Verify the right output of the flash message.
@@ -126,9 +126,9 @@ class AdventureGameControllerTest extends WebTestCase
     }
 
     /**
-     * Test POST route /proj/game/collect/{thingId}/{closetId}. ClosedId = 0
+     * Test POST route /proj/game/collect/{thingId}/{closetId}. ClosetId = 0
      */
-    public function testAdventuregameCollectFromRoom(): void
+    public function testAdventureGameCollectFromRoom(): void
     {
         $client = static::createClient();
 
@@ -175,7 +175,7 @@ class AdventureGameControllerTest extends WebTestCase
         // Verify that the time is visible
         $this->assertSelectorTextContains('body', '666');
 
-        // Verify that the session is clearad
+        // Verify that the session is cleared
         $session = $client->getRequest()->getSession();
         $this->assertFalse($session->has('Game'));
         $this->assertFalse($session->has('start_time'));

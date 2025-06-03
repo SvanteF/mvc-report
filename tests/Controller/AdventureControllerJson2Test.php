@@ -29,7 +29,7 @@ class AdventureControllerJson2Test extends WebTestCase
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
         
-        // Verify that an error is thown if there is no game
+        // Verify that an error is thrown if there is no game
         $this->assertEquals('No game has been created, create it first', $data['error']);
     }
 
@@ -96,7 +96,7 @@ class AdventureControllerJson2Test extends WebTestCase
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
 
-        // Verify that that a key was read correctly
+        // Verify that a key was read correctly
         $this->assertArrayHasKey('key_id', $data[0]);
     }
 

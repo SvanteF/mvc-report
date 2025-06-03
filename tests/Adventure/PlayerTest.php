@@ -84,7 +84,7 @@ class PlayerTest extends TestCase
     /**
      * Verify that the wrong key cannot open a closet but the right one can
      */
-    public function testunlockClosetByPlayer(): void
+    public function testUnlockClosetByPlayer(): void
     {
         $name = 'Hallen';
         $playerName = 'John Doe';
@@ -105,7 +105,7 @@ class PlayerTest extends TestCase
         // Get the closet added above in room 'Hallen' in position 0.
         $closet = $startRoom->getClosets()[0];
 
-        // Verify that fasle is returned if there is no key in the pocket
+        // Verify that false is returned if there is no key in the pocket
         $this->assertFalse($player->useKeyOnCloset($key1->getId(), $closet));
 
         // Give the wrong key to the player
@@ -117,7 +117,7 @@ class PlayerTest extends TestCase
         // Throw away the wrong key
         $player->emptyPocket();
 
-        // Give the rigth key to the player
+        // Give the right key to the player
         $player->addKeyToPocket($key1);
 
         // Verify that the player unlocked the closet with the key
@@ -151,7 +151,7 @@ class PlayerTest extends TestCase
         // Verify that the player now is in grovköket
         $this->assertSame($grovkok, $player->getCurrentRoom());
 
-        // Change curret room to $hallen
+        // Change current room to $hallen
         $player->setCurrentRoom($hallen);
 
         // Verify that the player now is in hallen

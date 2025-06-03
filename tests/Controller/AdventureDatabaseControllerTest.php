@@ -81,7 +81,7 @@ class AdventureDatabaseControllerTest extends WebTestCase
         $highscore->setPlayer($player);
         $highscore->setCreated($date);
 
-        // Verify that higscore gets the right values
+        // Verify that highscore gets the right values
         $this->assertEquals(666, $highscore->getScore());
         $this->assertSame($player, $highscore->getPlayer());
         $this->assertSame($date, $highscore->getCreated());

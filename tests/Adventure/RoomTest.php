@@ -40,7 +40,7 @@ class RoomTest extends TestCase
 
         $room->addThing($thing);
 
-        // Verify that that getThings() return the object that was added
+        // Verify that getThings() return the object that was added
         $this->assertContains($thing, $room->getThings());
 
     }
@@ -109,7 +109,7 @@ class RoomTest extends TestCase
     }
 
      /**
-    * Verify that a id can be read
+    * Verify that an id can be read
     */
     public function testIdRoom(): void
     {

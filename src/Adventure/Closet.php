@@ -35,11 +35,6 @@ class Closet
         return $this->id;
     }
 
-    /*public function lock(): void
-    {
-        $this->locked = true;
-    }*/
-
     /**
      * Unlock a door
      *

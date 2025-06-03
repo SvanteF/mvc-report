@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 class LaundryTest extends TestCase
 {
     /**
-     * Construct object and verify that the correct instance is created as well as correvt type & visibility
+     * Construct object and verify that the correct instance is created as well as correct type & visibility
      */
     public function testLaundry(): void
     {

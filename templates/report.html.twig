@@ -429,7 +429,142 @@
             </p>
             <h2 id="kmom07/10">Kmom07/10</h2>
             <p>
-                ...
+                Samtliga obligatoriska och optionella krav är implementerade.
+            </p>
+            <h3>
+                Krav 1-3: Webbplats
+            </h3>
+            <p>
+                Landningssidan /proj syns i navbaren med namnet Adventure vilket är det fokus jag valt för
+                projektet. Jag har skapat spelet Laundry Master och stilen och utseendet för projektet skiljer sig 
+                markant från min report-sida och övriga sidor under kursen. En ny stylesheet är skapad där färger, 
+                typsnitt och layout är förändrade för hela /proj inklusive header och footer. Min ambition är att spelet ska 
+                kännas som ett retro-spel och jag har därför valt både typsnitt och färger med omsorg. 
+                Även bilderna är speciellt framtagna för spelet och visar korrekt antal objekt i rummen 
+                för att höja spelupplevelsen. Mer om det under krav 6.
+            </p>
+            <p>
+                Projektet har även en separat navbar som innehåller länkarna för projektet. Dessa
+                är <code>/proj</code> - "Starta ett nytt spel", <code>/proj/highscore</code> - Highscores,
+                <code>/proj/about</code> - Om, <code>/proj/quick</code> - "Snabblösning" till lärare 
+                samt <code>/proj/api</code> - API. Under <code>/proj/about</code> förklarar jag utförligt 
+                bakgrund och tanke med projektet.
+            </p>
+            <p>
+                Git repo har en <code>README.md</code> som uppfyller samtliga krav. Klickbara badges till
+                Scrutinizer finns. Innehållet i report beskrivs samt en instruktion för man kan klona och 
+                komma igång med webbplatsen.
+            </p>
+            <p>
+                Innehållet i <code>/docs</code> är uppdaterat. Jag har lagt stor kraft på kodtäckningen
+                vilken är 100% för de obligatoriska delarna och totalt 94% med tester för 
+                Controllers. Dokumentation och metrics finns naturligtvis.
+            </p>
+            <h3>
+                Krav 4: JSON API
+            </h3>
+            <p>
+                Jag har skapat JSON API till projektet på <code>proj/api</code>. Totalt är 7 API
+                implementerade varav 3 POST och 4 GET. Samtliga APIer har knappar som kan användas 
+                för att testa varje API. Samtliga fungerar väl och var givande att använda i 
+                utvecklingen av projektet.
+                <br>
+                <code>POST /proj/api/player/:name</code>
+                <br>
+                <code>GET /proj/api/player</code>
+                <br>
+                <code>POST /proj/api/basket/add</code>
+                <br>
+                <code>GET /proj/api/basket</code>
+                <br>
+                <code>POST /proj/api/pocket/add</code>
+                <br>
+                <code>GET /proj/api/pocket</code>
+                <br>
+                <code>GET /proj/api/room</code>
+                <br>
+            </p>
+            <h3>
+                Krav 5: ORM
+            </h3>
+            <p>
+                Jag har använt databasen SQLite via ORM. Databasen använder, för det här projektet, två relevanta 
+                tabeller, "player_entity" och "highscore". Dessa har en många-till-en relation mellan sig. Jag har 
+                skapat sidan <code>proj/about/database</code> - "Information om databasen" som jag länkat till 
+                från <code>proj/about</code>. Där har jag utförligt svarat på samtliga frågor i krav 5. 
+            </p>
+            <h3>
+                Krav 6: Avancerade features
+            </h3>
+            <p>
+                Jag har implementerat ett flertal features som varit extra svåra eller tagit lång tid att utföra. Samtliga
+                har jag gjort för att förbättra webbsidan och framförallt spelupplevelsen av Laundry Master.
+            </p>
+            <p>
+                Feature 1: Det första jag vill lyfta är att jag la en hel del energi på att designa spelet så det skulle bli roligt 
+                att spela och därför tyckte jag inte att de räckte med kraven att man skulle kunna ta saker och lägga i
+                ryggsäck och förflytta sig. Istället implementerade jag tvätt som man samlar i en korg, nyckel som man kan lägga
+                i en spelares ficka samt garderober som innehåller nycklar och tvätt. De garderoberna kan dessutom vara låsta. 
+                Konkret betydde det att jag implementerade en mer komplex värld med betydligt fler klasser än vad kraven krävde.
+            </p>
+            <p>
+                Feature 2: Jag blev inspirerad av Mikaels projektintroduktion till att implementera tester även för Controllers vilket
+                jag också gjorde. Detta var svårt då vi inte gått genom det i kursen och tog dessutom många timmar att genomföra. 
+                Min ambition var att behålla 100% coverage som jag hade från grundkraven men landade i varje fall på 94% till slut
+                när jag fick nöja mig pga tidsbrist.
+            </p>
+            <p>
+                Feature 3: Det är 2025 så därför måste ett spel måste kunna spelas på en telefon. Jag passade på att repetera
+                från designkursen och skapade därför mobilanpassning för alla projektsidor. Detta var tidskrävande 
+                och resultatet är ett spel som faktiskt fungerar helt ok på mobilen utan buggar.
+            </p>
+            <p>
+                Feature 4: Tillbaka till spelupplevelsen: För att spelet skulle vara roligt att spela la jag mycket energi på val
+                av färger och typsnitt. Det jag dock la mest tid på var att ta fram relevanta bilder för rummen. Jag testade med
+                flera olika vertyg innan jag med hjälp av AI-bildgenerering skapade bilder av rum som innehöll rätt antal dörrar,
+                garderober, nycklar och tvätt. Detta gav mig god repetition från designkursen gällande färger och typsnitt medan 
+                bilderna blev ett nötande av prompts. Det ingår inte i kursen men var lika lärorikt som frustrerande då det var svårt 
+                att få rätt. Till slut ritade jag rummet på papper, fotade och från det skapade bilder utifrån materialet 
+                i retrostil.
+            </p>
+            <p>
+                Feature 5: Slutligen vill jag nämna att det var viktigt för mig att databasen tillförde något relevant till spelet och
+                något jag verkligen saknade från grundkraven var highscore för spelet. Det är något jag velat göra i många år för egna 
+                projekt men inte haft kunskap i hur så det passade helt perfekt att göra det. Resultatet är att databasen hanterar 
+                highscore (en topplista alltså) och visar de 10 bästa resultaten på en egen sida <code>/proj/highscore</code>.
+            </p>
+            <h3>
+                Genomförande av projekt
+            </h3>
+            <p>
+                Den roligaste delen av projektet var att designa spelet och skapa de klasser som behövdes för att realisera det.
+                Jag började tidigt att göra enhetstester för den kod jag skapade för att dra nytta av testerna under utvecklingen. 
+                Det svåraste i projektet var trots det att göra tester, precis som jag upplevt under tidigare kursmoment. Särskilt 
+                för controllers även om det var lärorikt.
+            </p>
+            <p>
+                Jag hade gärna arbetat än mer med ORM och kopplingen mellan databas och objektorienterad utveckling. Totalt har jag i 
+                vanlig ordning lagt ganska mycket tid men jag har haft möjlighet till det och tycker det är roligt.
+            </p>
+            <h3>
+                Återkoppling kring kursen
+            </h3>
+            <p>
+                Jag tycker de förinspelade föreläsningarna är utmärkta och passar mitt vardagspussel. 
+                Gällande handledning har jag fått god och snabb hjälp, främst från Mikael, på mina många frågor under kursen.
+                Även andra studenter svarar snabbt i discord-chatten om man har funderingar. 
+            </p>
+            <p>
+                I kategorin konstruktiv feedback skulle jag vilja lyfta att det kan vara en idé att lärarteamet testar genom
+                kursmaterialet innan kursen drar igång för att se om de miljöer som ska användas fungerar. I mitt specifika fall är jag
+                en person som ofta ligger före de flesta andra i kursen samtidigt som jag inte är en lika erfaren utvecklare som 
+                andra som ligger långt fram. Därför kan jag ibland bränna mycket tid på att försöka lösa problem med exempelvis
+                labbmiljön som vore bra om det redan fungerade.
+            </p>
+            <p>
+                Jag är överlag mycket nöjd med samtliga kurser jag gått i detta kurspaket men kanske varit överdrivet snål
+                i mitt betyg. Jag drar därför till med 10 av 10 för MVC. Det var ett utmärkt sätt att avsluta kurspaketet och 
+                behandlade många andra delar av de andra kurserna. Tack!
             </p>
         </article>
     </section>

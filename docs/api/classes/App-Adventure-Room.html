@@ -225,78 +225,91 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
+<dd>Constructor of Room</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Adventure-Room.html#method_addThing">addThing()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
+<dd>Add Thing to a room</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Adventure-Room.html#method_getAvailableDoors">getAvailableDoors()</a>
     <span>
                                 &nbsp;: array&lt;string, <a href="classes/App-Adventure-Room.html"><abbr title="\App\Adventure\Room">Room</abbr></a>&gt;    </span>
 </dt>
+<dd>Get all available doors in the room</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Adventure-Room.html#method_getClosetById">getClosetById()</a>
     <span>
                                 &nbsp;: <a href="classes/App-Adventure-Closet.html"><abbr title="\App\Adventure\Closet">Closet</abbr></a>|null    </span>
 </dt>
+<dd>Get closet in the room by id</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Adventure-Room.html#method_getClosets">getClosets()</a>
     <span>
                                 &nbsp;: array&lt;string|int, <a href="classes/App-Adventure-Closet.html"><abbr title="\App\Adventure\Closet">Closet</abbr></a>&gt;    </span>
 </dt>
+<dd>Get closets in the room</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Adventure-Room.html#method_getDoorTo">getDoorTo()</a>
     <span>
                                 &nbsp;: <a href="classes/App-Adventure-Room.html"><abbr title="\App\Adventure\Room">Room</abbr></a>|null    </span>
 </dt>
+<dd>Get where a door leads</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Adventure-Room.html#method_getImage">getImage()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
+<dd>Get image of room</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Adventure-Room.html#method_getInfo">getInfo()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
+<dd>Get info of room</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Adventure-Room.html#method_getName">getName()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
+<dd>Get name of room</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Adventure-Room.html#method_getThingById">getThingById()</a>
     <span>
                                 &nbsp;: <a href="classes/App-Adventure-Thing.html"><abbr title="\App\Adventure\Thing">Thing</abbr></a>|null    </span>
 </dt>
+<dd>Get Things in the room by id</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Adventure-Room.html#method_getThings">getThings()</a>
     <span>
                                 &nbsp;: array&lt;string|int, <a href="classes/App-Adventure-Thing.html"><abbr title="\App\Adventure\Thing">Thing</abbr></a>&gt;    </span>
 </dt>
+<dd>Get the Things in the room</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Adventure-Room.html#method_removeThing">removeThing()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
+<dd>Remove a Thing from a room</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Adventure-Room.html#method_setDoorTo">setDoorTo()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
+<dd>Set where a door leads</dd>
 
     </dl>
 
@@ -549,11 +562,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Constructor of Room</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/App-Adventure-Thing.html"><abbr title="\App\Adventure\Thing">Thing</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$things</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/App-Adventure-Closet.html"><abbr title="\App\Adventure\Closet">Closet</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$closets</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$roomInfo</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;&quot;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$image</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;&quot;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
@@ -621,11 +635,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Add Thing to a room</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">addThing</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Adventure-Thing.html"><abbr title="\App\Adventure\Thing">Thing</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$thing</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -665,11 +680,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">169</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get all available doors in the room</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getAvailableDoors</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, <a href="classes/App-Adventure-Room.html"><abbr title="\App\Adventure\Room">Room</abbr></a>&gt;</span></code>
@@ -703,11 +719,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">138</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get closet in the room by id</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getClosetById</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/App-Adventure-Closet.html"><abbr title="\App\Adventure\Closet">Closet</abbr></a>|null</span></code>
@@ -751,11 +768,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">97</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get closets in the room</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getClosets</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/App-Adventure-Closet.html"><abbr title="\App\Adventure\Closet">Closet</abbr></a>&gt;</span></code>
@@ -789,11 +807,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">159</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get where a door leads</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDoorTo</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$where</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/App-Adventure-Room.html"><abbr title="\App\Adventure\Room">Room</abbr></a>|null</span></code>
@@ -837,11 +856,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get image of room</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getImage</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
@@ -875,11 +895,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get info of room</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getInfo</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
@@ -913,11 +934,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get name of room</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getName</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
@@ -951,11 +973,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get Things in the room by id</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getThingById</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/App-Adventure-Thing.html"><abbr title="\App\Adventure\Thing">Thing</abbr></a>|null</span></code>
@@ -999,11 +1022,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get the Things in the room</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getThings</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/App-Adventure-Thing.html"><abbr title="\App\Adventure\Thing">Thing</abbr></a>&gt;</span></code>
@@ -1037,11 +1061,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Remove a Thing from a room</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">removeThing</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Adventure-Thing.html"><abbr title="\App\Adventure\Thing">Thing</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$thing</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
@@ -1085,11 +1110,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Adventure/Room.php"><a href="files/src-adventure-room.html"><abbr title="src/Adventure/Room.php">Room.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">115</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Set where a door leads</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setDoorTo</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$where</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Adventure-Room.html"><abbr title="\App\Adventure\Room">Room</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$room</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>

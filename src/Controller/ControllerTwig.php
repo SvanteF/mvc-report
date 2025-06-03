@@ -20,7 +20,7 @@ class ControllerTwig extends AbstractController
         return $this->render('about.html.twig');
     }
 
-    #[Route("/report", name: "report")]
+    #[Route("/me/report", name: "report")]
     public function report(): Response
     {
         return $this->render('report.html.twig');

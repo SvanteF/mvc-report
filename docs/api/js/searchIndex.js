@@ -273,67 +273,67 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020of\u0020Room",
             "url": "classes/App-Adventure-Room.html#method___construct"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003AaddThing\u0028\u0029",
             "name": "addThing",
-            "summary": "",
+            "summary": "Add\u0020Thing\u0020to\u0020a\u0020room",
             "url": "classes/App-Adventure-Room.html#method_addThing"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003AremoveThing\u0028\u0029",
             "name": "removeThing",
-            "summary": "",
+            "summary": "Remove\u0020a\u0020Thing\u0020from\u0020a\u0020room",
             "url": "classes/App-Adventure-Room.html#method_removeThing"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003AgetName\u0028\u0029",
             "name": "getName",
-            "summary": "",
+            "summary": "Get\u0020name\u0020of\u0020room",
             "url": "classes/App-Adventure-Room.html#method_getName"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003AgetInfo\u0028\u0029",
             "name": "getInfo",
-            "summary": "",
+            "summary": "Get\u0020info\u0020of\u0020room",
             "url": "classes/App-Adventure-Room.html#method_getInfo"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003AgetImage\u0028\u0029",
             "name": "getImage",
-            "summary": "",
+            "summary": "Get\u0020image\u0020of\u0020room",
             "url": "classes/App-Adventure-Room.html#method_getImage"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003AgetThings\u0028\u0029",
             "name": "getThings",
-            "summary": "",
+            "summary": "Get\u0020the\u0020Things\u0020in\u0020the\u0020room",
             "url": "classes/App-Adventure-Room.html#method_getThings"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003AgetThingById\u0028\u0029",
             "name": "getThingById",
-            "summary": "",
+            "summary": "Get\u0020Things\u0020in\u0020the\u0020room\u0020by\u0020id",
             "url": "classes/App-Adventure-Room.html#method_getThingById"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003AgetClosets\u0028\u0029",
             "name": "getClosets",
-            "summary": "",
+            "summary": "Get\u0020closets\u0020in\u0020the\u0020room",
             "url": "classes/App-Adventure-Room.html#method_getClosets"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003AgetClosetById\u0028\u0029",
             "name": "getClosetById",
-            "summary": "",
+            "summary": "Get\u0020closet\u0020in\u0020the\u0020room\u0020by\u0020id",
             "url": "classes/App-Adventure-Room.html#method_getClosetById"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003AsetDoorTo\u0028\u0029",
             "name": "setDoorTo",
-            "summary": "",
+            "summary": "Set\u0020where\u0020a\u0020door\u0020leads",
             "url": "classes/App-Adventure-Room.html#method_setDoorTo"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003AgetDoorTo\u0028\u0029",
             "name": "getDoorTo",
-            "summary": "",
+            "summary": "Get\u0020where\u0020a\u0020door\u0020leads",
             "url": "classes/App-Adventure-Room.html#method_getDoorTo"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003AgetAvailableDoors\u0028\u0029",
             "name": "getAvailableDoors",
-            "summary": "",
+            "summary": "Get\u0020all\u0020available\u0020doors\u0020in\u0020the\u0020room",
             "url": "classes/App-Adventure-Room.html#method_getAvailableDoors"
         },                {
             "fqsen": "\\App\\Adventure\\Room\u003A\u003A\u0024name",
@@ -373,27 +373,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Adventure\\Thing\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020of\u0020Thing",
             "url": "classes/App-Adventure-Thing.html#method___construct"
         },                {
             "fqsen": "\\App\\Adventure\\Thing\u003A\u003AgetType\u0028\u0029",
             "name": "getType",
-            "summary": "",
+            "summary": "Get\u0020type\u0020of\u0020Thing",
             "url": "classes/App-Adventure-Thing.html#method_getType"
         },                {
             "fqsen": "\\App\\Adventure\\Thing\u003A\u003AsetVisibility\u0028\u0029",
             "name": "setVisibility",
-            "summary": "",
+            "summary": "Set\u0020visibility\u0020of\u0020Thing",
             "url": "classes/App-Adventure-Thing.html#method_setVisibility"
         },                {
-            "fqsen": "\\App\\Adventure\\Thing\u003A\u003AgetVisibility\u0028\u0029",
-            "name": "getVisibility",
-            "summary": "",
-            "url": "classes/App-Adventure-Thing.html#method_getVisibility"
+            "fqsen": "\\App\\Adventure\\Thing\u003A\u003AisVisible\u0028\u0029",
+            "name": "isVisible",
+            "summary": "Get\u0020visibility\u0020of\u0020Thing",
+            "url": "classes/App-Adventure-Thing.html#method_isVisible"
         },                {
             "fqsen": "\\App\\Adventure\\Thing\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
-            "summary": "",
+            "summary": "Get\u0020id\u0020of\u0020Thing",
             "url": "classes/App-Adventure-Thing.html#method_getId"
         },                {
             "fqsen": "\\App\\Adventure\\Thing\u003A\u003A\u0024type",
@@ -1288,37 +1288,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Highscore\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
-            "summary": "",
+            "summary": "Get\u0020id\u0020of\u0020highscore",
             "url": "classes/App-Entity-Highscore.html#method_getId"
         },                {
             "fqsen": "\\App\\Entity\\Highscore\u003A\u003AgetScore\u0028\u0029",
             "name": "getScore",
-            "summary": "",
+            "summary": "Get\u0020score\u0020of\u0020highscore",
             "url": "classes/App-Entity-Highscore.html#method_getScore"
         },                {
             "fqsen": "\\App\\Entity\\Highscore\u003A\u003AsetScore\u0028\u0029",
             "name": "setScore",
-            "summary": "",
+            "summary": "Set\u0020id\u0020of\u0020highscore",
             "url": "classes/App-Entity-Highscore.html#method_setScore"
         },                {
             "fqsen": "\\App\\Entity\\Highscore\u003A\u003AgetCreated\u0028\u0029",
             "name": "getCreated",
-            "summary": "",
+            "summary": "Get\u0020date\u0020of\u0020creation\u0020of\u0020highscore",
             "url": "classes/App-Entity-Highscore.html#method_getCreated"
         },                {
             "fqsen": "\\App\\Entity\\Highscore\u003A\u003AsetCreated\u0028\u0029",
             "name": "setCreated",
-            "summary": "",
+            "summary": "Set\u0020date\u0020of\u0020creation\u0020of\u0020highscore",
             "url": "classes/App-Entity-Highscore.html#method_setCreated"
         },                {
             "fqsen": "\\App\\Entity\\Highscore\u003A\u003AgetPlayer\u0028\u0029",
             "name": "getPlayer",
-            "summary": "",
+            "summary": "Get\u0020the\u0020player\u0020of\u0020highscore",
             "url": "classes/App-Entity-Highscore.html#method_getPlayer"
         },                {
             "fqsen": "\\App\\Entity\\Highscore\u003A\u003AsetPlayer\u0028\u0029",
             "name": "setPlayer",
-            "summary": "",
+            "summary": "Set\u0020the\u0020player\u0020of\u0020highscore",
             "url": "classes/App-Entity-Highscore.html#method_setPlayer"
         },                {
             "fqsen": "\\App\\Entity\\Highscore\u003A\u003A\u0024id",
@@ -1593,7 +1593,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Adventure\\ClosetTest\u003A\u003AtestRemoveThingsFromCloset\u0028\u0029",
             "name": "testRemoveThingsFromCloset",
-            "summary": "Verify\u0020that\u0020a\u0020Thing\u0020is\u0020removed\u0020from\u0020Closet\u0020it\u0020it\u0020is\u0020open.",
+            "summary": "Verify\u0020that\u0020a\u0020Thing\u0020is\u0020removed\u0020from\u0020Closet\u0020if\u0020it\u0020is\u0020open.",
             "url": "classes/App-Adventure-ClosetTest.html#method_testRemoveThingsFromCloset"
         },                {
             "fqsen": "\\App\\Adventure\\ClosetTest\u003A\u003AtestIdCloset\u0028\u0029",
@@ -1618,7 +1618,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Adventure\\KeyTest\u003A\u003AtestKey\u0028\u0029",
             "name": "testKey",
-            "summary": "Construct\u0020object\u0020and\u0020verify\u0020that\u0020the\u0020correct\u0020instance\u0020is\u0020created\u0020as\u0020well\u0020as\u0020correvt\u0020type\u0020\u0026\u0020visibility.",
+            "summary": "Construct\u0020object\u0020and\u0020verify\u0020that\u0020the\u0020correct\u0020instance\u0020is\u0020created\u0020as\u0020well\u0020as\u0020correct\u0020type\u0020\u0026\u0020visibility.",
             "url": "classes/App-Adventure-KeyTest.html#method_testKey"
         },                {
             "fqsen": "\\App\\Adventure\\LaundryTest",
@@ -1628,7 +1628,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Adventure\\LaundryTest\u003A\u003AtestLaundry\u0028\u0029",
             "name": "testLaundry",
-            "summary": "Construct\u0020object\u0020and\u0020verify\u0020that\u0020the\u0020correct\u0020instance\u0020is\u0020created\u0020as\u0020well\u0020as\u0020correvt\u0020type\u0020\u0026\u0020visibility",
+            "summary": "Construct\u0020object\u0020and\u0020verify\u0020that\u0020the\u0020correct\u0020instance\u0020is\u0020created\u0020as\u0020well\u0020as\u0020correct\u0020type\u0020\u0026\u0020visibility",
             "url": "classes/App-Adventure-LaundryTest.html#method_testLaundry"
         },                {
             "fqsen": "\\App\\Adventure\\PlayerTest",
@@ -1651,10 +1651,10 @@ Search.appendIndex(
             "summary": "Verify\u0020handling\u0020of\u0020pocket\u0020is\u0020correct",
             "url": "classes/App-Adventure-PlayerTest.html#method_testPocketPlayer"
         },                {
-            "fqsen": "\\App\\Adventure\\PlayerTest\u003A\u003AtestunlockClosetByPlayer\u0028\u0029",
-            "name": "testunlockClosetByPlayer",
+            "fqsen": "\\App\\Adventure\\PlayerTest\u003A\u003AtestUnlockClosetByPlayer\u0028\u0029",
+            "name": "testUnlockClosetByPlayer",
             "summary": "Verify\u0020that\u0020the\u0020wrong\u0020key\u0020cannot\u0020open\u0020a\u0020closet\u0020but\u0020the\u0020right\u0020one\u0020can",
-            "url": "classes/App-Adventure-PlayerTest.html#method_testunlockClosetByPlayer"
+            "url": "classes/App-Adventure-PlayerTest.html#method_testUnlockClosetByPlayer"
         },                {
             "fqsen": "\\App\\Adventure\\PlayerTest\u003A\u003AtestMovePlayer\u0028\u0029",
             "name": "testMovePlayer",
@@ -1703,7 +1703,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Adventure\\RoomTest\u003A\u003AtestIdRoom\u0028\u0029",
             "name": "testIdRoom",
-            "summary": "Verify\u0020that\u0020a\u0020id\u0020can\u0020be\u0020read",
+            "summary": "Verify\u0020that\u0020an\u0020id\u0020can\u0020be\u0020read",
             "url": "classes/App-Adventure-RoomTest.html#method_testIdRoom"
         },                {
             "fqsen": "\\App\\Adventure\\RoomTest\u003A\u003AtestInfoAndImageRoom\u0028\u0029",
@@ -2086,10 +2086,10 @@ Search.appendIndex(
             "summary": "Test\u0020GET\u0020route\u0020\/proj\/game\/move\/\u007Bwhere\u007D",
             "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventureGameMove"
         },                {
-            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventuregameCollectFromRoom\u0028\u0029",
-            "name": "testAdventuregameCollectFromRoom",
-            "summary": "Test\u0020POST\u0020route\u0020\/proj\/game\/collect\/\u007BthingId\u007D\/\u007BclosetId\u007D.\u0020ClosedId\u0020\u003D\u00200",
-            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventuregameCollectFromRoom"
+            "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventureGameCollectFromRoom\u0028\u0029",
+            "name": "testAdventureGameCollectFromRoom",
+            "summary": "Test\u0020POST\u0020route\u0020\/proj\/game\/collect\/\u007BthingId\u007D\/\u007BclosetId\u007D.\u0020ClosetId\u0020\u003D\u00200",
+            "url": "classes/App-Tests-Controller-AdventureGameControllerTest.html#method_testAdventureGameCollectFromRoom"
         },                {
             "fqsen": "\\App\\Tests\\Controller\\AdventureGameControllerTest\u003A\u003AtestAdventureGameOver\u0028\u0029",
             "name": "testAdventureGameOver",

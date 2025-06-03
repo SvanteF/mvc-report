@@ -7,6 +7,8 @@ filter:
         test/*, 
         src/Dice/*, 
         src/Card/*, 
+        tests/Card,
+        tests/Dice,
         src/Entity/Library.php, 
         src/Entity/Product.php,
         src/Repository/LibraryRepository.php,

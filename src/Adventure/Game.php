@@ -56,7 +56,7 @@ class Game
          * Create 5 closets
          */
         $closets = [];
-        
+
         $closets[] = new Closet(1, 1); // $closets[0]
         $closets[] = new Closet(2, 2); // $closets[1]
         $closets[] = new Closet(3, 3); // $closets[2]

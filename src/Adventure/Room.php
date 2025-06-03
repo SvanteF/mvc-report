@@ -28,7 +28,7 @@ class Room
 
     /**
      * Constructor of Room
-     * 
+     *
      * @param Thing[] $things
      * @param Closet[] $closets
      */
@@ -51,7 +51,7 @@ class Room
 
     /**
      * Remove a Thing from a room
-     * 
+     *
      * @return bool
      */
     public function removeThing(Thing $thing): bool
@@ -67,7 +67,7 @@ class Room
 
     /**
      * Get name of room
-     * 
+     *
      * @return string
      */
     public function getName(): string
@@ -75,21 +75,21 @@ class Room
         return $this->name;
     }
 
-     /**
-     * Get info of room
-     * 
-     * @return string
-     */
+    /**
+    * Get info of room
+    *
+    * @return string
+    */
     public function getInfo(): string
     {
         return $this->roomInfo;
     }
 
-     /**
-     * Get image of room
-     * 
-     * @return string
-     */
+    /**
+    * Get image of room
+    *
+    * @return string
+    */
     public function getImage(): string
     {
         return $this->image;
@@ -97,7 +97,7 @@ class Room
 
     /**
      * Get the Things in the room
-     * 
+     *
      * @return Thing[]
      */
     public function getThings(): array
@@ -107,7 +107,7 @@ class Room
 
     /**
      * Get Things in the room by id
-     * 
+     *
      * @return ?Thing
      */
     public function getThingById(int $id): ?Thing
@@ -122,7 +122,7 @@ class Room
 
     /**
      * Get closets in the room
-     * 
+     *
      * @return Closet[]
      */
     public function getClosets(): array
@@ -132,7 +132,7 @@ class Room
 
     /**
      * Get closet in the room by id
-     * 
+     *
      * @return ?Closet
      */
     public function getClosetById(int $id): ?Closet
@@ -163,7 +163,7 @@ class Room
 
     /**
      * Get all available doors in the room
-     * 
+     *
      * @return array<string, Room>
      */
     public function getAvailableDoors(): array

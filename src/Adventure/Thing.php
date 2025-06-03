@@ -24,7 +24,7 @@ class Thing
 
     /**
      * Get type of Thing
-     * 
+     *
      * @return string
      */
     public function getType(): string
@@ -42,7 +42,7 @@ class Thing
 
     /**
      * Get visibility of Thing
-     * 
+     *
      * @return bool
      */
     public function isVisible(): bool
@@ -52,7 +52,7 @@ class Thing
 
     /**
      * Get id of Thing
-     * 
+     *
      * @return int
      */
     public function getId(): int

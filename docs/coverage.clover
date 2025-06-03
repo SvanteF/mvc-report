@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1748926376">
-  <project timestamp="1748926376">
+<coverage generated="1748969094">
+  <project timestamp="1748969094">
     <file name="/home/sf/dbwebb-kurser/mvc/me/report/src/Adventure/Closet.php">
       <class name="App\Adventure\Closet" namespace="global">
         <metrics complexity="14" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="23" elements="31" coveredelements="31"/>

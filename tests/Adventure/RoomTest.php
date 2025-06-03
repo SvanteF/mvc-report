@@ -108,7 +108,7 @@ class RoomTest extends TestCase
         $this->assertCount(1, $hallen->getAvailableDoors());
     }
 
-     /**
+    /**
     * Verify that an id can be read
     */
     public function testIdRoom(): void
@@ -119,7 +119,7 @@ class RoomTest extends TestCase
         $closets[0] = new Closet($closetId);
 
         $thing = new Thing('laundry');
-        $room1 = new Room ('rumMedGarderob', [], $closets);
+        $room1 = new Room('rumMedGarderob', [], $closets);
         $room2 = new Room('rumUtanGarderob');
 
         // Verify that there is no closet in the room
@@ -134,7 +134,7 @@ class RoomTest extends TestCase
         // Add a thing to closet
         $room1->addThing($thing);
 
-        // Verify that room can get the correct thing id. 
+        // Verify that room can get the correct thing id.
         $this->assertSame($thing, $room1->getThingById($thing->getId()));
 
     }

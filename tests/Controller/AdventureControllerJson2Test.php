@@ -3,9 +3,7 @@
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-
 use App\Adventure\Game;
-
 use App\Entity\PlayerEntity;
 use App\Entity\Highscore;
 use DateTimeImmutable;
@@ -15,9 +13,9 @@ use Doctrine\Persistence\ManagerRegistry;
 
 class AdventureControllerJson2Test extends WebTestCase
 {
-     /**
-     * Test POST json route - Add key to pocket without an active session
-     */
+    /**
+    * Test POST json route - Add key to pocket without an active session
+    */
     public function testAdventureJsonAddKeyToPocketNoActiveSession(): void
     {
         $client = static::createClient();
@@ -28,7 +26,7 @@ class AdventureControllerJson2Test extends WebTestCase
         $this->assertResponseIsSuccessful();
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
-        
+
         // Verify that an error is thrown if there is no game
         $this->assertEquals('No game has been created, create it first', $data['error']);
     }
@@ -51,7 +49,7 @@ class AdventureControllerJson2Test extends WebTestCase
         $this->assertResponseIsSuccessful();
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
-       
+
         // Verify that a key has been added to the pocket
         $this->assertArrayHasKey('key_id', $data[0]);
     }
@@ -68,7 +66,7 @@ class AdventureControllerJson2Test extends WebTestCase
         $this->assertResponseIsSuccessful();
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
-        
+
         // Verify that an error is thown if there is no game
         $this->assertEquals('No game has been created, create it first', $data['error']);
     }
@@ -100,9 +98,9 @@ class AdventureControllerJson2Test extends WebTestCase
         $this->assertArrayHasKey('key_id', $data[0]);
     }
 
-     /**
-     * Test GET json route - Get information about the current room without an active session
-     */
+    /**
+    * Test GET json route - Get information about the current room without an active session
+    */
     public function testAdventureJsonGetRoomNoActiveSession(): void
     {
         $client = static::createClient();
@@ -112,7 +110,7 @@ class AdventureControllerJson2Test extends WebTestCase
         $this->assertResponseIsSuccessful();
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
-        
+
         // Verify that an error is thrown if there is no game
         $this->assertEquals('No game has been created, create it first', $data['error']);
     }
@@ -135,7 +133,7 @@ class AdventureControllerJson2Test extends WebTestCase
         $this->assertResponseIsSuccessful();
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
-        
+
         // Verify that currentRoom, roomInfo and roomImage are read
         $this->assertArrayHasKey('currentRoom', $data[0]);
         $this->assertArrayHasKey('roomInfo', $data[0]);

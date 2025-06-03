@@ -3,14 +3,11 @@
 namespace App\Controller;
 
 use App\Adventure\Game;
-
 use App\Entity\PlayerEntity;
 use App\Entity\Highscore;
-
 use DateTimeImmutable;
 use DateTimeZone;
 use Doctrine\Persistence\ManagerRegistry;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -44,7 +41,7 @@ class AdventureGameController extends AbstractController
         $name = (string) ($request->request->get('name'));
         $name = trim($name);
 
-          if ($name == '') {
+        if ($name == '') {
             $this->addFlash('warning', 'Du glömde ditt namn, vänligen skriv in det innan du börjar');
             return $this->redirectToRoute('adventure_start');
         }
@@ -65,7 +62,7 @@ class AdventureGameController extends AbstractController
         $session->set('player_id', $playerEntity->getId());
         $session->set('start_time', $startTime->getTimestamp());
         $session->set('Game', $game);
-        
+
         $player = $game->getPlayer();
 
         return $this->render('adventure/play.html.twig', [
@@ -80,7 +77,7 @@ class AdventureGameController extends AbstractController
     #[Route("/proj/game", name: "adventure_game", methods: ["GET"])]
     public function gamePlay(
         SessionInterface $session
-        ): Response {
+    ): Response {
 
         $game = $session->get('Game');
 
@@ -140,7 +137,7 @@ class AdventureGameController extends AbstractController
             }
             $session->set('Game', $game);
             return $this->redirectToRoute('adventure_game');
-        } 
+        }
 
         $thing = $room->getThingById($thingId);
         if ($thing) {
@@ -180,13 +177,13 @@ class AdventureGameController extends AbstractController
             $session->set('Game', $game);
 
             return $this->redirectToRoute('adventure_game');
-        } 
+        }
 
         $this->addFlash(
             'warning',
             'Det var fel nyckel, garderoben är fortfarande låst'
         );
-        
+
         $session->set('Game', $game);
 
         return $this->redirectToRoute('adventure_game');
@@ -199,8 +196,7 @@ class AdventureGameController extends AbstractController
     public function gameOver(
         ManagerRegistry $doctrine,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         // Calculate the duration of the game
         $startTimestamp = $session->get('start_time');
         $endTime = new DateTimeImmutable();
@@ -255,7 +251,8 @@ class AdventureGameController extends AbstractController
      * Load the quick solution page
      */
     #[Route("/proj/quick", name: "adventure_quick")]
-    public function adventureQuick(): Response {
+    public function adventureQuick(): Response
+    {
         return $this->render('adventure/quick.html.twig');
     }
 }

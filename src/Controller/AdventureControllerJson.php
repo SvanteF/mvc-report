@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Adventure\Game;
 use App\Adventure\Laundry;
 use App\Adventure\Key;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AdventureControllerJson extends AbstractController
 {
-
     /**
      * Main route for proj/api
      */
@@ -32,8 +30,7 @@ class AdventureControllerJson extends AbstractController
     public function jsonNamePOST(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         // Get the name from the form
         $name = (string) $request->request->get('name');
 
@@ -60,8 +57,7 @@ class AdventureControllerJson extends AbstractController
     #[Route("/proj/api/player", methods: ["GET"])]
     public function jsonNameGET(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = $session->get("Game");
 
         // Catch error if no game exists in the session
@@ -75,7 +71,7 @@ class AdventureControllerJson extends AbstractController
             $response->setEncodingOptions(
                 $response->getEncodingOptions() | JSON_PRETTY_PRINT
             );
-            return $response;        
+            return $response;
         }
 
         $data = [
@@ -95,8 +91,7 @@ class AdventureControllerJson extends AbstractController
     #[Route("/proj/api/basket/add", methods: ["POST"])]
     public function jsonBasketPOST(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = $session->get("Game");
 
         // Catch error if no game or player exists in the session
@@ -110,7 +105,7 @@ class AdventureControllerJson extends AbstractController
             $response->setEncodingOptions(
                 $response->getEncodingOptions() | JSON_PRETTY_PRINT
             );
-            return $response;        
+            return $response;
         }
 
         $player = $game->getPlayer();
@@ -139,8 +134,7 @@ class AdventureControllerJson extends AbstractController
     #[Route("/proj/api/basket", methods: ["GET"])]
     public function jsonBasketGET(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = $session->get("Game");
 
         // Catch error if no game or player exists in the session
@@ -154,7 +148,7 @@ class AdventureControllerJson extends AbstractController
             $response->setEncodingOptions(
                 $response->getEncodingOptions() | JSON_PRETTY_PRINT
             );
-            return $response;        
+            return $response;
         }
 
         $player = $game->getPlayer();
@@ -181,8 +175,7 @@ class AdventureControllerJson extends AbstractController
     #[Route("/proj/api/pocket/add", methods: ["POST"])]
     public function jsonPocketPOST(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = $session->get("Game");
 
         // Catch error if no game or player exists in the session
@@ -196,7 +189,7 @@ class AdventureControllerJson extends AbstractController
             $response->setEncodingOptions(
                 $response->getEncodingOptions() | JSON_PRETTY_PRINT
             );
-            return $response;        
+            return $response;
         }
 
         $player = $game->getPlayer();
@@ -225,8 +218,7 @@ class AdventureControllerJson extends AbstractController
     #[Route("/proj/api/pocket", methods: ["GET"])]
     public function jsonPocketGET(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = $session->get("Game");
 
         // Catch error if no game or player exists in the session
@@ -240,7 +232,7 @@ class AdventureControllerJson extends AbstractController
             $response->setEncodingOptions(
                 $response->getEncodingOptions() | JSON_PRETTY_PRINT
             );
-            return $response;        
+            return $response;
         }
 
         $player = $game->getPlayer();
@@ -267,8 +259,7 @@ class AdventureControllerJson extends AbstractController
     #[Route("/proj/api/room", methods: ["GET"])]
     public function jsonRoomGET(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = $session->get("Game");
 
         $data = [];
@@ -284,7 +275,7 @@ class AdventureControllerJson extends AbstractController
             $response->setEncodingOptions(
                 $response->getEncodingOptions() | JSON_PRETTY_PRINT
             );
-            return $response;        
+            return $response;
         }
 
         $player = $game->getPlayer();

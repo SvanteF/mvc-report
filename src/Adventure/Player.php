@@ -21,9 +21,9 @@ class Player
      */
     private array $pocket = [];
 
-     /**
-     * Constructor of Player
-     */
+    /**
+    * Constructor of Player
+    */
     public function __construct(Room $startRoom, string $playerName)
     {
         $this->currentRoom = $startRoom;
@@ -51,7 +51,7 @@ class Player
 
     /**
      * Get the player's name
-     * 
+     *
      * @return string
      */
     public function getName(): string
@@ -61,7 +61,7 @@ class Player
 
     /**
      * Get all laundry from the basket
-     * 
+     *
      * @return Laundry[]
      */
     public function getBasket(): array
@@ -79,7 +79,7 @@ class Player
 
     /**
      * Get all keys from from the player's pocket.
-     * 
+     *
      * @return Key[]
      */
     public function getPocket(): array
@@ -172,7 +172,7 @@ class Player
 
     /**
      * Get the number of laundry in the basket
-     * 
+     *
      * @return int
      */
     public function getLaundryCount(): int
@@ -182,7 +182,7 @@ class Player
 
     /**
      * Get the current room
-     * 
+     *
      * @return Room
      */
     public function getCurrentRoom(): Room

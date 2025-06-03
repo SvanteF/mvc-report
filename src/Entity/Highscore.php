@@ -29,7 +29,7 @@ class Highscore
 
     /**
      * Get id of highscore
-     * 
+     *
      * @return int
      */
     public function getId(): ?int
@@ -39,7 +39,7 @@ class Highscore
 
     /**
      * Get score of highscore
-     * 
+     *
      * @return int
      */
     public function getScore(): int
@@ -49,7 +49,7 @@ class Highscore
 
     /**
      * Set id of highscore
-     * 
+     *
      * @return self
      */
     public function setScore(int $score): self

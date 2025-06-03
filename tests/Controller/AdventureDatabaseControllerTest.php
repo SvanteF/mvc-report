@@ -3,9 +3,7 @@
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-
 use App\Adventure\Game;
-
 use App\Entity\PlayerEntity;
 use App\Entity\Highscore;
 use DateTimeImmutable;
@@ -19,10 +17,10 @@ class AdventureDatabaseControllerTest extends WebTestCase
     /**
      * Test POST route /proj/entity/delete
      */
-   public function testResetDatabase(): void
-   {
+    public function testResetDatabase(): void
+    {
         $client = static::createClient();
-        
+
         // @phpstan-ignore-next-line
         $entityManager = static::getContainer()->get('doctrine')->getManager();
 
@@ -52,7 +50,7 @@ class AdventureDatabaseControllerTest extends WebTestCase
         $client->followRedirect();
         $this->assertSelectorTextContains('.flash-success', 'Databasen har återställts');
     }
- 
+
     /**
      * Test GET route /proj/highscore
      */
@@ -87,28 +85,28 @@ class AdventureDatabaseControllerTest extends WebTestCase
         $this->assertSame($date, $highscore->getCreated());
     }
 
-public function testHighscoreGetId(): void
-{
-    // @phpstan-ignore-next-line
-    $entityManager = static::getContainer()->get('doctrine')->getManager();
+    public function testHighscoreGetId(): void
+    {
+        // @phpstan-ignore-next-line
+        $entityManager = static::getContainer()->get('doctrine')->getManager();
 
-    // Create a new player
-    $player = new PlayerEntity();
-    $player->setName('Test Name');
-    $entityManager->persist($player);
-    $entityManager->flush();
+        // Create a new player
+        $player = new PlayerEntity();
+        $player->setName('Test Name');
+        $entityManager->persist($player);
+        $entityManager->flush();
 
-    // Create a new highscore and connect to player
-    $highscore = new Highscore();
-    $highscore->setScore(123);
-    $highscore->setPlayer($player);
-    $highscore->setCreated(new DateTimeImmutable()); // <-- Lägg till denna rad!
-    $entityManager->persist($highscore);
-    $entityManager->flush();
+        // Create a new highscore and connect to player
+        $highscore = new Highscore();
+        $highscore->setScore(123);
+        $highscore->setPlayer($player);
+        $highscore->setCreated(new DateTimeImmutable()); // <-- Lägg till denna rad!
+        $entityManager->persist($highscore);
+        $entityManager->flush();
 
-    $this->assertNotNull($highscore->getId());
-    $this->assertIsInt($highscore->getId());
-}
+        $this->assertNotNull($highscore->getId());
+        $this->assertIsInt($highscore->getId());
+    }
 
     /**
      * Test all setters and getters for highscore

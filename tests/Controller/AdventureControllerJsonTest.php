@@ -3,9 +3,7 @@
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-
 use App\Adventure\Game;
-
 use App\Entity\PlayerEntity;
 use App\Entity\Highscore;
 use DateTimeImmutable;
@@ -18,7 +16,7 @@ class AdventureControllerJsonTest extends WebTestCase
     /**
      * Test GET main route for /proj/api
      */
-    public function testAdventureApi(): void 
+    public function testAdventureApi(): void
     {
         $client = static::createClient();
 
@@ -32,7 +30,7 @@ class AdventureControllerJsonTest extends WebTestCase
     /**
      * Test POST json route for setting a players name
      */
-    public function testAdventureJsonSetPlayer(): void 
+    public function testAdventureJsonSetPlayer(): void
     {
         $client = static::createClient();
 
@@ -62,7 +60,7 @@ class AdventureControllerJsonTest extends WebTestCase
         $this->assertResponseIsSuccessful();
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
-        
+
         // Verify that an error is thrown if there is no game
         $this->assertEquals('No game has been created, create it first', $data['error']);
     }
@@ -86,7 +84,7 @@ class AdventureControllerJsonTest extends WebTestCase
         $this->assertResponseIsSuccessful();
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
-       
+
         // Verify that getPlayer works correctly
         $this->assertEquals('Test Name', $data['name']);
     }
@@ -103,7 +101,7 @@ class AdventureControllerJsonTest extends WebTestCase
         $this->assertResponseIsSuccessful();
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
-        
+
         // Verify that an error is thown if there is no game
         $this->assertEquals('No game has been created, create it first', $data['error']);
     }
@@ -126,7 +124,7 @@ class AdventureControllerJsonTest extends WebTestCase
         $this->assertResponseIsSuccessful();
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
-       
+
         // Verify that laundry has been added to the basket
         $this->assertArrayHasKey('laundry_id', $data[0]);
     }
@@ -143,7 +141,7 @@ class AdventureControllerJsonTest extends WebTestCase
         $this->assertResponseIsSuccessful();
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
-        
+
         // Verify that an error is thown if there is no game
         $this->assertEquals('No game has been created, create it first', $data['error']);
     }
@@ -170,7 +168,7 @@ class AdventureControllerJsonTest extends WebTestCase
         $this->assertResponseIsSuccessful();
 
         $data = json_decode($client->getResponse()->getContent() ?: '', true);
-        
+
         // Verify that laundry was read correctly
         $this->assertArrayHasKey('laundry_id', $data[0]);
     }

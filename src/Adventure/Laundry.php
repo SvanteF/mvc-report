@@ -7,9 +7,9 @@ namespace App\Adventure;
  */
 class Laundry extends Thing
 {
-     /**
-     * Constructor of Laundry
-     */
+    /**
+    * Constructor of Laundry
+    */
     public function __construct()
     {
         parent::__construct('laundry');

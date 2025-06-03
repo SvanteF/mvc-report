@@ -3,9 +3,7 @@
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-
 use App\Adventure\Game;
-
 use App\Entity\PlayerEntity;
 use App\Entity\Highscore;
 use DateTimeImmutable;
@@ -42,7 +40,7 @@ class AdventureGameControllerTest extends WebTestCase
 
         // Verify that an empty name redirects to /proj
         $this->assertResponseRedirects('/proj');
-        
+
         // Verify the right output of the flash message.
         $client->followRedirect();
         $this->assertSelectorTextContains('.flash-warning', 'Du glömde ditt namn');
@@ -100,7 +98,7 @@ class AdventureGameControllerTest extends WebTestCase
     }
 
     /**
-     * Test GET route /proj/game/move/{where} 
+     * Test GET route /proj/game/move/{where}
      */
     public function testAdventureGameMove(): void
     {

@@ -16,7 +16,7 @@ class HighscoreRepository extends ServiceEntityRepository
         parent::__construct($registry, Highscore::class);
     }
 
-      /**
+    /**
      * Clear the table player_entity
      */
     public function resetHighscore(): void

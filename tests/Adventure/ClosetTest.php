@@ -140,7 +140,7 @@ class ClosetTest extends TestCase
         //Verify that the correct id is read
         $this->assertSame($closetId, $closet->getId());
 
-        // Verify that closet can get the correct thing id. 
+        // Verify that closet can get the correct thing id.
         $this->assertSame($thing, $closet->getThingById($thing->getId()));
 
     }

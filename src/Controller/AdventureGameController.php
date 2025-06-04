@@ -203,7 +203,7 @@ class AdventureGameController extends AbstractController
         $endTimestamp = $endTime->getTimestamp();
         $gameDuration = $endTimestamp - $startTimestamp;
 
-        // Get PlayerEntiry from session
+        // Get PlayerEntity from session
         $playerId = $session->get('player_id');
         $playerEntity = $doctrine->getRepository(PlayerEntity::class)->find($playerId);
 
